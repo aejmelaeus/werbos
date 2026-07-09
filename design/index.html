@@ -26,6 +26,14 @@
       };
     </script>
     <style>
+      *, ::before, ::after {
+        box-sizing: border-box;
+      }
+
+      html, body {
+        overflow-x: hidden;
+      }
+
       .typing::after {
         content: "";
         display: inline-block;
@@ -42,8 +50,8 @@
       }
     </style>
   </head>
-  <body class="min-h-screen bg-canvas text-graphite">
-    <main class="mx-auto flex min-h-screen w-full max-w-6xl flex-col px-4 py-4 sm:px-6 lg:py-6">
+  <body class="min-h-screen overflow-x-hidden bg-canvas text-graphite">
+    <main class="mx-auto flex min-h-screen max-w-6xl flex-col py-4 lg:py-6" style="width: min(72rem, calc(100vw - 2rem));">
       <header class="mb-4 flex items-center justify-between border-b border-graphite/10 pb-4">
         <div class="flex items-center gap-3">
           <div class="grid size-11 place-items-center rounded-lg bg-graphite text-lg font-black text-white" aria-label="Werbos placeholder logo">W</div>
