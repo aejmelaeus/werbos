@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Werbos Design System - Lesson Rail</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              canvas: "#f4f7f6",
+              panel: "#ffffff",
+              graphite: "#24302f",
+              moss: "#4f7f52",
+              clay: "#c96b4f",
+              pollen: "#edc967",
+              water: "#7db6c8"
+            },
+            boxShadow: {
+              panel: "0 10px 32px rgba(36, 48, 47, 0.10)"
+            }
+          }
+        }
+      };
+    </script>
+    <style>
+      .typing::after {
+        content: "";
+        display: inline-block;
+        width: 0.4rem;
+        height: 1rem;
+        margin-left: 0.12rem;
+        background: #c96b4f;
+        animation: cursor 1s steps(2, start) infinite;
+        vertical-align: -0.1rem;
+      }
+
+      @keyframes cursor {
+        50% { opacity: 0; }
+      }
+    </style>
+  </head>
+  <body class="min-h-screen bg-canvas text-graphite">
+    <main class="mx-auto flex min-h-screen w-full max-w-6xl flex-col px-4 py-4 sm:px-6 lg:py-6">
+      <header class="mb-4 flex items-center justify-between border-b border-graphite/10 pb-4">
+        <div class="flex items-center gap-3">
+          <div class="grid size-11 place-items-center rounded-lg bg-graphite text-lg font-black text-white" aria-label="Werbos placeholder logo">W</div>
+          <div>
+            <p class="text-sm font-black uppercase tracking-[0.18em] text-moss">Werbos</p>
+            <p class="text-sm text-graphite/70">Proposal C: Lesson Rail</p>
+          </div>
+        </div>
+        <button class="grid size-10 place-items-center rounded-lg bg-panel text-xl font-black shadow-panel" aria-label="Profile placeholder">·</button>
+      </header>
+
+      <section class="grid flex-1 gap-4 lg:grid-cols-[300px_1fr]">
+        <aside class="flex flex-col gap-4">
+          <article class="rounded-lg bg-panel p-4 shadow-panel">
+            <p class="text-xs font-black uppercase tracking-[0.18em] text-moss">Hero</p>
+            <div class="mt-4 rounded-lg bg-graphite p-5 text-white">
+              <p class="text-sm font-bold text-pollen">Verb 12</p>
+              <h1 class="mt-2 text-6xl font-black leading-none">decir</h1>
+              <p class="mt-3 text-lg font-semibold text-white/80">to say / to tell</p>
+            </div>
+            <div class="mt-4 grid grid-cols-2 gap-2">
+              <div class="rounded-lg bg-canvas p-3">
+                <p class="text-xs font-bold uppercase text-graphite/60">Region</p>
+                <p class="font-black">es-ES</p>
+              </div>
+              <div class="rounded-lg bg-canvas p-3">
+                <p class="text-xs font-bold uppercase text-graphite/60">Mode</p>
+                <p class="font-black">meaning</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="rounded-lg bg-panel p-4 shadow-panel">
+            <p class="text-xs font-black uppercase tracking-[0.18em] text-moss">Description</p>
+            <p class="mt-3 text-lg font-bold leading-snug">Short explanations should clarify the next choice without becoming a lesson page.</p>
+          </article>
+
+          <article class="rounded-lg bg-panel p-4 shadow-panel">
+            <p class="text-xs font-black uppercase tracking-[0.18em] text-moss">Tense rail</p>
+            <div class="mt-3 space-y-2 text-sm font-bold">
+              <div class="flex items-center justify-between rounded-lg bg-pollen px-3 py-2"><span>present</span><span>digo</span></div>
+              <div class="flex items-center justify-between rounded-lg bg-canvas px-3 py-2"><span>preterite</span><span>dije</span></div>
+              <div class="flex items-center justify-between rounded-lg bg-canvas px-3 py-2"><span>imperfect</span><span>decía</span></div>
+            </div>
+          </article>
+        </aside>
+
+        <section class="flex flex-col gap-4">
+          <article class="rounded-lg bg-panel p-4 shadow-panel">
+            <div class="flex gap-3">
+              <div class="grid size-16 shrink-0 place-items-center rounded-lg bg-clay text-2xl font-black text-white" aria-label="Zorrito placeholder">Z</div>
+              <div class="relative flex-1 rounded-lg bg-canvas p-4">
+                <span class="absolute -left-2 top-6 size-4 rotate-45 bg-canvas"></span>
+                <p class="text-xs font-black uppercase tracking-[0.18em] text-moss">Speech bubble</p>
+                <p id="coachText" class="typing mt-2 min-h-[4.5rem] text-base font-bold leading-7"></p>
+              </div>
+            </div>
+          </article>
+
+          <article class="rounded-lg bg-panel p-4 shadow-panel sm:p-5">
+            <div class="mb-5 flex items-start justify-between gap-3">
+              <div>
+                <p class="text-xs font-black uppercase tracking-[0.18em] text-moss">Quiz screen</p>
+                <h2 class="mt-2 text-2xl font-black leading-tight sm:text-3xl">Select the best English meaning.</h2>
+              </div>
+              <div class="rounded-lg bg-water px-3 py-2 text-sm font-black text-white">3 pts</div>
+            </div>
+
+            <div class="rounded-lg bg-canvas p-4">
+              <p class="text-sm font-bold uppercase tracking-[0.14em] text-graphite/60">Prompt</p>
+              <p class="mt-2 text-xl font-black">decir</p>
+            </div>
+
+            <div class="mt-4 space-y-3">
+              <button class="flex min-h-14 w-full items-center gap-3 rounded-lg bg-moss px-4 text-left font-black text-white">
+                <span class="grid size-8 shrink-0 place-items-center rounded-full bg-white text-moss">1</span>
+                <span>to say / to tell</span>
+              </button>
+              <button class="flex min-h-14 w-full items-center gap-3 rounded-lg border border-graphite/10 bg-white px-4 text-left font-bold">
+                <span class="grid size-8 shrink-0 place-items-center rounded-full bg-canvas">2</span>
+                <span>to hear</span>
+              </button>
+              <button class="flex min-h-14 w-full items-center gap-3 rounded-lg border border-graphite/10 bg-white px-4 text-left font-bold">
+                <span class="grid size-8 shrink-0 place-items-center rounded-full bg-canvas">3</span>
+                <span>to feel</span>
+              </button>
+              <button class="flex min-h-14 w-full items-center gap-3 rounded-lg border border-graphite/10 bg-white px-4 text-left font-bold">
+                <span class="grid size-8 shrink-0 place-items-center rounded-full bg-canvas">4</span>
+                <span>to think</span>
+              </button>
+            </div>
+
+            <div class="mt-5 rounded-lg border-l-4 border-clay bg-clay/10 p-4">
+              <p class="text-sm font-black text-clay">Feedback state</p>
+              <p class="mt-1 text-sm font-semibold leading-6">The selected answer fills with moss. The correction area can reuse this strip for examples like "Digo la verdad."</p>
+            </div>
+          </article>
+        </section>
+      </section>
+    </main>
+
+    <script>
+      const message = "Use the rail to preview patterns, then keep the quiz area focused on one decision.";
+      const coach = document.querySelector("#coachText");
+      let step = 0;
+
+      function writeCoach() {
+        coach.textContent = message.slice(0, step);
+        step = step < message.length ? step + 1 : 0;
+        setTimeout(writeCoach, step === 0 ? 1200 : 35);
+      }
+
+      writeCoach();
+    </script>
+  </body>
+</html>
