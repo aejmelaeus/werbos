@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Werbos speech coach icon</title>
+  <desc id="desc">Rounded dark icon with a W in a speech bubble and small fox ears.</desc>
+  <rect width="512" height="512" rx="96" fill="#202124"/>
+  <path fill="#d95d4f" d="M168 100h54l34 60h-70zM290 100h54l-18 60h-70z"/>
+  <path fill="#f8f4ed" d="M104 150h304a48 48 0 0 1 48 48v140a48 48 0 0 1-48 48H258l-82 66v-66h-72a48 48 0 0 1-48-48V198a48 48 0 0 1 48-48z"/>
+  <path fill="#28745d" d="M132 216h45l25 86 30-86h38l30 86 25-86h45l-47 124h-43l-29-80-29 80h-43z"/>
+  <circle cx="202" cy="196" r="12" fill="#202124"/>
+  <circle cx="310" cy="196" r="12" fill="#202124"/>
+</svg>

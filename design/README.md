@@ -9,6 +9,8 @@ should later move these decisions into the compiled Tailwind build described in
 
 - `index.html` - main design-system gallery with each component shown separately.
 - `styles.css` - shared Calm Study tokens and component classes.
+- `brand/` - logo, mascot, and PWA icon source SVGs.
+- `components/brand.html` - standalone brand asset preview.
 - `components/hero.html` - standalone hero word preview.
 - `components/description.html` - standalone short description preview.
 - `components/speech-bubble.html` - standalone Zorrito speech bubble preview.
@@ -23,6 +25,7 @@ The artifact covers:
 - Zorrito speech bubble with animated text.
 - Multiple-choice quiz screen with three to four answers.
 - Placeholder logo and icon treatments.
+- Logo, Zorrito mascot, and PWA icon source assets.
 
 Open `index.html` for the full gallery, or open any file under `components/`
 to preview one component in isolation.
