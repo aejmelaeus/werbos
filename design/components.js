@@ -1,4 +1,7 @@
 const zorritoMessage = "Decir is irregular in the yo form: digo. Show one useful example before asking for recall.";
+const assetBase = new URL("./", document.currentScript.src);
+const zorritoSpeech = new URL("brand/zorrito-speech.png", assetBase).href;
+const zorritoSpeech2x = new URL("brand/zorrito-speech@2x.png", assetBase).href;
 
 const components = {
   hero: `
@@ -27,7 +30,12 @@ const components = {
   "speech-bubble": `
     <article class="card speech-card">
       <div class="speech-layout">
-        <div class="zorrito-mark" aria-label="Zorrito placeholder">Z</div>
+        <img
+          class="zorrito-mark"
+          src="${zorritoSpeech}"
+          srcset="${zorritoSpeech} 1x, ${zorritoSpeech2x} 2x"
+          alt="Zorrito"
+        />
         <div class="speech-bubble">
           <p class="eyebrow">Zorrito explains</p>
           <p class="speech-text type-caret" data-speech-text></p>

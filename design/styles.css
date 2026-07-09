@@ -243,27 +243,13 @@ body {
 }
 
 .zorrito-mark {
-  position: relative;
-  display: grid;
   width: 4rem;
   height: 4rem;
   flex: 0 0 auto;
-  place-items: center;
-  border-radius: 0.5rem;
-  background: var(--werbos-maize);
-  font-size: 1.875rem;
+  border-radius: 50%;
+  object-fit: cover;
   box-shadow: 0 2px 10px rgba(32, 33, 36, 0.08);
-}
-
-.zorrito-mark::after {
-  content: "";
-  position: absolute;
-  top: -0.25rem;
-  right: -0.25rem;
-  width: 1rem;
-  height: 1rem;
-  border-radius: 999px;
-  background: var(--werbos-coral);
+  background: var(--werbos-paper);
 }
 
 .speech-bubble {
