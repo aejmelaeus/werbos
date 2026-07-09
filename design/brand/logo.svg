@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 220" role="img" aria-labelledby="title desc">
+  <title id="title">Werbos logo</title>
+  <desc id="desc">Werbos wordmark with a Zorrito fox badge.</desc>
+  <rect x="20" y="28" width="164" height="164" rx="36" fill="#28745d"/>
+  <path fill="#f1c76b" d="M54 91 77 49l25 34h9l25-34 23 42-11 62-46 29-46-29z"/>
+  <path fill="#d95d4f" d="m77 49 25 34H58zm59 0-25 34h44z"/>
+  <path fill="#fffaf0" d="M74 120c8 25 21 39 28 39s20-14 28-39c-16 9-40 9-56 0z"/>
+  <circle cx="83" cy="108" r="8" fill="#202124"/>
+  <circle cx="121" cy="108" r="8" fill="#202124"/>
+  <path fill="#202124" d="m94 132 8 8 8-8c-4-4-12-4-16 0z"/>
+  <path fill="none" stroke="#202124" stroke-linecap="round" stroke-width="6" d="M84 149c11 8 25 8 36 0"/>
+  <text x="224" y="130" fill="#202124" font-family="Inter, Arial, sans-serif" font-size="76" font-weight="900" letter-spacing="6">WERBOS</text>
+  <text x="228" y="174" fill="#28745d" font-family="Inter, Arial, sans-serif" font-size="21" font-weight="800" letter-spacing="5">PRACTICE SPANISH VERBS</text>
+</svg>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title desc">
+  <title id="title">Zorrito mascot</title>
+  <desc id="desc">A calm geometric fox mascot for Werbos.</desc>
+  <path fill="#f1c76b" d="M30 58 52 18l24 34h8l24-34 22 40-10 58-40 26-40-26z"/>
+  <path fill="#d95d4f" d="M52 18 76 52H34zm56 0L84 52h42z"/>
+  <path fill="#fffaf0" d="M48 86c8 24 22 40 32 40s24-16 32-40c-15 8-49 8-64 0z"/>
+  <path fill="#202124" d="M60 74a7 7 0 1 0 0-14 7 7 0 0 0 0 14zm40 0a7 7 0 1 0 0-14 7 7 0 0 0 0 14z"/>
+  <path fill="#202124" d="m72 92 8 8 8-8c-4-4-12-4-16 0z"/>
+  <path fill="none" stroke="#202124" stroke-linecap="round" stroke-width="6" d="M62 110c9 9 27 9 36 0"/>
+  <path fill="none" stroke="#202124" stroke-linejoin="round" stroke-width="6" d="M30 58 52 18l24 34h8l24-34 22 40-10 58-40 26-40-26z"/>
+</svg>

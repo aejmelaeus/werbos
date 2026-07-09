@@ -1,6 +1,26 @@
 const zorritoMessage = "Decir is irregular in the yo form: digo. Show one useful example before asking for recall.";
 
 const components = {
+  brand: `
+    <article class="card brand-card">
+      <div class="brand-showcase">
+        <div class="brand-primary">
+          <img src="./brand/logo.svg" alt="Werbos Zorrito badge logo" class="brand-logo" />
+          <p class="muted">Primary app header logo</p>
+        </div>
+        <div class="brand-assets">
+          <div class="brand-asset">
+            <img src="./brand/pwa-icon.svg" alt="Werbos PWA icon" />
+            <span>PWA icon</span>
+          </div>
+          <div class="brand-asset">
+            <img src="./brand/zorrito.svg" alt="Zorrito mascot" />
+            <span>Zorrito mascot</span>
+          </div>
+        </div>
+      </div>
+    </article>
+  `,
   hero: `
     <article class="card hero-card">
       <div class="hero-topline">

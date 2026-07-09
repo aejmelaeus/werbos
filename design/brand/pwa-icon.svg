@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Werbos PWA icon</title>
+  <desc id="desc">Rounded green icon with the Zorrito fox face.</desc>
+  <rect width="512" height="512" rx="96" fill="#28745d"/>
+  <path fill="#f1c76b" d="M116 202 178 90l66 92h24l66-92 62 112-30 166-110 70-110-70z"/>
+  <path fill="#d95d4f" d="m178 90 66 92H128zm156 0-66 92h116z"/>
+  <path fill="#fffaf0" d="M168 278c22 70 59 108 88 108s66-38 88-108c-42 24-134 24-176 0z"/>
+  <circle cx="204" cy="246" r="22" fill="#202124"/>
+  <circle cx="308" cy="246" r="22" fill="#202124"/>
+  <path fill="#202124" d="m236 308 20 22 20-22c-10-11-30-11-40 0z"/>
+  <path fill="none" stroke="#202124" stroke-linecap="round" stroke-width="18" d="M210 354c26 20 66 20 92 0"/>
+  <path fill="none" stroke="#202124" stroke-linejoin="round" stroke-width="18" d="M116 202 178 90l66 92h24l66-92 62 112-30 166-110 70-110-70z"/>
+</svg>
