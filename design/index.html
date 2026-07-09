@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Werbos Design System - Calm Study</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="ds-page">
+      <header class="ds-header">
+        <div class="brand-lockup">
+          <div class="logo-mark" aria-label="Werbos placeholder logo">W</div>
+          <div>
+            <p class="eyebrow">Werbos</p>
+            <p class="muted">Calm Study design system</p>
+          </div>
+        </div>
+        <button class="icon-button" aria-label="Settings placeholder">...</button>
+      </header>
+
+      <section class="component-grid" aria-label="Design components">
+        <article class="component-section">
+          <div class="section-label">
+            <p class="eyebrow">Hero word</p>
+            <a class="component-link" href="./components/hero.html">Preview</a>
+          </div>
+          <div data-component="hero"></div>
+        </article>
+
+        <article class="component-section">
+          <div class="section-label">
+            <p class="eyebrow">Description</p>
+            <a class="component-link" href="./components/description.html">Preview</a>
+          </div>
+          <div data-component="description"></div>
+        </article>
+
+        <article class="component-section">
+          <div class="section-label">
+            <p class="eyebrow">Speech bubble</p>
+            <a class="component-link" href="./components/speech-bubble.html">Preview</a>
+          </div>
+          <div data-component="speech-bubble"></div>
+        </article>
+
+        <article class="component-section is-wide">
+          <div class="section-label">
+            <p class="eyebrow">Quiz screen</p>
+            <a class="component-link" href="./components/quiz.html">Preview</a>
+          </div>
+          <div data-component="quiz"></div>
+        </article>
+      </section>
+    </main>
+
+    <script src="./components.js"></script>
+  </body>
+</html>
