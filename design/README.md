@@ -13,6 +13,8 @@ should later move these decisions into the compiled Tailwind build described in
 - `components/description.html` - standalone short description preview.
 - `components/speech-bubble.html` - standalone Zorrito speech bubble preview.
 - `components/quiz.html` - standalone quiz screen preview.
+- `brand/zorrito-speech.png` - speech-bubble-sized Zorrito avatar.
+- `brand/zorrito-speech@2x.png` - high-density source for the same avatar.
 
 ## Scope
 
@@ -21,6 +23,7 @@ The artifact covers:
 - Hero verb presentation.
 - Short descriptive copy.
 - Zorrito speech bubble with animated text.
+- Zorrito speech-bubble avatar image.
 - Multiple-choice quiz screen with three to four answers.
 - Placeholder logo and icon treatments.
 
