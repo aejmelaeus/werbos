@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Werbos Design System - Practice Deck</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              night: "#17151f",
+              card: "#fffaf0",
+              mint: "#45b69c",
+              tomato: "#ef6f5e",
+              plum: "#6f4c9b",
+              lemon: "#ffe082",
+              ocean: "#2c7da0"
+            },
+            boxShadow: {
+              deck: "0 14px 0 #17151f",
+              lift: "0 16px 40px rgba(23, 21, 31, 0.16)"
+            }
+          }
+        }
+      };
+    </script>
+    <style>
+      .bubble-text::after {
+        content: "";
+        display: inline-block;
+        width: 0.5rem;
+        height: 1rem;
+        margin-left: 0.1rem;
+        background: #ef6f5e;
+        animation: pulse 0.9s steps(2, start) infinite;
+        vertical-align: -0.1rem;
+      }
+
+      @keyframes pulse {
+        50% { opacity: 0; }
+      }
+    </style>
+  </head>
+  <body class="min-h-screen bg-mint text-night">
+    <main class="mx-auto grid min-h-screen w-full max-w-6xl gap-4 px-4 py-4 sm:px-6 lg:grid-cols-[360px_1fr] lg:gap-6 lg:py-6">
+      <aside class="flex flex-col gap-4">
+        <header class="flex items-center justify-between rounded-lg border-2 border-night bg-card p-3 shadow-deck">
+          <div class="flex items-center gap-3">
+            <div class="grid size-12 place-items-center rounded-md border-2 border-night bg-lemon text-xl font-black">W</div>
+            <div>
+              <p class="text-sm font-black uppercase tracking-[0.16em]">Werbos</p>
+              <p class="text-xs font-bold text-plum">Proposal B: Practice Deck</p>
+            </div>
+          </div>
+          <div class="grid size-10 place-items-center rounded-md border-2 border-night bg-white font-black" aria-label="Menu placeholder">≡</div>
+        </header>
+
+        <section class="rounded-lg border-2 border-night bg-card p-5 shadow-deck">
+          <div class="mb-4 flex items-center justify-between">
+            <p class="text-xs font-black uppercase tracking-[0.18em] text-ocean">Hero word</p>
+            <div class="h-3 w-24 rounded-full bg-night">
+              <div class="h-3 w-10 rounded-full bg-tomato"></div>
+            </div>
+          </div>
+          <p class="text-sm font-black uppercase tracking-[0.2em] text-plum">Verb</p>
+          <h1 class="mt-2 text-7xl font-black leading-none">decir</h1>
+          <p class="mt-3 max-w-xs text-xl font-black">to say / to tell</p>
+          <div class="mt-5 flex gap-2">
+            <span class="rounded-md border-2 border-night bg-lemon px-3 py-2 text-sm font-black">irregular</span>
+            <span class="rounded-md border-2 border-night bg-white px-3 py-2 text-sm font-black">rank 12</span>
+          </div>
+        </section>
+
+        <section class="rounded-lg border-2 border-night bg-night p-5 text-card shadow-lift">
+          <p class="text-xs font-black uppercase tracking-[0.18em] text-lemon">Description</p>
+          <p class="mt-2 text-xl font-black leading-snug">Fast cue cards keep learners moving without hiding grammar context.</p>
+          <p class="mt-3 text-sm font-semibold leading-6 text-stone-300">Use the short description for meaning, tense hints, or one sentence of encouragement.</p>
+        </section>
+      </aside>
+
+      <section class="flex flex-col gap-4">
+        <article class="rounded-lg border-2 border-night bg-card p-4 shadow-deck">
+          <div class="flex items-end gap-3">
+            <div class="grid size-20 shrink-0 place-items-center rounded-lg border-2 border-night bg-tomato text-3xl font-black text-white" aria-label="Zorrito placeholder">Z</div>
+            <div class="relative flex-1 rounded-lg border-2 border-night bg-white p-4">
+              <span class="absolute -left-2 bottom-5 size-4 rotate-45 border-b-2 border-l-2 border-night bg-white"></span>
+              <p class="text-xs font-black uppercase tracking-[0.18em] text-plum">Zorrito says</p>
+              <p id="bubbleText" class="bubble-text mt-2 min-h-[5rem] text-lg font-black leading-7"></p>
+            </div>
+          </div>
+        </article>
+
+        <article class="rounded-lg border-2 border-night bg-card p-4 shadow-deck sm:p-5">
+          <div class="mb-4 rounded-lg border-2 border-night bg-white p-4">
+            <div class="mb-3 flex items-center justify-between">
+              <p class="text-xs font-black uppercase tracking-[0.18em] text-ocean">Quiz</p>
+              <p class="rounded-md bg-lemon px-3 py-1 text-sm font-black">meaning</p>
+            </div>
+            <h2 class="text-3xl font-black leading-tight">Choose the meaning of <span class="text-tomato">decir</span>.</h2>
+          </div>
+
+          <div class="grid gap-3 sm:grid-cols-2">
+            <button class="min-h-20 rounded-lg border-2 border-night bg-tomato p-4 text-left text-lg font-black text-white shadow-[0_6px_0_#17151f]">
+              <span class="mb-2 block text-xs uppercase tracking-[0.18em] text-white/80">Correct</span>
+              to say / to tell
+            </button>
+            <button class="min-h-20 rounded-lg border-2 border-night bg-white p-4 text-left text-lg font-black shadow-[0_6px_0_#17151f]">to hear</button>
+            <button class="min-h-20 rounded-lg border-2 border-night bg-white p-4 text-left text-lg font-black shadow-[0_6px_0_#17151f]">to feel</button>
+            <button class="min-h-20 rounded-lg border-2 border-night bg-white p-4 text-left text-lg font-black shadow-[0_6px_0_#17151f]">to think</button>
+          </div>
+
+          <div class="mt-5 grid gap-3 sm:grid-cols-3">
+            <div class="rounded-lg border-2 border-night bg-lemon p-3">
+              <p class="text-xs font-black uppercase">Prompt</p>
+              <p class="font-black">Digo la verdad.</p>
+            </div>
+            <div class="rounded-lg border-2 border-night bg-white p-3">
+              <p class="text-xs font-black uppercase">Person</p>
+              <p class="font-black">yo</p>
+            </div>
+            <div class="rounded-lg border-2 border-night bg-white p-3">
+              <p class="text-xs font-black uppercase">Tense</p>
+              <p class="font-black">present</p>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <script>
+      const phrase = "Watch the stem change: decir becomes digo for yo, but dices for tú.";
+      const node = document.querySelector("#bubbleText");
+      let cursor = 0;
+
+      function animateBubble() {
+        node.textContent = phrase.slice(0, cursor);
+        cursor = cursor < phrase.length ? cursor + 1 : 0;
+        setTimeout(animateBubble, cursor === 0 ? 1000 : 38);
+      }
+
+      animateBubble();
+    </script>
+  </body>
+</html>
