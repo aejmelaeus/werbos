@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Werbos verb card icon</title>
+  <desc id="desc">Rounded cream app icon with a green verb card and coral accent.</desc>
+  <rect width="512" height="512" rx="96" fill="#f8f4ed"/>
+  <rect x="92" y="92" width="328" height="328" rx="56" fill="#28745d"/>
+  <path fill="#f1c76b" d="M132 148h248v62H132z"/>
+  <path fill="#d95d4f" d="M340 116h56v56h-56z"/>
+  <path fill="#f8f4ed" d="M151 246h54l30 96 35-96h44l35 96 30-96h54l-59 150h-52l-30-82-30 82h-52z"/>
+</svg>

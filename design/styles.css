@@ -133,6 +133,60 @@ body {
   padding: 1rem;
 }
 
+.brand-card {
+  padding: 1.25rem;
+}
+
+.brand-showcase {
+  display: grid;
+  gap: 1rem;
+}
+
+.brand-primary {
+  display: grid;
+  gap: 0.75rem;
+  border-radius: 0.5rem;
+  background: var(--werbos-paper);
+  padding: 1rem;
+}
+
+.brand-logo {
+  display: block;
+  width: min(18rem, 100%);
+  height: auto;
+}
+
+.brand-primary .muted {
+  max-width: 30ch;
+  line-height: 1.5;
+}
+
+.brand-assets {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.brand-asset {
+  display: grid;
+  gap: 0.5rem;
+  place-items: center;
+  border: 1px solid var(--werbos-line);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+.brand-asset img {
+  width: 5rem;
+  height: 5rem;
+}
+
+.brand-asset span {
+  color: #69655e;
+  font-size: 0.875rem;
+  font-weight: 800;
+}
+
 .hero-card {
   padding: 1.25rem;
 }
@@ -408,6 +462,15 @@ body {
 
 @media (min-width: 700px) {
   .component-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .brand-showcase {
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+  }
+
+  .brand-assets {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 

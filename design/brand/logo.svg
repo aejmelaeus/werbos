@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 220" role="img" aria-labelledby="title desc">
+  <title id="title">Werbos verb card logo</title>
+  <desc id="desc">Werbos wordmark with a practice-card monogram.</desc>
+  <rect x="24" y="36" width="160" height="160" rx="36" fill="#28745d"/>
+  <path fill="#f1c76b" d="M48 58h112v35H48z"/>
+  <path fill="#d95d4f" d="M136 40h40v40h-40z"/>
+  <path fill="#f8f4ed" d="M55 112h28l15 48 18-48h22l18 48 15-48h28l-31 74h-24l-17-40-17 40H86z"/>
+  <text x="224" y="130" fill="#202124" font-family="Inter, Arial, sans-serif" font-size="76" font-weight="900" letter-spacing="6">WERBOS</text>
+  <text x="228" y="174" fill="#28745d" font-family="Inter, Arial, sans-serif" font-size="21" font-weight="800" letter-spacing="5">PRACTICE SPANISH VERBS</text>
+</svg>

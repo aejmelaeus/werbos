@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 160" role="img" aria-labelledby="title desc">
+  <title id="title">Zorrito coach mascot</title>
+  <desc id="desc">A small geometric fox mascot holding a verb card.</desc>
+  <path fill="#f1c76b" d="M24 56 46 20l24 32h8l24-32 22 36-10 54-40 28-40-28z"/>
+  <path fill="#d95d4f" d="m46 20 24 32H29zm56 0L78 52h43z"/>
+  <path fill="#fffaf0" d="M44 84c9 25 22 40 30 40s21-15 30-40c-18 10-42 10-60 0z"/>
+  <circle cx="56" cy="72" r="7" fill="#202124"/>
+  <circle cx="92" cy="72" r="7" fill="#202124"/>
+  <path fill="#202124" d="m66 96 8 8 8-8c-4-4-12-4-16 0z"/>
+  <path fill="none" stroke="#202124" stroke-linecap="round" stroke-width="6" d="M58 112c10 8 22 8 32 0"/>
+  <rect x="112" y="82" width="54" height="42" rx="8" fill="#28745d"/>
+  <path fill="#f8f4ed" d="M122 96h9l6 16 7-16h7l7 16 6-16h9l-11 23h-8l-7-14-7 14h-8z"/>
+</svg>
