@@ -9,6 +9,8 @@ should later move these decisions into the compiled Tailwind build described in
 
 - `index.html` - main design-system gallery with each component shown separately.
 - `styles.css` - shared Calm Study tokens and component classes.
+- `brand/` - logo, favicon, Apple touch icon, PWA icon, and Zorrito avatar assets.
+- `components/brand.html` - standalone logo and favicon preview.
 - `components/hero.html` - standalone hero word preview.
 - `components/description.html` - standalone short description preview.
 - `components/speech-bubble.html` - standalone Zorrito speech bubble preview.
@@ -20,12 +22,21 @@ should later move these decisions into the compiled Tailwind build described in
 
 The artifact covers:
 
+- Logo and favicon assets for app and device usage.
 - Hero verb presentation.
 - Short descriptive copy.
 - Zorrito speech bubble with animated text.
 - Zorrito speech-bubble avatar image.
 - Multiple-choice quiz screen with three to four answers.
-- Placeholder logo and icon treatments.
+- Real logo and icon treatments.
+
+## Logo Assets
+
+- `brand/favicon.ico` - multi-size browser favicon.
+- `brand/favicon-16.png` and `brand/favicon-32.png` - explicit browser favicon PNGs.
+- `brand/apple-touch-icon.png` - iOS homescreen icon.
+- `brand/pwa-icon-192.png` and `brand/pwa-icon-512.png` - PWA install icons.
+- `brand/logo-mark-64.png` and `brand/logo-mark-128.png` - app header logo mark.
 
 Open `index.html` for the full gallery, or open any file under `components/`
 to preview one component in isolation.

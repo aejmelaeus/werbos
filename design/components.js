@@ -1,9 +1,56 @@
 const zorritoMessage = "Decir is irregular in the yo form: digo. Show one useful example before asking for recall.";
 const assetBase = new URL("./", document.currentScript.src);
+const logoMark = new URL("brand/logo-mark-64.png", assetBase).href;
+const logoMark2x = new URL("brand/logo-mark-128.png", assetBase).href;
+const favicon16 = new URL("brand/favicon-16.png", assetBase).href;
+const favicon32 = new URL("brand/favicon-32.png", assetBase).href;
+const appleTouchIcon = new URL("brand/apple-touch-icon.png", assetBase).href;
+const pwaIcon192 = new URL("brand/pwa-icon-192.png", assetBase).href;
+const pwaIcon512 = new URL("brand/pwa-icon-512.png", assetBase).href;
 const zorritoSpeech = new URL("brand/zorrito-speech.png", assetBase).href;
 const zorritoSpeech2x = new URL("brand/zorrito-speech@2x.png", assetBase).href;
 
 const components = {
+  brand: `
+    <article class="card brand-card">
+      <div class="brand-showcase">
+        <div class="brand-primary">
+          <img
+            class="brand-logo-mark"
+            src="${logoMark}"
+            srcset="${logoMark} 1x, ${logoMark2x} 2x"
+            alt="Werbos logo"
+          />
+          <div>
+            <p class="eyebrow">Werbos logo</p>
+            <p class="brand-copy">Primary W mark for app headers, component previews, browser favicons, iOS homescreen, and PWA install icons.</p>
+          </div>
+        </div>
+        <div class="brand-assets">
+          <div class="brand-asset brand-asset-small">
+            <img src="${favicon16}" alt="Werbos 16 pixel favicon" />
+            <span>16 favicon</span>
+          </div>
+          <div class="brand-asset brand-asset-small">
+            <img src="${favicon32}" alt="Werbos 32 pixel favicon" />
+            <span>32 favicon</span>
+          </div>
+          <div class="brand-asset">
+            <img src="${appleTouchIcon}" alt="Werbos Apple touch icon" />
+            <span>Apple touch icon</span>
+          </div>
+          <div class="brand-asset">
+            <img src="${pwaIcon192}" alt="Werbos 192 pixel PWA icon" />
+            <span>PWA 192</span>
+          </div>
+          <div class="brand-asset">
+            <img src="${pwaIcon512}" alt="Werbos 512 pixel PWA icon" />
+            <span>PWA 512</span>
+          </div>
+        </div>
+      </div>
+    </article>
+  `,
   hero: `
     <article class="card hero-card">
       <div class="hero-topline">

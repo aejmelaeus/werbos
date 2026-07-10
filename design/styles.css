@@ -54,15 +54,10 @@ body {
 }
 
 .logo-mark {
-  display: grid;
   width: 2.75rem;
   height: 2.75rem;
-  place-items: center;
   border-radius: 0.5rem;
-  background: var(--werbos-fern);
-  color: var(--werbos-white);
-  font-size: 1.125rem;
-  font-weight: 900;
+  object-fit: cover;
   box-shadow: var(--werbos-shadow);
 }
 
@@ -131,6 +126,75 @@ body {
 
 .component-shell {
   padding: 1rem;
+}
+
+.brand-card {
+  padding: 1.25rem;
+}
+
+.brand-showcase {
+  display: grid;
+  gap: 1rem;
+}
+
+.brand-primary {
+  display: grid;
+  gap: 1rem;
+  align-items: center;
+  border-radius: 0.5rem;
+  background: var(--werbos-paper);
+  padding: 1rem;
+}
+
+.brand-logo-mark {
+  display: block;
+  width: 7rem;
+  height: 7rem;
+  border-radius: 1rem;
+  object-fit: cover;
+  box-shadow: 0 12px 28px rgba(32, 33, 36, 0.14);
+}
+
+.brand-copy {
+  max-width: 34ch;
+  margin: 0.5rem 0 0;
+  color: #69655e;
+  font-size: 0.875rem;
+  line-height: 1.55;
+}
+
+.brand-assets {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.brand-asset {
+  display: grid;
+  gap: 0.5rem;
+  place-items: center;
+  border: 1px solid var(--werbos-line);
+  border-radius: 0.5rem;
+  background: var(--werbos-white);
+  padding: 1rem;
+  text-align: center;
+}
+
+.brand-asset img {
+  width: 5rem;
+  height: 5rem;
+  object-fit: contain;
+}
+
+.brand-asset-small img {
+  width: 2rem;
+  height: 2rem;
+  image-rendering: auto;
+}
+
+.brand-asset span {
+  color: #69655e;
+  font-size: 0.875rem;
+  font-weight: 800;
 }
 
 .hero-card {
@@ -395,6 +459,19 @@ body {
 @media (min-width: 700px) {
   .component-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .brand-showcase {
+    grid-template-columns: 0.9fr 1.1fr;
+    align-items: start;
+  }
+
+  .brand-primary {
+    grid-template-columns: auto 1fr;
+  }
+
+  .brand-assets {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .section-label {
