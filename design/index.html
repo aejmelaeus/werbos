@@ -4,6 +4,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Werbos Design System - Calm Study</title>
+    <link rel="icon" href="./brand/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./brand/favicon-32.png" />
+    <link rel="apple-touch-icon" href="./brand/apple-touch-icon.png" />
+    <link rel="manifest" href="./manifest.webmanifest" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./styles.css" />
   </head>
@@ -11,7 +15,7 @@
     <main class="ds-page">
       <header class="ds-header">
         <div class="brand-lockup">
-          <div class="logo-mark" aria-label="Werbos placeholder logo">W</div>
+          <img class="logo-mark" src="./brand/logo-mark-64.png" srcset="./brand/logo-mark-64.png 1x, ./brand/logo-mark-128.png 2x" alt="Werbos logo" />
           <div>
             <p class="eyebrow">Werbos</p>
             <p class="muted">Calm Study design system</p>
@@ -21,6 +25,14 @@
       </header>
 
       <section class="component-grid" aria-label="Design components">
+        <article class="component-section is-wide">
+          <div class="section-label">
+            <p class="eyebrow">Brand assets</p>
+            <a class="component-link" href="./components/brand.html">Preview</a>
+          </div>
+          <div data-component="brand"></div>
+        </article>
+
         <article class="component-section">
           <div class="section-label">
             <p class="eyebrow">Hero word</p>
