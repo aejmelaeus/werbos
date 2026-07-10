@@ -56,9 +56,7 @@ body {
 .logo-mark {
   width: 2.75rem;
   height: 2.75rem;
-  border-radius: 0.5rem;
-  object-fit: cover;
-  box-shadow: var(--werbos-shadow);
+  object-fit: contain;
 }
 
 .icon-button {
@@ -150,9 +148,7 @@ body {
   display: block;
   width: 7rem;
   height: 7rem;
-  border-radius: 1rem;
-  object-fit: cover;
-  box-shadow: 0 12px 28px rgba(32, 33, 36, 0.14);
+  object-fit: contain;
 }
 
 .brand-copy {

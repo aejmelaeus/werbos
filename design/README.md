@@ -32,11 +32,11 @@ The artifact covers:
 
 ## Logo Assets
 
-- `brand/favicon.ico` - multi-size browser favicon.
-- `brand/favicon-16.png` and `brand/favicon-32.png` - explicit browser favicon PNGs.
-- `brand/apple-touch-icon.png` - iOS homescreen icon.
-- `brand/pwa-icon-192.png` and `brand/pwa-icon-512.png` - PWA install icons.
-- `brand/logo-mark-64.png` and `brand/logo-mark-128.png` - app header logo mark.
+- `brand/favicon.ico` - transparent multi-size browser favicon.
+- `brand/favicon-16.png` and `brand/favicon-32.png` - transparent browser favicon PNGs.
+- `brand/apple-touch-icon.png` - transparent iOS homescreen icon source.
+- `brand/pwa-icon-192.png` and `brand/pwa-icon-512.png` - transparent PWA install icon sources.
+- `brand/logo-mark-64.png` and `brand/logo-mark-128.png` - transparent app header logo mark.
 
 Open `index.html` for the full gallery, or open any file under `components/`
 to preview one component in isolation.
