@@ -121,7 +121,7 @@ function renderResult() {
         <p class="eyebrow">${completed ? "Completed" : "Failed"}</p>
         <h1>${completed ? "Nice work." : "Good practice."}</h1>
         <p>${completed ? "You matched the meaning and sentence." : "This verb will come back later. Mistakes are useful."}</p>
-        <button class="primary-action" data-action="next">Next verb</button>
+        <button class="primary-action" data-action="next">Next</button>
       </article>
       <article class="summary-card card">
         <p class="eyebrow">Last prompt</p>
@@ -210,6 +210,7 @@ app.addEventListener("click", (event) => {
       finishAttempt("failed", "failure");
       return;
     }
+    playSound("success");
     renderFormStep();
     return;
   }
