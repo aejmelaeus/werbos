@@ -11,6 +11,13 @@ export function createVerbSession(verb, random = Math.random) {
   };
 }
 
+export function pickRandomVerb(verbs, random = Math.random) {
+  if (!Array.isArray(verbs) || verbs.length === 0) {
+    throw new Error("No verbs are available for practice.");
+  }
+  return verbs[Math.floor(random() * verbs.length)];
+}
+
 export function answerMeaning(session, answer) {
   const correct = answer === session.verb.meaning.correct;
   return {

@@ -2,16 +2,397 @@
   "version": 1,
   "language": "es",
   "region": "es-ES",
+  "source": {
+    "frequencyBasis": "Learner-focused ordering of 100 common Spanish verbs, seeded from Spanish lemma frequency resources.",
+    "conjugationBasis": "Present indicative regular endings plus explicit overrides for common irregular and stem-changing verbs."
+  },
   "items": [
+    {
+      "id": "ser",
+      "type": "verb",
+      "infinitive": "ser",
+      "rank": 1,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to be",
+        "distractors": [
+          "to have",
+          "to do / to make",
+          "to be able to"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "ser.present.yo",
+            "person": "yo",
+            "form": "soy",
+            "spanish": "Yo soy estudiante.",
+            "english": "I am a student."
+          },
+          {
+            "id": "ser.present.tu",
+            "person": "tú",
+            "form": "eres",
+            "spanish": "Tú eres estudiante.",
+            "english": "You are a student."
+          },
+          {
+            "id": "ser.present.el",
+            "person": "él/ella/usted",
+            "form": "es",
+            "spanish": "Él/ella es estudiante.",
+            "english": "He/she is a student."
+          },
+          {
+            "id": "ser.present.nosotros",
+            "person": "nosotros",
+            "form": "somos",
+            "spanish": "Nosotros somos estudiantes.",
+            "english": "We are students."
+          },
+          {
+            "id": "ser.present.vosotros",
+            "person": "vosotros",
+            "form": "sois",
+            "spanish": "Vosotros sois estudiantes.",
+            "english": "You all are students."
+          },
+          {
+            "id": "ser.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "son",
+            "spanish": "Ellos/ellas son estudiantes.",
+            "english": "They are students."
+          }
+        ]
+      }
+    },
+    {
+      "id": "haber",
+      "type": "verb",
+      "infinitive": "haber",
+      "rank": 2,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to have (auxiliary)",
+        "distractors": [
+          "to have",
+          "to do / to make",
+          "to be able to"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "haber.present.yo",
+            "person": "yo",
+            "form": "he",
+            "spanish": "Yo he hablado.",
+            "english": "I have spoken."
+          },
+          {
+            "id": "haber.present.tu",
+            "person": "tú",
+            "form": "has",
+            "spanish": "Tú has hablado.",
+            "english": "You have spoken."
+          },
+          {
+            "id": "haber.present.el",
+            "person": "él/ella/usted",
+            "form": "ha",
+            "spanish": "Él/ella ha hablado.",
+            "english": "He/she has spoken."
+          },
+          {
+            "id": "haber.present.nosotros",
+            "person": "nosotros",
+            "form": "hemos",
+            "spanish": "Nosotros hemos hablado.",
+            "english": "We have spoken."
+          },
+          {
+            "id": "haber.present.vosotros",
+            "person": "vosotros",
+            "form": "habéis",
+            "spanish": "Vosotros habéis hablado.",
+            "english": "You all have spoken."
+          },
+          {
+            "id": "haber.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "han",
+            "spanish": "Ellos/ellas han hablado.",
+            "english": "They have spoken."
+          }
+        ]
+      }
+    },
+    {
+      "id": "estar",
+      "type": "verb",
+      "infinitive": "estar",
+      "rank": 3,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to be",
+        "distractors": [
+          "to be able to",
+          "to say / to tell",
+          "to go"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "estar.present.yo",
+            "person": "yo",
+            "form": "estoy",
+            "spanish": "Yo estoy aquí.",
+            "english": "I am here."
+          },
+          {
+            "id": "estar.present.tu",
+            "person": "tú",
+            "form": "estás",
+            "spanish": "Tú estás aquí.",
+            "english": "You are here."
+          },
+          {
+            "id": "estar.present.el",
+            "person": "él/ella/usted",
+            "form": "está",
+            "spanish": "Él/ella está aquí.",
+            "english": "He/she is here."
+          },
+          {
+            "id": "estar.present.nosotros",
+            "person": "nosotros",
+            "form": "estamos",
+            "spanish": "Nosotros estamos aquí.",
+            "english": "We are here."
+          },
+          {
+            "id": "estar.present.vosotros",
+            "person": "vosotros",
+            "form": "estáis",
+            "spanish": "Vosotros estáis aquí.",
+            "english": "You all are here."
+          },
+          {
+            "id": "estar.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "están",
+            "spanish": "Ellos/ellas están aquí.",
+            "english": "They are here."
+          }
+        ]
+      }
+    },
+    {
+      "id": "tener",
+      "type": "verb",
+      "infinitive": "tener",
+      "rank": 4,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to have",
+        "distractors": [
+          "to be able to",
+          "to say / to tell",
+          "to go"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "tener.present.yo",
+            "person": "yo",
+            "form": "tengo",
+            "spanish": "Yo tengo.",
+            "english": "I have."
+          },
+          {
+            "id": "tener.present.tu",
+            "person": "tú",
+            "form": "tienes",
+            "spanish": "Tú tienes.",
+            "english": "You have."
+          },
+          {
+            "id": "tener.present.el",
+            "person": "él/ella/usted",
+            "form": "tiene",
+            "spanish": "Él/ella tiene.",
+            "english": "He/she has."
+          },
+          {
+            "id": "tener.present.nosotros",
+            "person": "nosotros",
+            "form": "tenemos",
+            "spanish": "Nosotros tenemos.",
+            "english": "We have."
+          },
+          {
+            "id": "tener.present.vosotros",
+            "person": "vosotros",
+            "form": "tenéis",
+            "spanish": "Vosotros tenéis.",
+            "english": "You all have."
+          },
+          {
+            "id": "tener.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "tienen",
+            "spanish": "Ellos/ellas tienen.",
+            "english": "They have."
+          }
+        ]
+      }
+    },
+    {
+      "id": "hacer",
+      "type": "verb",
+      "infinitive": "hacer",
+      "rank": 5,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to do / to make",
+        "distractors": [
+          "to say / to tell",
+          "to go",
+          "to see"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "hacer.present.yo",
+            "person": "yo",
+            "form": "hago",
+            "spanish": "Yo hago.",
+            "english": "I do."
+          },
+          {
+            "id": "hacer.present.tu",
+            "person": "tú",
+            "form": "haces",
+            "spanish": "Tú haces.",
+            "english": "You do."
+          },
+          {
+            "id": "hacer.present.el",
+            "person": "él/ella/usted",
+            "form": "hace",
+            "spanish": "Él/ella hace.",
+            "english": "He/she does."
+          },
+          {
+            "id": "hacer.present.nosotros",
+            "person": "nosotros",
+            "form": "hacemos",
+            "spanish": "Nosotros hacemos.",
+            "english": "We do."
+          },
+          {
+            "id": "hacer.present.vosotros",
+            "person": "vosotros",
+            "form": "hacéis",
+            "spanish": "Vosotros hacéis.",
+            "english": "You all do."
+          },
+          {
+            "id": "hacer.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "hacen",
+            "spanish": "Ellos/ellas hacen.",
+            "english": "They do."
+          }
+        ]
+      }
+    },
+    {
+      "id": "poder",
+      "type": "verb",
+      "infinitive": "poder",
+      "rank": 6,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to be able to",
+        "distractors": [
+          "to go",
+          "to see",
+          "to give"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "poder.present.yo",
+            "person": "yo",
+            "form": "puedo",
+            "spanish": "Yo puedo.",
+            "english": "I can."
+          },
+          {
+            "id": "poder.present.tu",
+            "person": "tú",
+            "form": "puedes",
+            "spanish": "Tú puedes.",
+            "english": "You can."
+          },
+          {
+            "id": "poder.present.el",
+            "person": "él/ella/usted",
+            "form": "puede",
+            "spanish": "Él/ella puede.",
+            "english": "He/she can."
+          },
+          {
+            "id": "poder.present.nosotros",
+            "person": "nosotros",
+            "form": "podemos",
+            "spanish": "Nosotros podemos.",
+            "english": "We can."
+          },
+          {
+            "id": "poder.present.vosotros",
+            "person": "vosotros",
+            "form": "podéis",
+            "spanish": "Vosotros podéis.",
+            "english": "You all can."
+          },
+          {
+            "id": "poder.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "pueden",
+            "spanish": "Ellos/ellas pueden.",
+            "english": "They can."
+          }
+        ]
+      }
+    },
     {
       "id": "decir",
       "type": "verb",
       "infinitive": "decir",
-      "rank": 1,
+      "rank": 7,
       "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
       "meaning": {
         "correct": "to say / to tell",
-        "distractors": ["to hear", "to feel", "to think"]
+        "distractors": [
+          "to see",
+          "to give",
+          "to know"
+        ]
       },
       "tenses": {
         "present": [
@@ -19,175 +400,5809 @@
             "id": "decir.present.yo",
             "person": "yo",
             "form": "digo",
-            "spanish": "Digo la verdad.",
-            "english": "I tell the truth."
+            "spanish": "Yo digo.",
+            "english": "I say."
           },
           {
             "id": "decir.present.tu",
-            "person": "t\u00fa",
+            "person": "tú",
             "form": "dices",
-            "spanish": "Dices la verdad.",
-            "english": "You tell the truth."
+            "spanish": "Tú dices.",
+            "english": "You say."
           },
           {
             "id": "decir.present.el",
-            "person": "\u00e9l/ella/usted",
+            "person": "él/ella/usted",
             "form": "dice",
-            "spanish": "Dice la verdad.",
-            "english": "He/she tells the truth."
+            "spanish": "Él/ella dice.",
+            "english": "He/she says."
           },
           {
             "id": "decir.present.nosotros",
             "person": "nosotros",
             "form": "decimos",
-            "spanish": "Decimos la verdad.",
-            "english": "We tell the truth."
+            "spanish": "Nosotros decimos.",
+            "english": "We say."
           },
           {
             "id": "decir.present.vosotros",
             "person": "vosotros",
-            "form": "dec\u00eds",
-            "spanish": "Dec\u00eds la verdad.",
-            "english": "You all tell the truth."
+            "form": "decís",
+            "spanish": "Vosotros decís.",
+            "english": "You all say."
           },
           {
             "id": "decir.present.ellos",
             "person": "ellos/ellas/ustedes",
             "form": "dicen",
-            "spanish": "Dicen la verdad.",
-            "english": "They tell the truth."
+            "spanish": "Ellos/ellas dicen.",
+            "english": "They say."
           }
-        ],
-        "preterite": [
+        ]
+      }
+    },
+    {
+      "id": "ir",
+      "type": "verb",
+      "infinitive": "ir",
+      "rank": 8,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to go",
+        "distractors": [
+          "to give",
+          "to know",
+          "to want / to love"
+        ]
+      },
+      "tenses": {
+        "present": [
           {
-            "id": "decir.preterite.yo",
+            "id": "ir.present.yo",
             "person": "yo",
-            "form": "dije",
-            "spanish": "Dije la verdad.",
-            "english": "I told the truth."
+            "form": "voy",
+            "spanish": "Yo voy.",
+            "english": "I go."
           },
           {
-            "id": "decir.preterite.tu",
-            "person": "t\u00fa",
-            "form": "dijiste",
-            "spanish": "Dijiste la verdad.",
-            "english": "You told the truth."
+            "id": "ir.present.tu",
+            "person": "tú",
+            "form": "vas",
+            "spanish": "Tú vas.",
+            "english": "You go."
           },
           {
-            "id": "decir.preterite.el",
-            "person": "\u00e9l/ella/usted",
-            "form": "dijo",
-            "spanish": "Dijo la verdad.",
-            "english": "He/she told the truth."
+            "id": "ir.present.el",
+            "person": "él/ella/usted",
+            "form": "va",
+            "spanish": "Él/ella va.",
+            "english": "He/she goes."
           },
           {
-            "id": "decir.preterite.nosotros",
+            "id": "ir.present.nosotros",
             "person": "nosotros",
-            "form": "dijimos",
-            "spanish": "Dijimos la verdad.",
-            "english": "We told the truth."
+            "form": "vamos",
+            "spanish": "Nosotros vamos.",
+            "english": "We go."
           },
           {
-            "id": "decir.preterite.vosotros",
+            "id": "ir.present.vosotros",
             "person": "vosotros",
-            "form": "dijisteis",
-            "spanish": "Dijisteis la verdad.",
-            "english": "You all told the truth."
+            "form": "vais",
+            "spanish": "Vosotros vais.",
+            "english": "You all go."
           },
           {
-            "id": "decir.preterite.ellos",
+            "id": "ir.present.ellos",
             "person": "ellos/ellas/ustedes",
-            "form": "dijeron",
-            "spanish": "Dijeron la verdad.",
-            "english": "They told the truth."
+            "form": "van",
+            "spanish": "Ellos/ellas van.",
+            "english": "They go."
           }
-        ],
-        "imperfect": [
+        ]
+      }
+    },
+    {
+      "id": "ver",
+      "type": "verb",
+      "infinitive": "ver",
+      "rank": 9,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to see",
+        "distractors": [
+          "to know",
+          "to want / to love",
+          "to arrive"
+        ]
+      },
+      "tenses": {
+        "present": [
           {
-            "id": "decir.imperfect.yo",
+            "id": "ver.present.yo",
             "person": "yo",
-            "form": "dec\u00eda",
-            "spanish": "Dec\u00eda la verdad.",
-            "english": "I used to tell the truth."
+            "form": "veo",
+            "spanish": "Yo veo.",
+            "english": "I see."
           },
           {
-            "id": "decir.imperfect.tu",
-            "person": "t\u00fa",
-            "form": "dec\u00edas",
-            "spanish": "Dec\u00edas la verdad.",
-            "english": "You used to tell the truth."
+            "id": "ver.present.tu",
+            "person": "tú",
+            "form": "ves",
+            "spanish": "Tú ves.",
+            "english": "You see."
           },
           {
-            "id": "decir.imperfect.el",
-            "person": "\u00e9l/ella/usted",
-            "form": "dec\u00eda",
-            "spanish": "Dec\u00eda la verdad.",
-            "english": "He/she used to tell the truth."
+            "id": "ver.present.el",
+            "person": "él/ella/usted",
+            "form": "ve",
+            "spanish": "Él/ella ve.",
+            "english": "He/she sees."
           },
           {
-            "id": "decir.imperfect.nosotros",
+            "id": "ver.present.nosotros",
             "person": "nosotros",
-            "form": "dec\u00edamos",
-            "spanish": "Dec\u00edamos la verdad.",
-            "english": "We used to tell the truth."
+            "form": "vemos",
+            "spanish": "Nosotros vemos.",
+            "english": "We see."
           },
           {
-            "id": "decir.imperfect.vosotros",
+            "id": "ver.present.vosotros",
             "person": "vosotros",
-            "form": "dec\u00edais",
-            "spanish": "Dec\u00edais la verdad.",
-            "english": "You all used to tell the truth."
+            "form": "veis",
+            "spanish": "Vosotros veis.",
+            "english": "You all see."
           },
           {
-            "id": "decir.imperfect.ellos",
+            "id": "ver.present.ellos",
             "person": "ellos/ellas/ustedes",
-            "form": "dec\u00edan",
-            "spanish": "Dec\u00edan la verdad.",
-            "english": "They used to tell the truth."
+            "form": "ven",
+            "spanish": "Ellos/ellas ven.",
+            "english": "They see."
           }
-        ],
-        "presentPerfect": [
+        ]
+      }
+    },
+    {
+      "id": "dar",
+      "type": "verb",
+      "infinitive": "dar",
+      "rank": 10,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to give",
+        "distractors": [
+          "to want / to love",
+          "to arrive",
+          "to pass / to happen"
+        ]
+      },
+      "tenses": {
+        "present": [
           {
-            "id": "decir.presentPerfect.yo",
+            "id": "dar.present.yo",
             "person": "yo",
-            "form": "he dicho",
-            "spanish": "He dicho la verdad.",
-            "english": "I have told the truth."
+            "form": "doy",
+            "spanish": "Yo doy.",
+            "english": "I give."
           },
           {
-            "id": "decir.presentPerfect.tu",
-            "person": "t\u00fa",
-            "form": "has dicho",
-            "spanish": "Has dicho la verdad.",
-            "english": "You have told the truth."
+            "id": "dar.present.tu",
+            "person": "tú",
+            "form": "das",
+            "spanish": "Tú das.",
+            "english": "You give."
           },
           {
-            "id": "decir.presentPerfect.el",
-            "person": "\u00e9l/ella/usted",
-            "form": "ha dicho",
-            "spanish": "Ha dicho la verdad.",
-            "english": "He/she has told the truth."
+            "id": "dar.present.el",
+            "person": "él/ella/usted",
+            "form": "da",
+            "spanish": "Él/ella da.",
+            "english": "He/she gives."
           },
           {
-            "id": "decir.presentPerfect.nosotros",
+            "id": "dar.present.nosotros",
             "person": "nosotros",
-            "form": "hemos dicho",
-            "spanish": "Hemos dicho la verdad.",
-            "english": "We have told the truth."
+            "form": "damos",
+            "spanish": "Nosotros damos.",
+            "english": "We give."
           },
           {
-            "id": "decir.presentPerfect.vosotros",
+            "id": "dar.present.vosotros",
             "person": "vosotros",
-            "form": "hab\u00e9is dicho",
-            "spanish": "Hab\u00e9is dicho la verdad.",
-            "english": "You all have told the truth."
+            "form": "dais",
+            "spanish": "Vosotros dais.",
+            "english": "You all give."
           },
           {
-            "id": "decir.presentPerfect.ellos",
+            "id": "dar.present.ellos",
             "person": "ellos/ellas/ustedes",
-            "form": "han dicho",
-            "spanish": "Han dicho la verdad.",
-            "english": "They have told the truth."
+            "form": "dan",
+            "spanish": "Ellos/ellas dan.",
+            "english": "They give."
+          }
+        ]
+      }
+    },
+    {
+      "id": "saber",
+      "type": "verb",
+      "infinitive": "saber",
+      "rank": 11,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to know",
+        "distractors": [
+          "to arrive",
+          "to pass / to happen",
+          "to owe / should"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "saber.present.yo",
+            "person": "yo",
+            "form": "sé",
+            "spanish": "Yo sé.",
+            "english": "I know."
+          },
+          {
+            "id": "saber.present.tu",
+            "person": "tú",
+            "form": "sabes",
+            "spanish": "Tú sabes.",
+            "english": "You know."
+          },
+          {
+            "id": "saber.present.el",
+            "person": "él/ella/usted",
+            "form": "sabe",
+            "spanish": "Él/ella sabe.",
+            "english": "He/she knows."
+          },
+          {
+            "id": "saber.present.nosotros",
+            "person": "nosotros",
+            "form": "sabemos",
+            "spanish": "Nosotros sabemos.",
+            "english": "We know."
+          },
+          {
+            "id": "saber.present.vosotros",
+            "person": "vosotros",
+            "form": "sabéis",
+            "spanish": "Vosotros sabéis.",
+            "english": "You all know."
+          },
+          {
+            "id": "saber.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "saben",
+            "spanish": "Ellos/ellas saben.",
+            "english": "They know."
+          }
+        ]
+      }
+    },
+    {
+      "id": "querer",
+      "type": "verb",
+      "infinitive": "querer",
+      "rank": 12,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to want / to love",
+        "distractors": [
+          "to pass / to happen",
+          "to owe / should",
+          "to put"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "querer.present.yo",
+            "person": "yo",
+            "form": "quiero",
+            "spanish": "Yo quiero.",
+            "english": "I want."
+          },
+          {
+            "id": "querer.present.tu",
+            "person": "tú",
+            "form": "quieres",
+            "spanish": "Tú quieres.",
+            "english": "You want."
+          },
+          {
+            "id": "querer.present.el",
+            "person": "él/ella/usted",
+            "form": "quiere",
+            "spanish": "Él/ella quiere.",
+            "english": "He/she wants."
+          },
+          {
+            "id": "querer.present.nosotros",
+            "person": "nosotros",
+            "form": "queremos",
+            "spanish": "Nosotros queremos.",
+            "english": "We want."
+          },
+          {
+            "id": "querer.present.vosotros",
+            "person": "vosotros",
+            "form": "queréis",
+            "spanish": "Vosotros queréis.",
+            "english": "You all want."
+          },
+          {
+            "id": "querer.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "quieren",
+            "spanish": "Ellos/ellas quieren.",
+            "english": "They want."
+          }
+        ]
+      }
+    },
+    {
+      "id": "llegar",
+      "type": "verb",
+      "infinitive": "llegar",
+      "rank": 13,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to arrive",
+        "distractors": [
+          "to owe / should",
+          "to put",
+          "to seem"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "llegar.present.yo",
+            "person": "yo",
+            "form": "llego",
+            "spanish": "Yo llego.",
+            "english": "I arrive."
+          },
+          {
+            "id": "llegar.present.tu",
+            "person": "tú",
+            "form": "llegas",
+            "spanish": "Tú llegas.",
+            "english": "You arrive."
+          },
+          {
+            "id": "llegar.present.el",
+            "person": "él/ella/usted",
+            "form": "llega",
+            "spanish": "Él/ella llega.",
+            "english": "He/she arrives."
+          },
+          {
+            "id": "llegar.present.nosotros",
+            "person": "nosotros",
+            "form": "llegamos",
+            "spanish": "Nosotros llegamos.",
+            "english": "We arrive."
+          },
+          {
+            "id": "llegar.present.vosotros",
+            "person": "vosotros",
+            "form": "llegáis",
+            "spanish": "Vosotros llegáis.",
+            "english": "You all arrive."
+          },
+          {
+            "id": "llegar.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "llegan",
+            "spanish": "Ellos/ellas llegan.",
+            "english": "They arrive."
+          }
+        ]
+      }
+    },
+    {
+      "id": "pasar",
+      "type": "verb",
+      "infinitive": "pasar",
+      "rank": 14,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to pass / to happen",
+        "distractors": [
+          "to put",
+          "to seem",
+          "to remain / to stay"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "pasar.present.yo",
+            "person": "yo",
+            "form": "paso",
+            "spanish": "Yo paso.",
+            "english": "I pass."
+          },
+          {
+            "id": "pasar.present.tu",
+            "person": "tú",
+            "form": "pasas",
+            "spanish": "Tú pasas.",
+            "english": "You pass."
+          },
+          {
+            "id": "pasar.present.el",
+            "person": "él/ella/usted",
+            "form": "pasa",
+            "spanish": "Él/ella pasa.",
+            "english": "He/she passes."
+          },
+          {
+            "id": "pasar.present.nosotros",
+            "person": "nosotros",
+            "form": "pasamos",
+            "spanish": "Nosotros pasamos.",
+            "english": "We pass."
+          },
+          {
+            "id": "pasar.present.vosotros",
+            "person": "vosotros",
+            "form": "pasáis",
+            "spanish": "Vosotros pasáis.",
+            "english": "You all pass."
+          },
+          {
+            "id": "pasar.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "pasan",
+            "spanish": "Ellos/ellas pasan.",
+            "english": "They pass."
+          }
+        ]
+      }
+    },
+    {
+      "id": "deber",
+      "type": "verb",
+      "infinitive": "deber",
+      "rank": 15,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to owe / should",
+        "distractors": [
+          "to seem",
+          "to remain / to stay",
+          "to believe"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "deber.present.yo",
+            "person": "yo",
+            "form": "debo",
+            "spanish": "Yo debo.",
+            "english": "I owe."
+          },
+          {
+            "id": "deber.present.tu",
+            "person": "tú",
+            "form": "debes",
+            "spanish": "Tú debes.",
+            "english": "You owe."
+          },
+          {
+            "id": "deber.present.el",
+            "person": "él/ella/usted",
+            "form": "debe",
+            "spanish": "Él/ella debe.",
+            "english": "He/she owes."
+          },
+          {
+            "id": "deber.present.nosotros",
+            "person": "nosotros",
+            "form": "debemos",
+            "spanish": "Nosotros debemos.",
+            "english": "We owe."
+          },
+          {
+            "id": "deber.present.vosotros",
+            "person": "vosotros",
+            "form": "debéis",
+            "spanish": "Vosotros debéis.",
+            "english": "You all owe."
+          },
+          {
+            "id": "deber.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "deben",
+            "spanish": "Ellos/ellas deben.",
+            "english": "They owe."
+          }
+        ]
+      }
+    },
+    {
+      "id": "poner",
+      "type": "verb",
+      "infinitive": "poner",
+      "rank": 16,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to put",
+        "distractors": [
+          "to remain / to stay",
+          "to believe",
+          "to speak"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "poner.present.yo",
+            "person": "yo",
+            "form": "pongo",
+            "spanish": "Yo pongo.",
+            "english": "I put."
+          },
+          {
+            "id": "poner.present.tu",
+            "person": "tú",
+            "form": "pones",
+            "spanish": "Tú pones.",
+            "english": "You put."
+          },
+          {
+            "id": "poner.present.el",
+            "person": "él/ella/usted",
+            "form": "pone",
+            "spanish": "Él/ella pone.",
+            "english": "He/she puts."
+          },
+          {
+            "id": "poner.present.nosotros",
+            "person": "nosotros",
+            "form": "ponemos",
+            "spanish": "Nosotros ponemos.",
+            "english": "We put."
+          },
+          {
+            "id": "poner.present.vosotros",
+            "person": "vosotros",
+            "form": "ponéis",
+            "spanish": "Vosotros ponéis.",
+            "english": "You all put."
+          },
+          {
+            "id": "poner.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "ponen",
+            "spanish": "Ellos/ellas ponen.",
+            "english": "They put."
+          }
+        ]
+      }
+    },
+    {
+      "id": "parecer",
+      "type": "verb",
+      "infinitive": "parecer",
+      "rank": 17,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to seem",
+        "distractors": [
+          "to believe",
+          "to speak",
+          "to carry / to wear"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "parecer.present.yo",
+            "person": "yo",
+            "form": "parezco",
+            "spanish": "Yo parezco.",
+            "english": "I seem."
+          },
+          {
+            "id": "parecer.present.tu",
+            "person": "tú",
+            "form": "pareces",
+            "spanish": "Tú pareces.",
+            "english": "You seem."
+          },
+          {
+            "id": "parecer.present.el",
+            "person": "él/ella/usted",
+            "form": "parece",
+            "spanish": "Él/ella parece.",
+            "english": "He/she seems."
+          },
+          {
+            "id": "parecer.present.nosotros",
+            "person": "nosotros",
+            "form": "parecemos",
+            "spanish": "Nosotros parecemos.",
+            "english": "We seem."
+          },
+          {
+            "id": "parecer.present.vosotros",
+            "person": "vosotros",
+            "form": "parecéis",
+            "spanish": "Vosotros parecéis.",
+            "english": "You all seem."
+          },
+          {
+            "id": "parecer.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "parecen",
+            "spanish": "Ellos/ellas parecen.",
+            "english": "They seem."
+          }
+        ]
+      }
+    },
+    {
+      "id": "quedar",
+      "type": "verb",
+      "infinitive": "quedar",
+      "rank": 18,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to remain / to stay",
+        "distractors": [
+          "to speak",
+          "to carry / to wear",
+          "to leave / to let"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "quedar.present.yo",
+            "person": "yo",
+            "form": "quedo",
+            "spanish": "Yo quedo.",
+            "english": "I remain."
+          },
+          {
+            "id": "quedar.present.tu",
+            "person": "tú",
+            "form": "quedas",
+            "spanish": "Tú quedas.",
+            "english": "You remain."
+          },
+          {
+            "id": "quedar.present.el",
+            "person": "él/ella/usted",
+            "form": "queda",
+            "spanish": "Él/ella queda.",
+            "english": "He/she remains."
+          },
+          {
+            "id": "quedar.present.nosotros",
+            "person": "nosotros",
+            "form": "quedamos",
+            "spanish": "Nosotros quedamos.",
+            "english": "We remain."
+          },
+          {
+            "id": "quedar.present.vosotros",
+            "person": "vosotros",
+            "form": "quedáis",
+            "spanish": "Vosotros quedáis.",
+            "english": "You all remain."
+          },
+          {
+            "id": "quedar.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "quedan",
+            "spanish": "Ellos/ellas quedan.",
+            "english": "They remain."
+          }
+        ]
+      }
+    },
+    {
+      "id": "creer",
+      "type": "verb",
+      "infinitive": "creer",
+      "rank": 19,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to believe",
+        "distractors": [
+          "to carry / to wear",
+          "to leave / to let",
+          "to follow / to continue"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "creer.present.yo",
+            "person": "yo",
+            "form": "creo",
+            "spanish": "Yo creo.",
+            "english": "I believe."
+          },
+          {
+            "id": "creer.present.tu",
+            "person": "tú",
+            "form": "crees",
+            "spanish": "Tú crees.",
+            "english": "You believe."
+          },
+          {
+            "id": "creer.present.el",
+            "person": "él/ella/usted",
+            "form": "cree",
+            "spanish": "Él/ella cree.",
+            "english": "He/she believes."
+          },
+          {
+            "id": "creer.present.nosotros",
+            "person": "nosotros",
+            "form": "creemos",
+            "spanish": "Nosotros creemos.",
+            "english": "We believe."
+          },
+          {
+            "id": "creer.present.vosotros",
+            "person": "vosotros",
+            "form": "creéis",
+            "spanish": "Vosotros creéis.",
+            "english": "You all believe."
+          },
+          {
+            "id": "creer.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "creen",
+            "spanish": "Ellos/ellas creen.",
+            "english": "They believe."
+          }
+        ]
+      }
+    },
+    {
+      "id": "hablar",
+      "type": "verb",
+      "infinitive": "hablar",
+      "rank": 20,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to speak",
+        "distractors": [
+          "to leave / to let",
+          "to follow / to continue",
+          "to find"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "hablar.present.yo",
+            "person": "yo",
+            "form": "hablo",
+            "spanish": "Yo hablo.",
+            "english": "I speak."
+          },
+          {
+            "id": "hablar.present.tu",
+            "person": "tú",
+            "form": "hablas",
+            "spanish": "Tú hablas.",
+            "english": "You speak."
+          },
+          {
+            "id": "hablar.present.el",
+            "person": "él/ella/usted",
+            "form": "habla",
+            "spanish": "Él/ella habla.",
+            "english": "He/she speaks."
+          },
+          {
+            "id": "hablar.present.nosotros",
+            "person": "nosotros",
+            "form": "hablamos",
+            "spanish": "Nosotros hablamos.",
+            "english": "We speak."
+          },
+          {
+            "id": "hablar.present.vosotros",
+            "person": "vosotros",
+            "form": "habláis",
+            "spanish": "Vosotros habláis.",
+            "english": "You all speak."
+          },
+          {
+            "id": "hablar.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "hablan",
+            "spanish": "Ellos/ellas hablan.",
+            "english": "They speak."
+          }
+        ]
+      }
+    },
+    {
+      "id": "llevar",
+      "type": "verb",
+      "infinitive": "llevar",
+      "rank": 21,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to carry / to wear",
+        "distractors": [
+          "to follow / to continue",
+          "to find",
+          "to call"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "llevar.present.yo",
+            "person": "yo",
+            "form": "llevo",
+            "spanish": "Yo llevo.",
+            "english": "I carry."
+          },
+          {
+            "id": "llevar.present.tu",
+            "person": "tú",
+            "form": "llevas",
+            "spanish": "Tú llevas.",
+            "english": "You carry."
+          },
+          {
+            "id": "llevar.present.el",
+            "person": "él/ella/usted",
+            "form": "lleva",
+            "spanish": "Él/ella lleva.",
+            "english": "He/she carries."
+          },
+          {
+            "id": "llevar.present.nosotros",
+            "person": "nosotros",
+            "form": "llevamos",
+            "spanish": "Nosotros llevamos.",
+            "english": "We carry."
+          },
+          {
+            "id": "llevar.present.vosotros",
+            "person": "vosotros",
+            "form": "lleváis",
+            "spanish": "Vosotros lleváis.",
+            "english": "You all carry."
+          },
+          {
+            "id": "llevar.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "llevan",
+            "spanish": "Ellos/ellas llevan.",
+            "english": "They carry."
+          }
+        ]
+      }
+    },
+    {
+      "id": "dejar",
+      "type": "verb",
+      "infinitive": "dejar",
+      "rank": 22,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to leave / to let",
+        "distractors": [
+          "to find",
+          "to call",
+          "to come"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "dejar.present.yo",
+            "person": "yo",
+            "form": "dejo",
+            "spanish": "Yo dejo.",
+            "english": "I leave."
+          },
+          {
+            "id": "dejar.present.tu",
+            "person": "tú",
+            "form": "dejas",
+            "spanish": "Tú dejas.",
+            "english": "You leave."
+          },
+          {
+            "id": "dejar.present.el",
+            "person": "él/ella/usted",
+            "form": "deja",
+            "spanish": "Él/ella deja.",
+            "english": "He/she leaves."
+          },
+          {
+            "id": "dejar.present.nosotros",
+            "person": "nosotros",
+            "form": "dejamos",
+            "spanish": "Nosotros dejamos.",
+            "english": "We leave."
+          },
+          {
+            "id": "dejar.present.vosotros",
+            "person": "vosotros",
+            "form": "dejáis",
+            "spanish": "Vosotros dejáis.",
+            "english": "You all leave."
+          },
+          {
+            "id": "dejar.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "dejan",
+            "spanish": "Ellos/ellas dejan.",
+            "english": "They leave."
+          }
+        ]
+      }
+    },
+    {
+      "id": "seguir",
+      "type": "verb",
+      "infinitive": "seguir",
+      "rank": 23,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to follow / to continue",
+        "distractors": [
+          "to call",
+          "to come",
+          "to think"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "seguir.present.yo",
+            "person": "yo",
+            "form": "sigo",
+            "spanish": "Yo sigo.",
+            "english": "I follow."
+          },
+          {
+            "id": "seguir.present.tu",
+            "person": "tú",
+            "form": "sigues",
+            "spanish": "Tú sigues.",
+            "english": "You follow."
+          },
+          {
+            "id": "seguir.present.el",
+            "person": "él/ella/usted",
+            "form": "sigue",
+            "spanish": "Él/ella sigue.",
+            "english": "He/she follows."
+          },
+          {
+            "id": "seguir.present.nosotros",
+            "person": "nosotros",
+            "form": "seguimos",
+            "spanish": "Nosotros seguimos.",
+            "english": "We follow."
+          },
+          {
+            "id": "seguir.present.vosotros",
+            "person": "vosotros",
+            "form": "seguís",
+            "spanish": "Vosotros seguís.",
+            "english": "You all follow."
+          },
+          {
+            "id": "seguir.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "siguen",
+            "spanish": "Ellos/ellas siguen.",
+            "english": "They follow."
+          }
+        ]
+      }
+    },
+    {
+      "id": "encontrar",
+      "type": "verb",
+      "infinitive": "encontrar",
+      "rank": 24,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to find",
+        "distractors": [
+          "to come",
+          "to think",
+          "to leave / to go out"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "encontrar.present.yo",
+            "person": "yo",
+            "form": "encuentro",
+            "spanish": "Yo encuentro.",
+            "english": "I find."
+          },
+          {
+            "id": "encontrar.present.tu",
+            "person": "tú",
+            "form": "encuentras",
+            "spanish": "Tú encuentras.",
+            "english": "You find."
+          },
+          {
+            "id": "encontrar.present.el",
+            "person": "él/ella/usted",
+            "form": "encuentra",
+            "spanish": "Él/ella encuentra.",
+            "english": "He/she finds."
+          },
+          {
+            "id": "encontrar.present.nosotros",
+            "person": "nosotros",
+            "form": "encontramos",
+            "spanish": "Nosotros encontramos.",
+            "english": "We find."
+          },
+          {
+            "id": "encontrar.present.vosotros",
+            "person": "vosotros",
+            "form": "encontráis",
+            "spanish": "Vosotros encontráis.",
+            "english": "You all find."
+          },
+          {
+            "id": "encontrar.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "encuentran",
+            "spanish": "Ellos/ellas encuentran.",
+            "english": "They find."
+          }
+        ]
+      }
+    },
+    {
+      "id": "llamar",
+      "type": "verb",
+      "infinitive": "llamar",
+      "rank": 25,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to call",
+        "distractors": [
+          "to think",
+          "to leave / to go out",
+          "to return"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "llamar.present.yo",
+            "person": "yo",
+            "form": "llamo",
+            "spanish": "Yo llamo.",
+            "english": "I call."
+          },
+          {
+            "id": "llamar.present.tu",
+            "person": "tú",
+            "form": "llamas",
+            "spanish": "Tú llamas.",
+            "english": "You call."
+          },
+          {
+            "id": "llamar.present.el",
+            "person": "él/ella/usted",
+            "form": "llama",
+            "spanish": "Él/ella llama.",
+            "english": "He/she calls."
+          },
+          {
+            "id": "llamar.present.nosotros",
+            "person": "nosotros",
+            "form": "llamamos",
+            "spanish": "Nosotros llamamos.",
+            "english": "We call."
+          },
+          {
+            "id": "llamar.present.vosotros",
+            "person": "vosotros",
+            "form": "llamáis",
+            "spanish": "Vosotros llamáis.",
+            "english": "You all call."
+          },
+          {
+            "id": "llamar.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "llaman",
+            "spanish": "Ellos/ellas llaman.",
+            "english": "They call."
+          }
+        ]
+      }
+    },
+    {
+      "id": "venir",
+      "type": "verb",
+      "infinitive": "venir",
+      "rank": 26,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to come",
+        "distractors": [
+          "to leave / to go out",
+          "to return",
+          "to take / to drink"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "venir.present.yo",
+            "person": "yo",
+            "form": "vengo",
+            "spanish": "Yo vengo.",
+            "english": "I come."
+          },
+          {
+            "id": "venir.present.tu",
+            "person": "tú",
+            "form": "vienes",
+            "spanish": "Tú vienes.",
+            "english": "You come."
+          },
+          {
+            "id": "venir.present.el",
+            "person": "él/ella/usted",
+            "form": "viene",
+            "spanish": "Él/ella viene.",
+            "english": "He/she comes."
+          },
+          {
+            "id": "venir.present.nosotros",
+            "person": "nosotros",
+            "form": "venimos",
+            "spanish": "Nosotros venimos.",
+            "english": "We come."
+          },
+          {
+            "id": "venir.present.vosotros",
+            "person": "vosotros",
+            "form": "venís",
+            "spanish": "Vosotros venís.",
+            "english": "You all come."
+          },
+          {
+            "id": "venir.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "vienen",
+            "spanish": "Ellos/ellas vienen.",
+            "english": "They come."
+          }
+        ]
+      }
+    },
+    {
+      "id": "pensar",
+      "type": "verb",
+      "infinitive": "pensar",
+      "rank": 27,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to think",
+        "distractors": [
+          "to return",
+          "to take / to drink",
+          "to know / to meet"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "pensar.present.yo",
+            "person": "yo",
+            "form": "pienso",
+            "spanish": "Yo pienso.",
+            "english": "I think."
+          },
+          {
+            "id": "pensar.present.tu",
+            "person": "tú",
+            "form": "piensas",
+            "spanish": "Tú piensas.",
+            "english": "You think."
+          },
+          {
+            "id": "pensar.present.el",
+            "person": "él/ella/usted",
+            "form": "piensa",
+            "spanish": "Él/ella piensa.",
+            "english": "He/she thinks."
+          },
+          {
+            "id": "pensar.present.nosotros",
+            "person": "nosotros",
+            "form": "pensamos",
+            "spanish": "Nosotros pensamos.",
+            "english": "We think."
+          },
+          {
+            "id": "pensar.present.vosotros",
+            "person": "vosotros",
+            "form": "pensáis",
+            "spanish": "Vosotros pensáis.",
+            "english": "You all think."
+          },
+          {
+            "id": "pensar.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "piensan",
+            "spanish": "Ellos/ellas piensan.",
+            "english": "They think."
+          }
+        ]
+      }
+    },
+    {
+      "id": "salir",
+      "type": "verb",
+      "infinitive": "salir",
+      "rank": 28,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to leave / to go out",
+        "distractors": [
+          "to take / to drink",
+          "to know / to meet",
+          "to live"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "salir.present.yo",
+            "person": "yo",
+            "form": "salgo",
+            "spanish": "Yo salgo.",
+            "english": "I leave."
+          },
+          {
+            "id": "salir.present.tu",
+            "person": "tú",
+            "form": "sales",
+            "spanish": "Tú sales.",
+            "english": "You leave."
+          },
+          {
+            "id": "salir.present.el",
+            "person": "él/ella/usted",
+            "form": "sale",
+            "spanish": "Él/ella sale.",
+            "english": "He/she leaves."
+          },
+          {
+            "id": "salir.present.nosotros",
+            "person": "nosotros",
+            "form": "salimos",
+            "spanish": "Nosotros salimos.",
+            "english": "We leave."
+          },
+          {
+            "id": "salir.present.vosotros",
+            "person": "vosotros",
+            "form": "salís",
+            "spanish": "Vosotros salís.",
+            "english": "You all leave."
+          },
+          {
+            "id": "salir.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "salen",
+            "spanish": "Ellos/ellas salen.",
+            "english": "They leave."
+          }
+        ]
+      }
+    },
+    {
+      "id": "volver",
+      "type": "verb",
+      "infinitive": "volver",
+      "rank": 29,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to return",
+        "distractors": [
+          "to know / to meet",
+          "to live",
+          "to feel"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "volver.present.yo",
+            "person": "yo",
+            "form": "vuelvo",
+            "spanish": "Yo vuelvo.",
+            "english": "I return."
+          },
+          {
+            "id": "volver.present.tu",
+            "person": "tú",
+            "form": "vuelves",
+            "spanish": "Tú vuelves.",
+            "english": "You return."
+          },
+          {
+            "id": "volver.present.el",
+            "person": "él/ella/usted",
+            "form": "vuelve",
+            "spanish": "Él/ella vuelve.",
+            "english": "He/she returns."
+          },
+          {
+            "id": "volver.present.nosotros",
+            "person": "nosotros",
+            "form": "volvemos",
+            "spanish": "Nosotros volvemos.",
+            "english": "We return."
+          },
+          {
+            "id": "volver.present.vosotros",
+            "person": "vosotros",
+            "form": "volvéis",
+            "spanish": "Vosotros volvéis.",
+            "english": "You all return."
+          },
+          {
+            "id": "volver.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "vuelven",
+            "spanish": "Ellos/ellas vuelven.",
+            "english": "They return."
+          }
+        ]
+      }
+    },
+    {
+      "id": "tomar",
+      "type": "verb",
+      "infinitive": "tomar",
+      "rank": 30,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to take / to drink",
+        "distractors": [
+          "to live",
+          "to feel",
+          "to try / to treat"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "tomar.present.yo",
+            "person": "yo",
+            "form": "tomo",
+            "spanish": "Yo tomo.",
+            "english": "I take."
+          },
+          {
+            "id": "tomar.present.tu",
+            "person": "tú",
+            "form": "tomas",
+            "spanish": "Tú tomas.",
+            "english": "You take."
+          },
+          {
+            "id": "tomar.present.el",
+            "person": "él/ella/usted",
+            "form": "toma",
+            "spanish": "Él/ella toma.",
+            "english": "He/she takes."
+          },
+          {
+            "id": "tomar.present.nosotros",
+            "person": "nosotros",
+            "form": "tomamos",
+            "spanish": "Nosotros tomamos.",
+            "english": "We take."
+          },
+          {
+            "id": "tomar.present.vosotros",
+            "person": "vosotros",
+            "form": "tomáis",
+            "spanish": "Vosotros tomáis.",
+            "english": "You all take."
+          },
+          {
+            "id": "tomar.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "toman",
+            "spanish": "Ellos/ellas toman.",
+            "english": "They take."
+          }
+        ]
+      }
+    },
+    {
+      "id": "conocer",
+      "type": "verb",
+      "infinitive": "conocer",
+      "rank": 31,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to know / to meet",
+        "distractors": [
+          "to feel",
+          "to try / to treat",
+          "to look at"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "conocer.present.yo",
+            "person": "yo",
+            "form": "conozco",
+            "spanish": "Yo conozco.",
+            "english": "I know."
+          },
+          {
+            "id": "conocer.present.tu",
+            "person": "tú",
+            "form": "conoces",
+            "spanish": "Tú conoces.",
+            "english": "You know."
+          },
+          {
+            "id": "conocer.present.el",
+            "person": "él/ella/usted",
+            "form": "conoce",
+            "spanish": "Él/ella conoce.",
+            "english": "He/she knows."
+          },
+          {
+            "id": "conocer.present.nosotros",
+            "person": "nosotros",
+            "form": "conocemos",
+            "spanish": "Nosotros conocemos.",
+            "english": "We know."
+          },
+          {
+            "id": "conocer.present.vosotros",
+            "person": "vosotros",
+            "form": "conocéis",
+            "spanish": "Vosotros conocéis.",
+            "english": "You all know."
+          },
+          {
+            "id": "conocer.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "conocen",
+            "spanish": "Ellos/ellas conocen.",
+            "english": "They know."
+          }
+        ]
+      }
+    },
+    {
+      "id": "vivir",
+      "type": "verb",
+      "infinitive": "vivir",
+      "rank": 32,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to live",
+        "distractors": [
+          "to try / to treat",
+          "to look at",
+          "to count / to tell"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "vivir.present.yo",
+            "person": "yo",
+            "form": "vivo",
+            "spanish": "Yo vivo.",
+            "english": "I live."
+          },
+          {
+            "id": "vivir.present.tu",
+            "person": "tú",
+            "form": "vives",
+            "spanish": "Tú vives.",
+            "english": "You live."
+          },
+          {
+            "id": "vivir.present.el",
+            "person": "él/ella/usted",
+            "form": "vive",
+            "spanish": "Él/ella vive.",
+            "english": "He/she lives."
+          },
+          {
+            "id": "vivir.present.nosotros",
+            "person": "nosotros",
+            "form": "vivimos",
+            "spanish": "Nosotros vivimos.",
+            "english": "We live."
+          },
+          {
+            "id": "vivir.present.vosotros",
+            "person": "vosotros",
+            "form": "vivís",
+            "spanish": "Vosotros vivís.",
+            "english": "You all live."
+          },
+          {
+            "id": "vivir.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "viven",
+            "spanish": "Ellos/ellas viven.",
+            "english": "They live."
+          }
+        ]
+      }
+    },
+    {
+      "id": "sentir",
+      "type": "verb",
+      "infinitive": "sentir",
+      "rank": 33,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to feel",
+        "distractors": [
+          "to look at",
+          "to count / to tell",
+          "to begin"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "sentir.present.yo",
+            "person": "yo",
+            "form": "siento",
+            "spanish": "Yo siento.",
+            "english": "I feel."
+          },
+          {
+            "id": "sentir.present.tu",
+            "person": "tú",
+            "form": "sientes",
+            "spanish": "Tú sientes.",
+            "english": "You feel."
+          },
+          {
+            "id": "sentir.present.el",
+            "person": "él/ella/usted",
+            "form": "siente",
+            "spanish": "Él/ella siente.",
+            "english": "He/she feels."
+          },
+          {
+            "id": "sentir.present.nosotros",
+            "person": "nosotros",
+            "form": "sentimos",
+            "spanish": "Nosotros sentimos.",
+            "english": "We feel."
+          },
+          {
+            "id": "sentir.present.vosotros",
+            "person": "vosotros",
+            "form": "sentís",
+            "spanish": "Vosotros sentís.",
+            "english": "You all feel."
+          },
+          {
+            "id": "sentir.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "sienten",
+            "spanish": "Ellos/ellas sienten.",
+            "english": "They feel."
+          }
+        ]
+      }
+    },
+    {
+      "id": "tratar",
+      "type": "verb",
+      "infinitive": "tratar",
+      "rank": 34,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to try / to treat",
+        "distractors": [
+          "to count / to tell",
+          "to begin",
+          "to wait / to hope"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "tratar.present.yo",
+            "person": "yo",
+            "form": "trato",
+            "spanish": "Yo trato.",
+            "english": "I try."
+          },
+          {
+            "id": "tratar.present.tu",
+            "person": "tú",
+            "form": "tratas",
+            "spanish": "Tú tratas.",
+            "english": "You try."
+          },
+          {
+            "id": "tratar.present.el",
+            "person": "él/ella/usted",
+            "form": "trata",
+            "spanish": "Él/ella trata.",
+            "english": "He/she tries."
+          },
+          {
+            "id": "tratar.present.nosotros",
+            "person": "nosotros",
+            "form": "tratamos",
+            "spanish": "Nosotros tratamos.",
+            "english": "We try."
+          },
+          {
+            "id": "tratar.present.vosotros",
+            "person": "vosotros",
+            "form": "tratáis",
+            "spanish": "Vosotros tratáis.",
+            "english": "You all try."
+          },
+          {
+            "id": "tratar.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "tratan",
+            "spanish": "Ellos/ellas tratan.",
+            "english": "They try."
+          }
+        ]
+      }
+    },
+    {
+      "id": "mirar",
+      "type": "verb",
+      "infinitive": "mirar",
+      "rank": 35,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to look at",
+        "distractors": [
+          "to begin",
+          "to wait / to hope",
+          "to look for"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "mirar.present.yo",
+            "person": "yo",
+            "form": "miro",
+            "spanish": "Yo miro.",
+            "english": "I look."
+          },
+          {
+            "id": "mirar.present.tu",
+            "person": "tú",
+            "form": "miras",
+            "spanish": "Tú miras.",
+            "english": "You look."
+          },
+          {
+            "id": "mirar.present.el",
+            "person": "él/ella/usted",
+            "form": "mira",
+            "spanish": "Él/ella mira.",
+            "english": "He/she looks."
+          },
+          {
+            "id": "mirar.present.nosotros",
+            "person": "nosotros",
+            "form": "miramos",
+            "spanish": "Nosotros miramos.",
+            "english": "We look."
+          },
+          {
+            "id": "mirar.present.vosotros",
+            "person": "vosotros",
+            "form": "miráis",
+            "spanish": "Vosotros miráis.",
+            "english": "You all look."
+          },
+          {
+            "id": "mirar.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "miran",
+            "spanish": "Ellos/ellas miran.",
+            "english": "They look."
+          }
+        ]
+      }
+    },
+    {
+      "id": "contar",
+      "type": "verb",
+      "infinitive": "contar",
+      "rank": 36,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to count / to tell",
+        "distractors": [
+          "to wait / to hope",
+          "to look for",
+          "to exist"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "contar.present.yo",
+            "person": "yo",
+            "form": "cuento",
+            "spanish": "Yo cuento.",
+            "english": "I count."
+          },
+          {
+            "id": "contar.present.tu",
+            "person": "tú",
+            "form": "cuentas",
+            "spanish": "Tú cuentas.",
+            "english": "You count."
+          },
+          {
+            "id": "contar.present.el",
+            "person": "él/ella/usted",
+            "form": "cuenta",
+            "spanish": "Él/ella cuenta.",
+            "english": "He/she counts."
+          },
+          {
+            "id": "contar.present.nosotros",
+            "person": "nosotros",
+            "form": "contamos",
+            "spanish": "Nosotros contamos.",
+            "english": "We count."
+          },
+          {
+            "id": "contar.present.vosotros",
+            "person": "vosotros",
+            "form": "contáis",
+            "spanish": "Vosotros contáis.",
+            "english": "You all count."
+          },
+          {
+            "id": "contar.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "cuentan",
+            "spanish": "Ellos/ellas cuentan.",
+            "english": "They count."
+          }
+        ]
+      }
+    },
+    {
+      "id": "empezar",
+      "type": "verb",
+      "infinitive": "empezar",
+      "rank": 37,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to begin",
+        "distractors": [
+          "to look for",
+          "to exist",
+          "to enter"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "empezar.present.yo",
+            "person": "yo",
+            "form": "empiezo",
+            "spanish": "Yo empiezo.",
+            "english": "I begin."
+          },
+          {
+            "id": "empezar.present.tu",
+            "person": "tú",
+            "form": "empiezas",
+            "spanish": "Tú empiezas.",
+            "english": "You begin."
+          },
+          {
+            "id": "empezar.present.el",
+            "person": "él/ella/usted",
+            "form": "empieza",
+            "spanish": "Él/ella empieza.",
+            "english": "He/she begins."
+          },
+          {
+            "id": "empezar.present.nosotros",
+            "person": "nosotros",
+            "form": "empezamos",
+            "spanish": "Nosotros empezamos.",
+            "english": "We begin."
+          },
+          {
+            "id": "empezar.present.vosotros",
+            "person": "vosotros",
+            "form": "empezáis",
+            "spanish": "Vosotros empezáis.",
+            "english": "You all begin."
+          },
+          {
+            "id": "empezar.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "empiezan",
+            "spanish": "Ellos/ellas empiezan.",
+            "english": "They begin."
+          }
+        ]
+      }
+    },
+    {
+      "id": "esperar",
+      "type": "verb",
+      "infinitive": "esperar",
+      "rank": 38,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to wait / to hope",
+        "distractors": [
+          "to exist",
+          "to enter",
+          "to work"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "esperar.present.yo",
+            "person": "yo",
+            "form": "espero",
+            "spanish": "Yo espero.",
+            "english": "I wait."
+          },
+          {
+            "id": "esperar.present.tu",
+            "person": "tú",
+            "form": "esperas",
+            "spanish": "Tú esperas.",
+            "english": "You wait."
+          },
+          {
+            "id": "esperar.present.el",
+            "person": "él/ella/usted",
+            "form": "espera",
+            "spanish": "Él/ella espera.",
+            "english": "He/she waits."
+          },
+          {
+            "id": "esperar.present.nosotros",
+            "person": "nosotros",
+            "form": "esperamos",
+            "spanish": "Nosotros esperamos.",
+            "english": "We wait."
+          },
+          {
+            "id": "esperar.present.vosotros",
+            "person": "vosotros",
+            "form": "esperáis",
+            "spanish": "Vosotros esperáis.",
+            "english": "You all wait."
+          },
+          {
+            "id": "esperar.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "esperan",
+            "spanish": "Ellos/ellas esperan.",
+            "english": "They wait."
+          }
+        ]
+      }
+    },
+    {
+      "id": "buscar",
+      "type": "verb",
+      "infinitive": "buscar",
+      "rank": 39,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to look for",
+        "distractors": [
+          "to enter",
+          "to work",
+          "to write"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "buscar.present.yo",
+            "person": "yo",
+            "form": "busco",
+            "spanish": "Yo busco.",
+            "english": "I look for."
+          },
+          {
+            "id": "buscar.present.tu",
+            "person": "tú",
+            "form": "buscas",
+            "spanish": "Tú buscas.",
+            "english": "You look for."
+          },
+          {
+            "id": "buscar.present.el",
+            "person": "él/ella/usted",
+            "form": "busca",
+            "spanish": "Él/ella busca.",
+            "english": "He/she look for."
+          },
+          {
+            "id": "buscar.present.nosotros",
+            "person": "nosotros",
+            "form": "buscamos",
+            "spanish": "Nosotros buscamos.",
+            "english": "We look for."
+          },
+          {
+            "id": "buscar.present.vosotros",
+            "person": "vosotros",
+            "form": "buscáis",
+            "spanish": "Vosotros buscáis.",
+            "english": "You all look for."
+          },
+          {
+            "id": "buscar.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "buscan",
+            "spanish": "Ellos/ellas buscan.",
+            "english": "They look for."
+          }
+        ]
+      }
+    },
+    {
+      "id": "existir",
+      "type": "verb",
+      "infinitive": "existir",
+      "rank": 40,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to exist",
+        "distractors": [
+          "to work",
+          "to write",
+          "to lose"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "existir.present.yo",
+            "person": "yo",
+            "form": "existo",
+            "spanish": "Yo existo.",
+            "english": "I exist."
+          },
+          {
+            "id": "existir.present.tu",
+            "person": "tú",
+            "form": "existes",
+            "spanish": "Tú existes.",
+            "english": "You exist."
+          },
+          {
+            "id": "existir.present.el",
+            "person": "él/ella/usted",
+            "form": "existe",
+            "spanish": "Él/ella existe.",
+            "english": "He/she exists."
+          },
+          {
+            "id": "existir.present.nosotros",
+            "person": "nosotros",
+            "form": "existimos",
+            "spanish": "Nosotros existimos.",
+            "english": "We exist."
+          },
+          {
+            "id": "existir.present.vosotros",
+            "person": "vosotros",
+            "form": "existís",
+            "spanish": "Vosotros existís.",
+            "english": "You all exist."
+          },
+          {
+            "id": "existir.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "existen",
+            "spanish": "Ellos/ellas existen.",
+            "english": "They exist."
+          }
+        ]
+      }
+    },
+    {
+      "id": "entrar",
+      "type": "verb",
+      "infinitive": "entrar",
+      "rank": 41,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to enter",
+        "distractors": [
+          "to write",
+          "to lose",
+          "to produce"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "entrar.present.yo",
+            "person": "yo",
+            "form": "entro",
+            "spanish": "Yo entro.",
+            "english": "I enter."
+          },
+          {
+            "id": "entrar.present.tu",
+            "person": "tú",
+            "form": "entras",
+            "spanish": "Tú entras.",
+            "english": "You enter."
+          },
+          {
+            "id": "entrar.present.el",
+            "person": "él/ella/usted",
+            "form": "entra",
+            "spanish": "Él/ella entra.",
+            "english": "He/she enters."
+          },
+          {
+            "id": "entrar.present.nosotros",
+            "person": "nosotros",
+            "form": "entramos",
+            "spanish": "Nosotros entramos.",
+            "english": "We enter."
+          },
+          {
+            "id": "entrar.present.vosotros",
+            "person": "vosotros",
+            "form": "entráis",
+            "spanish": "Vosotros entráis.",
+            "english": "You all enter."
+          },
+          {
+            "id": "entrar.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "entran",
+            "spanish": "Ellos/ellas entran.",
+            "english": "They enter."
+          }
+        ]
+      }
+    },
+    {
+      "id": "trabajar",
+      "type": "verb",
+      "infinitive": "trabajar",
+      "rank": 42,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to work",
+        "distractors": [
+          "to lose",
+          "to produce",
+          "to occur"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "trabajar.present.yo",
+            "person": "yo",
+            "form": "trabajo",
+            "spanish": "Yo trabajo.",
+            "english": "I work."
+          },
+          {
+            "id": "trabajar.present.tu",
+            "person": "tú",
+            "form": "trabajas",
+            "spanish": "Tú trabajas.",
+            "english": "You work."
+          },
+          {
+            "id": "trabajar.present.el",
+            "person": "él/ella/usted",
+            "form": "trabaja",
+            "spanish": "Él/ella trabaja.",
+            "english": "He/she works."
+          },
+          {
+            "id": "trabajar.present.nosotros",
+            "person": "nosotros",
+            "form": "trabajamos",
+            "spanish": "Nosotros trabajamos.",
+            "english": "We work."
+          },
+          {
+            "id": "trabajar.present.vosotros",
+            "person": "vosotros",
+            "form": "trabajáis",
+            "spanish": "Vosotros trabajáis.",
+            "english": "You all work."
+          },
+          {
+            "id": "trabajar.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "trabajan",
+            "spanish": "Ellos/ellas trabajan.",
+            "english": "They work."
+          }
+        ]
+      }
+    },
+    {
+      "id": "escribir",
+      "type": "verb",
+      "infinitive": "escribir",
+      "rank": 43,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to write",
+        "distractors": [
+          "to produce",
+          "to occur",
+          "to understand"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "escribir.present.yo",
+            "person": "yo",
+            "form": "escribo",
+            "spanish": "Yo escribo.",
+            "english": "I write."
+          },
+          {
+            "id": "escribir.present.tu",
+            "person": "tú",
+            "form": "escribes",
+            "spanish": "Tú escribes.",
+            "english": "You write."
+          },
+          {
+            "id": "escribir.present.el",
+            "person": "él/ella/usted",
+            "form": "escribe",
+            "spanish": "Él/ella escribe.",
+            "english": "He/she writes."
+          },
+          {
+            "id": "escribir.present.nosotros",
+            "person": "nosotros",
+            "form": "escribimos",
+            "spanish": "Nosotros escribimos.",
+            "english": "We write."
+          },
+          {
+            "id": "escribir.present.vosotros",
+            "person": "vosotros",
+            "form": "escribís",
+            "spanish": "Vosotros escribís.",
+            "english": "You all write."
+          },
+          {
+            "id": "escribir.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "escriben",
+            "spanish": "Ellos/ellas escriben.",
+            "english": "They write."
+          }
+        ]
+      }
+    },
+    {
+      "id": "perder",
+      "type": "verb",
+      "infinitive": "perder",
+      "rank": 44,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to lose",
+        "distractors": [
+          "to occur",
+          "to understand",
+          "to ask for / to request"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "perder.present.yo",
+            "person": "yo",
+            "form": "pierdo",
+            "spanish": "Yo pierdo.",
+            "english": "I lose."
+          },
+          {
+            "id": "perder.present.tu",
+            "person": "tú",
+            "form": "pierdes",
+            "spanish": "Tú pierdes.",
+            "english": "You lose."
+          },
+          {
+            "id": "perder.present.el",
+            "person": "él/ella/usted",
+            "form": "pierde",
+            "spanish": "Él/ella pierde.",
+            "english": "He/she loses."
+          },
+          {
+            "id": "perder.present.nosotros",
+            "person": "nosotros",
+            "form": "perdemos",
+            "spanish": "Nosotros perdemos.",
+            "english": "We lose."
+          },
+          {
+            "id": "perder.present.vosotros",
+            "person": "vosotros",
+            "form": "perdéis",
+            "spanish": "Vosotros perdéis.",
+            "english": "You all lose."
+          },
+          {
+            "id": "perder.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "pierden",
+            "spanish": "Ellos/ellas pierden.",
+            "english": "They lose."
+          }
+        ]
+      }
+    },
+    {
+      "id": "producir",
+      "type": "verb",
+      "infinitive": "producir",
+      "rank": 45,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to produce",
+        "distractors": [
+          "to understand",
+          "to ask for / to request",
+          "to receive"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "producir.present.yo",
+            "person": "yo",
+            "form": "produzco",
+            "spanish": "Yo produzco.",
+            "english": "I produce."
+          },
+          {
+            "id": "producir.present.tu",
+            "person": "tú",
+            "form": "produces",
+            "spanish": "Tú produces.",
+            "english": "You produce."
+          },
+          {
+            "id": "producir.present.el",
+            "person": "él/ella/usted",
+            "form": "produce",
+            "spanish": "Él/ella produce.",
+            "english": "He/she produces."
+          },
+          {
+            "id": "producir.present.nosotros",
+            "person": "nosotros",
+            "form": "producimos",
+            "spanish": "Nosotros producimos.",
+            "english": "We produce."
+          },
+          {
+            "id": "producir.present.vosotros",
+            "person": "vosotros",
+            "form": "producís",
+            "spanish": "Vosotros producís.",
+            "english": "You all produce."
+          },
+          {
+            "id": "producir.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "producen",
+            "spanish": "Ellos/ellas producen.",
+            "english": "They produce."
+          }
+        ]
+      }
+    },
+    {
+      "id": "ocurrir",
+      "type": "verb",
+      "infinitive": "ocurrir",
+      "rank": 46,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to occur",
+        "distractors": [
+          "to ask for / to request",
+          "to receive",
+          "to remember"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "ocurrir.present.yo",
+            "person": "yo",
+            "form": "ocurro",
+            "spanish": "Yo ocurro.",
+            "english": "I occur."
+          },
+          {
+            "id": "ocurrir.present.tu",
+            "person": "tú",
+            "form": "ocurres",
+            "spanish": "Tú ocurres.",
+            "english": "You occur."
+          },
+          {
+            "id": "ocurrir.present.el",
+            "person": "él/ella/usted",
+            "form": "ocurre",
+            "spanish": "Él/ella ocurre.",
+            "english": "He/she occurs."
+          },
+          {
+            "id": "ocurrir.present.nosotros",
+            "person": "nosotros",
+            "form": "ocurrimos",
+            "spanish": "Nosotros ocurrimos.",
+            "english": "We occur."
+          },
+          {
+            "id": "ocurrir.present.vosotros",
+            "person": "vosotros",
+            "form": "ocurrís",
+            "spanish": "Vosotros ocurrís.",
+            "english": "You all occur."
+          },
+          {
+            "id": "ocurrir.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "ocurren",
+            "spanish": "Ellos/ellas ocurren.",
+            "english": "They occur."
+          }
+        ]
+      }
+    },
+    {
+      "id": "entender",
+      "type": "verb",
+      "infinitive": "entender",
+      "rank": 47,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to understand",
+        "distractors": [
+          "to receive",
+          "to remember",
+          "to finish"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "entender.present.yo",
+            "person": "yo",
+            "form": "entiendo",
+            "spanish": "Yo entiendo.",
+            "english": "I understand."
+          },
+          {
+            "id": "entender.present.tu",
+            "person": "tú",
+            "form": "entiendes",
+            "spanish": "Tú entiendes.",
+            "english": "You understand."
+          },
+          {
+            "id": "entender.present.el",
+            "person": "él/ella/usted",
+            "form": "entiende",
+            "spanish": "Él/ella entiende.",
+            "english": "He/she understands."
+          },
+          {
+            "id": "entender.present.nosotros",
+            "person": "nosotros",
+            "form": "entendemos",
+            "spanish": "Nosotros entendemos.",
+            "english": "We understand."
+          },
+          {
+            "id": "entender.present.vosotros",
+            "person": "vosotros",
+            "form": "entendéis",
+            "spanish": "Vosotros entendéis.",
+            "english": "You all understand."
+          },
+          {
+            "id": "entender.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "entienden",
+            "spanish": "Ellos/ellas entienden.",
+            "english": "They understand."
+          }
+        ]
+      }
+    },
+    {
+      "id": "pedir",
+      "type": "verb",
+      "infinitive": "pedir",
+      "rank": 48,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to ask for / to request",
+        "distractors": [
+          "to remember",
+          "to finish",
+          "to allow"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "pedir.present.yo",
+            "person": "yo",
+            "form": "pido",
+            "spanish": "Yo pido.",
+            "english": "I request."
+          },
+          {
+            "id": "pedir.present.tu",
+            "person": "tú",
+            "form": "pides",
+            "spanish": "Tú pides.",
+            "english": "You request."
+          },
+          {
+            "id": "pedir.present.el",
+            "person": "él/ella/usted",
+            "form": "pide",
+            "spanish": "Él/ella pide.",
+            "english": "He/she requests."
+          },
+          {
+            "id": "pedir.present.nosotros",
+            "person": "nosotros",
+            "form": "pedimos",
+            "spanish": "Nosotros pedimos.",
+            "english": "We request."
+          },
+          {
+            "id": "pedir.present.vosotros",
+            "person": "vosotros",
+            "form": "pedís",
+            "spanish": "Vosotros pedís.",
+            "english": "You all request."
+          },
+          {
+            "id": "pedir.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "piden",
+            "spanish": "Ellos/ellas piden.",
+            "english": "They request."
+          }
+        ]
+      }
+    },
+    {
+      "id": "recibir",
+      "type": "verb",
+      "infinitive": "recibir",
+      "rank": 49,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to receive",
+        "distractors": [
+          "to finish",
+          "to allow",
+          "to appear"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "recibir.present.yo",
+            "person": "yo",
+            "form": "recibo",
+            "spanish": "Yo recibo.",
+            "english": "I receive."
+          },
+          {
+            "id": "recibir.present.tu",
+            "person": "tú",
+            "form": "recibes",
+            "spanish": "Tú recibes.",
+            "english": "You receive."
+          },
+          {
+            "id": "recibir.present.el",
+            "person": "él/ella/usted",
+            "form": "recibe",
+            "spanish": "Él/ella recibe.",
+            "english": "He/she receives."
+          },
+          {
+            "id": "recibir.present.nosotros",
+            "person": "nosotros",
+            "form": "recibimos",
+            "spanish": "Nosotros recibimos.",
+            "english": "We receive."
+          },
+          {
+            "id": "recibir.present.vosotros",
+            "person": "vosotros",
+            "form": "recibís",
+            "spanish": "Vosotros recibís.",
+            "english": "You all receive."
+          },
+          {
+            "id": "recibir.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "reciben",
+            "spanish": "Ellos/ellas reciben.",
+            "english": "They receive."
+          }
+        ]
+      }
+    },
+    {
+      "id": "recordar",
+      "type": "verb",
+      "infinitive": "recordar",
+      "rank": 50,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to remember",
+        "distractors": [
+          "to allow",
+          "to appear",
+          "to get / to obtain"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "recordar.present.yo",
+            "person": "yo",
+            "form": "recuerdo",
+            "spanish": "Yo recuerdo.",
+            "english": "I remember."
+          },
+          {
+            "id": "recordar.present.tu",
+            "person": "tú",
+            "form": "recuerdas",
+            "spanish": "Tú recuerdas.",
+            "english": "You remember."
+          },
+          {
+            "id": "recordar.present.el",
+            "person": "él/ella/usted",
+            "form": "recuerda",
+            "spanish": "Él/ella recuerda.",
+            "english": "He/she remembers."
+          },
+          {
+            "id": "recordar.present.nosotros",
+            "person": "nosotros",
+            "form": "recordamos",
+            "spanish": "Nosotros recordamos.",
+            "english": "We remember."
+          },
+          {
+            "id": "recordar.present.vosotros",
+            "person": "vosotros",
+            "form": "recordáis",
+            "spanish": "Vosotros recordáis.",
+            "english": "You all remember."
+          },
+          {
+            "id": "recordar.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "recuerdan",
+            "spanish": "Ellos/ellas recuerdan.",
+            "english": "They remember."
+          }
+        ]
+      }
+    },
+    {
+      "id": "terminar",
+      "type": "verb",
+      "infinitive": "terminar",
+      "rank": 51,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to finish",
+        "distractors": [
+          "to appear",
+          "to get / to obtain",
+          "to begin"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "terminar.present.yo",
+            "person": "yo",
+            "form": "termino",
+            "spanish": "Yo termino.",
+            "english": "I finish."
+          },
+          {
+            "id": "terminar.present.tu",
+            "person": "tú",
+            "form": "terminas",
+            "spanish": "Tú terminas.",
+            "english": "You finish."
+          },
+          {
+            "id": "terminar.present.el",
+            "person": "él/ella/usted",
+            "form": "termina",
+            "spanish": "Él/ella termina.",
+            "english": "He/she finishes."
+          },
+          {
+            "id": "terminar.present.nosotros",
+            "person": "nosotros",
+            "form": "terminamos",
+            "spanish": "Nosotros terminamos.",
+            "english": "We finish."
+          },
+          {
+            "id": "terminar.present.vosotros",
+            "person": "vosotros",
+            "form": "termináis",
+            "spanish": "Vosotros termináis.",
+            "english": "You all finish."
+          },
+          {
+            "id": "terminar.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "terminan",
+            "spanish": "Ellos/ellas terminan.",
+            "english": "They finish."
+          }
+        ]
+      }
+    },
+    {
+      "id": "permitir",
+      "type": "verb",
+      "infinitive": "permitir",
+      "rank": 52,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to allow",
+        "distractors": [
+          "to get / to obtain",
+          "to begin",
+          "to serve"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "permitir.present.yo",
+            "person": "yo",
+            "form": "permito",
+            "spanish": "Yo permito.",
+            "english": "I allow."
+          },
+          {
+            "id": "permitir.present.tu",
+            "person": "tú",
+            "form": "permites",
+            "spanish": "Tú permites.",
+            "english": "You allow."
+          },
+          {
+            "id": "permitir.present.el",
+            "person": "él/ella/usted",
+            "form": "permite",
+            "spanish": "Él/ella permite.",
+            "english": "He/she allows."
+          },
+          {
+            "id": "permitir.present.nosotros",
+            "person": "nosotros",
+            "form": "permitimos",
+            "spanish": "Nosotros permitimos.",
+            "english": "We allow."
+          },
+          {
+            "id": "permitir.present.vosotros",
+            "person": "vosotros",
+            "form": "permitís",
+            "spanish": "Vosotros permitís.",
+            "english": "You all allow."
+          },
+          {
+            "id": "permitir.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "permiten",
+            "spanish": "Ellos/ellas permiten.",
+            "english": "They allow."
+          }
+        ]
+      }
+    },
+    {
+      "id": "aparecer",
+      "type": "verb",
+      "infinitive": "aparecer",
+      "rank": 53,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to appear",
+        "distractors": [
+          "to begin",
+          "to serve",
+          "to take out"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "aparecer.present.yo",
+            "person": "yo",
+            "form": "aparezco",
+            "spanish": "Yo aparezco.",
+            "english": "I appear."
+          },
+          {
+            "id": "aparecer.present.tu",
+            "person": "tú",
+            "form": "apareces",
+            "spanish": "Tú apareces.",
+            "english": "You appear."
+          },
+          {
+            "id": "aparecer.present.el",
+            "person": "él/ella/usted",
+            "form": "aparece",
+            "spanish": "Él/ella aparece.",
+            "english": "He/she appears."
+          },
+          {
+            "id": "aparecer.present.nosotros",
+            "person": "nosotros",
+            "form": "aparecemos",
+            "spanish": "Nosotros aparecemos.",
+            "english": "We appear."
+          },
+          {
+            "id": "aparecer.present.vosotros",
+            "person": "vosotros",
+            "form": "aparecéis",
+            "spanish": "Vosotros aparecéis.",
+            "english": "You all appear."
+          },
+          {
+            "id": "aparecer.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "aparecen",
+            "spanish": "Ellos/ellas aparecen.",
+            "english": "They appear."
+          }
+        ]
+      }
+    },
+    {
+      "id": "conseguir",
+      "type": "verb",
+      "infinitive": "conseguir",
+      "rank": 54,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to get / to obtain",
+        "distractors": [
+          "to serve",
+          "to take out",
+          "to need"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "conseguir.present.yo",
+            "person": "yo",
+            "form": "consigo",
+            "spanish": "Yo consigo.",
+            "english": "I get."
+          },
+          {
+            "id": "conseguir.present.tu",
+            "person": "tú",
+            "form": "consigues",
+            "spanish": "Tú consigues.",
+            "english": "You get."
+          },
+          {
+            "id": "conseguir.present.el",
+            "person": "él/ella/usted",
+            "form": "consigue",
+            "spanish": "Él/ella consigue.",
+            "english": "He/she gets."
+          },
+          {
+            "id": "conseguir.present.nosotros",
+            "person": "nosotros",
+            "form": "conseguimos",
+            "spanish": "Nosotros conseguimos.",
+            "english": "We get."
+          },
+          {
+            "id": "conseguir.present.vosotros",
+            "person": "vosotros",
+            "form": "conseguís",
+            "spanish": "Vosotros conseguís.",
+            "english": "You all get."
+          },
+          {
+            "id": "conseguir.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "consiguen",
+            "spanish": "Ellos/ellas consiguen.",
+            "english": "They get."
+          }
+        ]
+      }
+    },
+    {
+      "id": "comenzar",
+      "type": "verb",
+      "infinitive": "comenzar",
+      "rank": 55,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to begin",
+        "distractors": [
+          "to need",
+          "to maintain / to keep",
+          "to turn out"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "comenzar.present.yo",
+            "person": "yo",
+            "form": "comienzo",
+            "spanish": "Yo comienzo.",
+            "english": "I begin."
+          },
+          {
+            "id": "comenzar.present.tu",
+            "person": "tú",
+            "form": "comienzas",
+            "spanish": "Tú comienzas.",
+            "english": "You begin."
+          },
+          {
+            "id": "comenzar.present.el",
+            "person": "él/ella/usted",
+            "form": "comienza",
+            "spanish": "Él/ella comienza.",
+            "english": "He/she begins."
+          },
+          {
+            "id": "comenzar.present.nosotros",
+            "person": "nosotros",
+            "form": "comenzamos",
+            "spanish": "Nosotros comenzamos.",
+            "english": "We begin."
+          },
+          {
+            "id": "comenzar.present.vosotros",
+            "person": "vosotros",
+            "form": "comenzáis",
+            "spanish": "Vosotros comenzáis.",
+            "english": "You all begin."
+          },
+          {
+            "id": "comenzar.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "comienzan",
+            "spanish": "Ellos/ellas comienzan.",
+            "english": "They begin."
+          }
+        ]
+      }
+    },
+    {
+      "id": "servir",
+      "type": "verb",
+      "infinitive": "servir",
+      "rank": 56,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to serve",
+        "distractors": [
+          "to need",
+          "to maintain / to keep",
+          "to turn out"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "servir.present.yo",
+            "person": "yo",
+            "form": "sirvo",
+            "spanish": "Yo sirvo.",
+            "english": "I serve."
+          },
+          {
+            "id": "servir.present.tu",
+            "person": "tú",
+            "form": "sirves",
+            "spanish": "Tú sirves.",
+            "english": "You serve."
+          },
+          {
+            "id": "servir.present.el",
+            "person": "él/ella/usted",
+            "form": "sirve",
+            "spanish": "Él/ella sirve.",
+            "english": "He/she serves."
+          },
+          {
+            "id": "servir.present.nosotros",
+            "person": "nosotros",
+            "form": "servimos",
+            "spanish": "Nosotros servimos.",
+            "english": "We serve."
+          },
+          {
+            "id": "servir.present.vosotros",
+            "person": "vosotros",
+            "form": "servís",
+            "spanish": "Vosotros servís.",
+            "english": "You all serve."
+          },
+          {
+            "id": "servir.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "sirven",
+            "spanish": "Ellos/ellas sirven.",
+            "english": "They serve."
+          }
+        ]
+      }
+    },
+    {
+      "id": "sacar",
+      "type": "verb",
+      "infinitive": "sacar",
+      "rank": 57,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to take out",
+        "distractors": [
+          "to maintain / to keep",
+          "to turn out",
+          "to read"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "sacar.present.yo",
+            "person": "yo",
+            "form": "saco",
+            "spanish": "Yo saco.",
+            "english": "I take out."
+          },
+          {
+            "id": "sacar.present.tu",
+            "person": "tú",
+            "form": "sacas",
+            "spanish": "Tú sacas.",
+            "english": "You take out."
+          },
+          {
+            "id": "sacar.present.el",
+            "person": "él/ella/usted",
+            "form": "saca",
+            "spanish": "Él/ella saca.",
+            "english": "He/she take out."
+          },
+          {
+            "id": "sacar.present.nosotros",
+            "person": "nosotros",
+            "form": "sacamos",
+            "spanish": "Nosotros sacamos.",
+            "english": "We take out."
+          },
+          {
+            "id": "sacar.present.vosotros",
+            "person": "vosotros",
+            "form": "sacáis",
+            "spanish": "Vosotros sacáis.",
+            "english": "You all take out."
+          },
+          {
+            "id": "sacar.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "sacan",
+            "spanish": "Ellos/ellas sacan.",
+            "english": "They take out."
+          }
+        ]
+      }
+    },
+    {
+      "id": "necesitar",
+      "type": "verb",
+      "infinitive": "necesitar",
+      "rank": 58,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to need",
+        "distractors": [
+          "to turn out",
+          "to read",
+          "to fall"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "necesitar.present.yo",
+            "person": "yo",
+            "form": "necesito",
+            "spanish": "Yo necesito.",
+            "english": "I need."
+          },
+          {
+            "id": "necesitar.present.tu",
+            "person": "tú",
+            "form": "necesitas",
+            "spanish": "Tú necesitas.",
+            "english": "You need."
+          },
+          {
+            "id": "necesitar.present.el",
+            "person": "él/ella/usted",
+            "form": "necesita",
+            "spanish": "Él/ella necesita.",
+            "english": "He/she needs."
+          },
+          {
+            "id": "necesitar.present.nosotros",
+            "person": "nosotros",
+            "form": "necesitamos",
+            "spanish": "Nosotros necesitamos.",
+            "english": "We need."
+          },
+          {
+            "id": "necesitar.present.vosotros",
+            "person": "vosotros",
+            "form": "necesitáis",
+            "spanish": "Vosotros necesitáis.",
+            "english": "You all need."
+          },
+          {
+            "id": "necesitar.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "necesitan",
+            "spanish": "Ellos/ellas necesitan.",
+            "english": "They need."
+          }
+        ]
+      }
+    },
+    {
+      "id": "mantener",
+      "type": "verb",
+      "infinitive": "mantener",
+      "rank": 59,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to maintain / to keep",
+        "distractors": [
+          "to read",
+          "to fall",
+          "to change"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "mantener.present.yo",
+            "person": "yo",
+            "form": "mantengo",
+            "spanish": "Yo mantengo.",
+            "english": "I keep."
+          },
+          {
+            "id": "mantener.present.tu",
+            "person": "tú",
+            "form": "mantienes",
+            "spanish": "Tú mantienes.",
+            "english": "You keep."
+          },
+          {
+            "id": "mantener.present.el",
+            "person": "él/ella/usted",
+            "form": "mantiene",
+            "spanish": "Él/ella mantiene.",
+            "english": "He/she keeps."
+          },
+          {
+            "id": "mantener.present.nosotros",
+            "person": "nosotros",
+            "form": "mantenemos",
+            "spanish": "Nosotros mantenemos.",
+            "english": "We keep."
+          },
+          {
+            "id": "mantener.present.vosotros",
+            "person": "vosotros",
+            "form": "mantenéis",
+            "spanish": "Vosotros mantenéis.",
+            "english": "You all keep."
+          },
+          {
+            "id": "mantener.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "mantienen",
+            "spanish": "Ellos/ellas mantienen.",
+            "english": "They keep."
+          }
+        ]
+      }
+    },
+    {
+      "id": "resultar",
+      "type": "verb",
+      "infinitive": "resultar",
+      "rank": 60,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to turn out",
+        "distractors": [
+          "to fall",
+          "to change",
+          "to present"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "resultar.present.yo",
+            "person": "yo",
+            "form": "resulto",
+            "spanish": "Yo resulto.",
+            "english": "I turn out."
+          },
+          {
+            "id": "resultar.present.tu",
+            "person": "tú",
+            "form": "resultas",
+            "spanish": "Tú resultas.",
+            "english": "You turn out."
+          },
+          {
+            "id": "resultar.present.el",
+            "person": "él/ella/usted",
+            "form": "resulta",
+            "spanish": "Él/ella resulta.",
+            "english": "He/she turn out."
+          },
+          {
+            "id": "resultar.present.nosotros",
+            "person": "nosotros",
+            "form": "resultamos",
+            "spanish": "Nosotros resultamos.",
+            "english": "We turn out."
+          },
+          {
+            "id": "resultar.present.vosotros",
+            "person": "vosotros",
+            "form": "resultáis",
+            "spanish": "Vosotros resultáis.",
+            "english": "You all turn out."
+          },
+          {
+            "id": "resultar.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "resultan",
+            "spanish": "Ellos/ellas resultan.",
+            "english": "They turn out."
+          }
+        ]
+      }
+    },
+    {
+      "id": "leer",
+      "type": "verb",
+      "infinitive": "leer",
+      "rank": 61,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to read",
+        "distractors": [
+          "to change",
+          "to present",
+          "to create"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "leer.present.yo",
+            "person": "yo",
+            "form": "leo",
+            "spanish": "Yo leo.",
+            "english": "I read."
+          },
+          {
+            "id": "leer.present.tu",
+            "person": "tú",
+            "form": "lees",
+            "spanish": "Tú lees.",
+            "english": "You read."
+          },
+          {
+            "id": "leer.present.el",
+            "person": "él/ella/usted",
+            "form": "lee",
+            "spanish": "Él/ella lee.",
+            "english": "He/she reads."
+          },
+          {
+            "id": "leer.present.nosotros",
+            "person": "nosotros",
+            "form": "leemos",
+            "spanish": "Nosotros leemos.",
+            "english": "We read."
+          },
+          {
+            "id": "leer.present.vosotros",
+            "person": "vosotros",
+            "form": "leéis",
+            "spanish": "Vosotros leéis.",
+            "english": "You all read."
+          },
+          {
+            "id": "leer.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "leen",
+            "spanish": "Ellos/ellas leen.",
+            "english": "They read."
+          }
+        ]
+      }
+    },
+    {
+      "id": "caer",
+      "type": "verb",
+      "infinitive": "caer",
+      "rank": 62,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to fall",
+        "distractors": [
+          "to present",
+          "to create",
+          "to open"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "caer.present.yo",
+            "person": "yo",
+            "form": "caigo",
+            "spanish": "Yo caigo.",
+            "english": "I fall."
+          },
+          {
+            "id": "caer.present.tu",
+            "person": "tú",
+            "form": "caes",
+            "spanish": "Tú caes.",
+            "english": "You fall."
+          },
+          {
+            "id": "caer.present.el",
+            "person": "él/ella/usted",
+            "form": "cae",
+            "spanish": "Él/ella cae.",
+            "english": "He/she falls."
+          },
+          {
+            "id": "caer.present.nosotros",
+            "person": "nosotros",
+            "form": "caemos",
+            "spanish": "Nosotros caemos.",
+            "english": "We fall."
+          },
+          {
+            "id": "caer.present.vosotros",
+            "person": "vosotros",
+            "form": "caéis",
+            "spanish": "Vosotros caéis.",
+            "english": "You all fall."
+          },
+          {
+            "id": "caer.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "caen",
+            "spanish": "Ellos/ellas caen.",
+            "english": "They fall."
+          }
+        ]
+      }
+    },
+    {
+      "id": "cambiar",
+      "type": "verb",
+      "infinitive": "cambiar",
+      "rank": 63,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to change",
+        "distractors": [
+          "to create",
+          "to open",
+          "to consider"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "cambiar.present.yo",
+            "person": "yo",
+            "form": "cambio",
+            "spanish": "Yo cambio.",
+            "english": "I change."
+          },
+          {
+            "id": "cambiar.present.tu",
+            "person": "tú",
+            "form": "cambias",
+            "spanish": "Tú cambias.",
+            "english": "You change."
+          },
+          {
+            "id": "cambiar.present.el",
+            "person": "él/ella/usted",
+            "form": "cambia",
+            "spanish": "Él/ella cambia.",
+            "english": "He/she changes."
+          },
+          {
+            "id": "cambiar.present.nosotros",
+            "person": "nosotros",
+            "form": "cambiamos",
+            "spanish": "Nosotros cambiamos.",
+            "english": "We change."
+          },
+          {
+            "id": "cambiar.present.vosotros",
+            "person": "vosotros",
+            "form": "cambiáis",
+            "spanish": "Vosotros cambiáis.",
+            "english": "You all change."
+          },
+          {
+            "id": "cambiar.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "cambian",
+            "spanish": "Ellos/ellas cambian.",
+            "english": "They change."
+          }
+        ]
+      }
+    },
+    {
+      "id": "presentar",
+      "type": "verb",
+      "infinitive": "presentar",
+      "rank": 64,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to present",
+        "distractors": [
+          "to open",
+          "to consider",
+          "to hear"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "presentar.present.yo",
+            "person": "yo",
+            "form": "presento",
+            "spanish": "Yo presento.",
+            "english": "I present."
+          },
+          {
+            "id": "presentar.present.tu",
+            "person": "tú",
+            "form": "presentas",
+            "spanish": "Tú presentas.",
+            "english": "You present."
+          },
+          {
+            "id": "presentar.present.el",
+            "person": "él/ella/usted",
+            "form": "presenta",
+            "spanish": "Él/ella presenta.",
+            "english": "He/she presents."
+          },
+          {
+            "id": "presentar.present.nosotros",
+            "person": "nosotros",
+            "form": "presentamos",
+            "spanish": "Nosotros presentamos.",
+            "english": "We present."
+          },
+          {
+            "id": "presentar.present.vosotros",
+            "person": "vosotros",
+            "form": "presentáis",
+            "spanish": "Vosotros presentáis.",
+            "english": "You all present."
+          },
+          {
+            "id": "presentar.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "presentan",
+            "spanish": "Ellos/ellas presentan.",
+            "english": "They present."
+          }
+        ]
+      }
+    },
+    {
+      "id": "crear",
+      "type": "verb",
+      "infinitive": "crear",
+      "rank": 65,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to create",
+        "distractors": [
+          "to consider",
+          "to hear",
+          "to finish"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "crear.present.yo",
+            "person": "yo",
+            "form": "creo",
+            "spanish": "Yo creo.",
+            "english": "I create."
+          },
+          {
+            "id": "crear.present.tu",
+            "person": "tú",
+            "form": "creas",
+            "spanish": "Tú creas.",
+            "english": "You create."
+          },
+          {
+            "id": "crear.present.el",
+            "person": "él/ella/usted",
+            "form": "crea",
+            "spanish": "Él/ella crea.",
+            "english": "He/she creates."
+          },
+          {
+            "id": "crear.present.nosotros",
+            "person": "nosotros",
+            "form": "creamos",
+            "spanish": "Nosotros creamos.",
+            "english": "We create."
+          },
+          {
+            "id": "crear.present.vosotros",
+            "person": "vosotros",
+            "form": "creáis",
+            "spanish": "Vosotros creáis.",
+            "english": "You all create."
+          },
+          {
+            "id": "crear.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "crean",
+            "spanish": "Ellos/ellas crean.",
+            "english": "They create."
+          }
+        ]
+      }
+    },
+    {
+      "id": "abrir",
+      "type": "verb",
+      "infinitive": "abrir",
+      "rank": 66,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to open",
+        "distractors": [
+          "to hear",
+          "to finish",
+          "to convert / to turn into"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "abrir.present.yo",
+            "person": "yo",
+            "form": "abro",
+            "spanish": "Yo abro.",
+            "english": "I open."
+          },
+          {
+            "id": "abrir.present.tu",
+            "person": "tú",
+            "form": "abres",
+            "spanish": "Tú abres.",
+            "english": "You open."
+          },
+          {
+            "id": "abrir.present.el",
+            "person": "él/ella/usted",
+            "form": "abre",
+            "spanish": "Él/ella abre.",
+            "english": "He/she opens."
+          },
+          {
+            "id": "abrir.present.nosotros",
+            "person": "nosotros",
+            "form": "abrimos",
+            "spanish": "Nosotros abrimos.",
+            "english": "We open."
+          },
+          {
+            "id": "abrir.present.vosotros",
+            "person": "vosotros",
+            "form": "abrís",
+            "spanish": "Vosotros abrís.",
+            "english": "You all open."
+          },
+          {
+            "id": "abrir.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "abren",
+            "spanish": "Ellos/ellas abren.",
+            "english": "They open."
+          }
+        ]
+      }
+    },
+    {
+      "id": "considerar",
+      "type": "verb",
+      "infinitive": "considerar",
+      "rank": 67,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to consider",
+        "distractors": [
+          "to finish",
+          "to convert / to turn into",
+          "to win / to earn"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "considerar.present.yo",
+            "person": "yo",
+            "form": "considero",
+            "spanish": "Yo considero.",
+            "english": "I consider."
+          },
+          {
+            "id": "considerar.present.tu",
+            "person": "tú",
+            "form": "consideras",
+            "spanish": "Tú consideras.",
+            "english": "You consider."
+          },
+          {
+            "id": "considerar.present.el",
+            "person": "él/ella/usted",
+            "form": "considera",
+            "spanish": "Él/ella considera.",
+            "english": "He/she considers."
+          },
+          {
+            "id": "considerar.present.nosotros",
+            "person": "nosotros",
+            "form": "consideramos",
+            "spanish": "Nosotros consideramos.",
+            "english": "We consider."
+          },
+          {
+            "id": "considerar.present.vosotros",
+            "person": "vosotros",
+            "form": "consideráis",
+            "spanish": "Vosotros consideráis.",
+            "english": "You all consider."
+          },
+          {
+            "id": "considerar.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "consideran",
+            "spanish": "Ellos/ellas consideran.",
+            "english": "They consider."
+          }
+        ]
+      }
+    },
+    {
+      "id": "oir",
+      "type": "verb",
+      "infinitive": "oír",
+      "rank": 68,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to hear",
+        "distractors": [
+          "to convert / to turn into",
+          "to win / to earn",
+          "to form"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "oir.present.yo",
+            "person": "yo",
+            "form": "oigo",
+            "spanish": "Yo oigo.",
+            "english": "I hear."
+          },
+          {
+            "id": "oir.present.tu",
+            "person": "tú",
+            "form": "oyes",
+            "spanish": "Tú oyes.",
+            "english": "You hear."
+          },
+          {
+            "id": "oir.present.el",
+            "person": "él/ella/usted",
+            "form": "oye",
+            "spanish": "Él/ella oye.",
+            "english": "He/she hears."
+          },
+          {
+            "id": "oir.present.nosotros",
+            "person": "nosotros",
+            "form": "oímos",
+            "spanish": "Nosotros oímos.",
+            "english": "We hear."
+          },
+          {
+            "id": "oir.present.vosotros",
+            "person": "vosotros",
+            "form": "oís",
+            "spanish": "Vosotros oís.",
+            "english": "You all hear."
+          },
+          {
+            "id": "oir.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "oyen",
+            "spanish": "Ellos/ellas oyen.",
+            "english": "They hear."
+          }
+        ]
+      }
+    },
+    {
+      "id": "acabar",
+      "type": "verb",
+      "infinitive": "acabar",
+      "rank": 69,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to finish",
+        "distractors": [
+          "to form",
+          "to bring",
+          "to leave / to split"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "acabar.present.yo",
+            "person": "yo",
+            "form": "acabo",
+            "spanish": "Yo acabo.",
+            "english": "I finish."
+          },
+          {
+            "id": "acabar.present.tu",
+            "person": "tú",
+            "form": "acabas",
+            "spanish": "Tú acabas.",
+            "english": "You finish."
+          },
+          {
+            "id": "acabar.present.el",
+            "person": "él/ella/usted",
+            "form": "acaba",
+            "spanish": "Él/ella acaba.",
+            "english": "He/she finishes."
+          },
+          {
+            "id": "acabar.present.nosotros",
+            "person": "nosotros",
+            "form": "acabamos",
+            "spanish": "Nosotros acabamos.",
+            "english": "We finish."
+          },
+          {
+            "id": "acabar.present.vosotros",
+            "person": "vosotros",
+            "form": "acabáis",
+            "spanish": "Vosotros acabáis.",
+            "english": "You all finish."
+          },
+          {
+            "id": "acabar.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "acaban",
+            "spanish": "Ellos/ellas acaban.",
+            "english": "They finish."
+          }
+        ]
+      }
+    },
+    {
+      "id": "convertir",
+      "type": "verb",
+      "infinitive": "convertir",
+      "rank": 70,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to convert / to turn into",
+        "distractors": [
+          "to form",
+          "to bring",
+          "to leave / to split"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "convertir.present.yo",
+            "person": "yo",
+            "form": "convierto",
+            "spanish": "Yo convierto.",
+            "english": "I convert."
+          },
+          {
+            "id": "convertir.present.tu",
+            "person": "tú",
+            "form": "conviertes",
+            "spanish": "Tú conviertes.",
+            "english": "You convert."
+          },
+          {
+            "id": "convertir.present.el",
+            "person": "él/ella/usted",
+            "form": "convierte",
+            "spanish": "Él/ella convierte.",
+            "english": "He/she converts."
+          },
+          {
+            "id": "convertir.present.nosotros",
+            "person": "nosotros",
+            "form": "convertimos",
+            "spanish": "Nosotros convertimos.",
+            "english": "We convert."
+          },
+          {
+            "id": "convertir.present.vosotros",
+            "person": "vosotros",
+            "form": "convertís",
+            "spanish": "Vosotros convertís.",
+            "english": "You all convert."
+          },
+          {
+            "id": "convertir.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "convierten",
+            "spanish": "Ellos/ellas convierten.",
+            "english": "They convert."
+          }
+        ]
+      }
+    },
+    {
+      "id": "ganar",
+      "type": "verb",
+      "infinitive": "ganar",
+      "rank": 71,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to win / to earn",
+        "distractors": [
+          "to bring",
+          "to leave / to split",
+          "to die"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "ganar.present.yo",
+            "person": "yo",
+            "form": "gano",
+            "spanish": "Yo gano.",
+            "english": "I win."
+          },
+          {
+            "id": "ganar.present.tu",
+            "person": "tú",
+            "form": "ganas",
+            "spanish": "Tú ganas.",
+            "english": "You win."
+          },
+          {
+            "id": "ganar.present.el",
+            "person": "él/ella/usted",
+            "form": "gana",
+            "spanish": "Él/ella gana.",
+            "english": "He/she wins."
+          },
+          {
+            "id": "ganar.present.nosotros",
+            "person": "nosotros",
+            "form": "ganamos",
+            "spanish": "Nosotros ganamos.",
+            "english": "We win."
+          },
+          {
+            "id": "ganar.present.vosotros",
+            "person": "vosotros",
+            "form": "ganáis",
+            "spanish": "Vosotros ganáis.",
+            "english": "You all win."
+          },
+          {
+            "id": "ganar.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "ganan",
+            "spanish": "Ellos/ellas ganan.",
+            "english": "They win."
+          }
+        ]
+      }
+    },
+    {
+      "id": "formar",
+      "type": "verb",
+      "infinitive": "formar",
+      "rank": 72,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to form",
+        "distractors": [
+          "to leave / to split",
+          "to die",
+          "to accept"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "formar.present.yo",
+            "person": "yo",
+            "form": "formo",
+            "spanish": "Yo formo.",
+            "english": "I form."
+          },
+          {
+            "id": "formar.present.tu",
+            "person": "tú",
+            "form": "formas",
+            "spanish": "Tú formas.",
+            "english": "You form."
+          },
+          {
+            "id": "formar.present.el",
+            "person": "él/ella/usted",
+            "form": "forma",
+            "spanish": "Él/ella forma.",
+            "english": "He/she forms."
+          },
+          {
+            "id": "formar.present.nosotros",
+            "person": "nosotros",
+            "form": "formamos",
+            "spanish": "Nosotros formamos.",
+            "english": "We form."
+          },
+          {
+            "id": "formar.present.vosotros",
+            "person": "vosotros",
+            "form": "formáis",
+            "spanish": "Vosotros formáis.",
+            "english": "You all form."
+          },
+          {
+            "id": "formar.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "forman",
+            "spanish": "Ellos/ellas forman.",
+            "english": "They form."
+          }
+        ]
+      }
+    },
+    {
+      "id": "traer",
+      "type": "verb",
+      "infinitive": "traer",
+      "rank": 73,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to bring",
+        "distractors": [
+          "to die",
+          "to accept",
+          "to carry out"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "traer.present.yo",
+            "person": "yo",
+            "form": "traigo",
+            "spanish": "Yo traigo.",
+            "english": "I bring."
+          },
+          {
+            "id": "traer.present.tu",
+            "person": "tú",
+            "form": "traes",
+            "spanish": "Tú traes.",
+            "english": "You bring."
+          },
+          {
+            "id": "traer.present.el",
+            "person": "él/ella/usted",
+            "form": "trae",
+            "spanish": "Él/ella trae.",
+            "english": "He/she brings."
+          },
+          {
+            "id": "traer.present.nosotros",
+            "person": "nosotros",
+            "form": "traemos",
+            "spanish": "Nosotros traemos.",
+            "english": "We bring."
+          },
+          {
+            "id": "traer.present.vosotros",
+            "person": "vosotros",
+            "form": "traéis",
+            "spanish": "Vosotros traéis.",
+            "english": "You all bring."
+          },
+          {
+            "id": "traer.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "traen",
+            "spanish": "Ellos/ellas traen.",
+            "english": "They bring."
+          }
+        ]
+      }
+    },
+    {
+      "id": "partir",
+      "type": "verb",
+      "infinitive": "partir",
+      "rank": 74,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to leave / to split",
+        "distractors": [
+          "to accept",
+          "to carry out",
+          "to suppose"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "partir.present.yo",
+            "person": "yo",
+            "form": "parto",
+            "spanish": "Yo parto.",
+            "english": "I depart."
+          },
+          {
+            "id": "partir.present.tu",
+            "person": "tú",
+            "form": "partes",
+            "spanish": "Tú partes.",
+            "english": "You depart."
+          },
+          {
+            "id": "partir.present.el",
+            "person": "él/ella/usted",
+            "form": "parte",
+            "spanish": "Él/ella parte.",
+            "english": "He/she departs."
+          },
+          {
+            "id": "partir.present.nosotros",
+            "person": "nosotros",
+            "form": "partimos",
+            "spanish": "Nosotros partimos.",
+            "english": "We depart."
+          },
+          {
+            "id": "partir.present.vosotros",
+            "person": "vosotros",
+            "form": "partís",
+            "spanish": "Vosotros partís.",
+            "english": "You all depart."
+          },
+          {
+            "id": "partir.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "parten",
+            "spanish": "Ellos/ellas parten.",
+            "english": "They depart."
+          }
+        ]
+      }
+    },
+    {
+      "id": "morir",
+      "type": "verb",
+      "infinitive": "morir",
+      "rank": 75,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to die",
+        "distractors": [
+          "to carry out",
+          "to suppose",
+          "to understand"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "morir.present.yo",
+            "person": "yo",
+            "form": "muero",
+            "spanish": "Yo muero.",
+            "english": "I die."
+          },
+          {
+            "id": "morir.present.tu",
+            "person": "tú",
+            "form": "mueres",
+            "spanish": "Tú mueres.",
+            "english": "You die."
+          },
+          {
+            "id": "morir.present.el",
+            "person": "él/ella/usted",
+            "form": "muere",
+            "spanish": "Él/ella muere.",
+            "english": "He/she dies."
+          },
+          {
+            "id": "morir.present.nosotros",
+            "person": "nosotros",
+            "form": "morimos",
+            "spanish": "Nosotros morimos.",
+            "english": "We die."
+          },
+          {
+            "id": "morir.present.vosotros",
+            "person": "vosotros",
+            "form": "morís",
+            "spanish": "Vosotros morís.",
+            "english": "You all die."
+          },
+          {
+            "id": "morir.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "mueren",
+            "spanish": "Ellos/ellas mueren.",
+            "english": "They die."
+          }
+        ]
+      }
+    },
+    {
+      "id": "aceptar",
+      "type": "verb",
+      "infinitive": "aceptar",
+      "rank": 76,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to accept",
+        "distractors": [
+          "to suppose",
+          "to understand",
+          "to achieve"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "aceptar.present.yo",
+            "person": "yo",
+            "form": "acepto",
+            "spanish": "Yo acepto.",
+            "english": "I accept."
+          },
+          {
+            "id": "aceptar.present.tu",
+            "person": "tú",
+            "form": "aceptas",
+            "spanish": "Tú aceptas.",
+            "english": "You accept."
+          },
+          {
+            "id": "aceptar.present.el",
+            "person": "él/ella/usted",
+            "form": "acepta",
+            "spanish": "Él/ella acepta.",
+            "english": "He/she accepts."
+          },
+          {
+            "id": "aceptar.present.nosotros",
+            "person": "nosotros",
+            "form": "aceptamos",
+            "spanish": "Nosotros aceptamos.",
+            "english": "We accept."
+          },
+          {
+            "id": "aceptar.present.vosotros",
+            "person": "vosotros",
+            "form": "aceptáis",
+            "spanish": "Vosotros aceptáis.",
+            "english": "You all accept."
+          },
+          {
+            "id": "aceptar.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "aceptan",
+            "spanish": "Ellos/ellas aceptan.",
+            "english": "They accept."
+          }
+        ]
+      }
+    },
+    {
+      "id": "realizar",
+      "type": "verb",
+      "infinitive": "realizar",
+      "rank": 77,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to carry out",
+        "distractors": [
+          "to understand",
+          "to achieve",
+          "to explain"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "realizar.present.yo",
+            "person": "yo",
+            "form": "realizo",
+            "spanish": "Yo realizo.",
+            "english": "I carry out."
+          },
+          {
+            "id": "realizar.present.tu",
+            "person": "tú",
+            "form": "realizas",
+            "spanish": "Tú realizas.",
+            "english": "You carry out."
+          },
+          {
+            "id": "realizar.present.el",
+            "person": "él/ella/usted",
+            "form": "realiza",
+            "spanish": "Él/ella realiza.",
+            "english": "He/she carry out."
+          },
+          {
+            "id": "realizar.present.nosotros",
+            "person": "nosotros",
+            "form": "realizamos",
+            "spanish": "Nosotros realizamos.",
+            "english": "We carry out."
+          },
+          {
+            "id": "realizar.present.vosotros",
+            "person": "vosotros",
+            "form": "realizáis",
+            "spanish": "Vosotros realizáis.",
+            "english": "You all carry out."
+          },
+          {
+            "id": "realizar.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "realizan",
+            "spanish": "Ellos/ellas realizan.",
+            "english": "They carry out."
+          }
+        ]
+      }
+    },
+    {
+      "id": "suponer",
+      "type": "verb",
+      "infinitive": "suponer",
+      "rank": 78,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to suppose",
+        "distractors": [
+          "to achieve",
+          "to explain",
+          "to ask"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "suponer.present.yo",
+            "person": "yo",
+            "form": "supongo",
+            "spanish": "Yo supongo.",
+            "english": "I suppose."
+          },
+          {
+            "id": "suponer.present.tu",
+            "person": "tú",
+            "form": "supones",
+            "spanish": "Tú supones.",
+            "english": "You suppose."
+          },
+          {
+            "id": "suponer.present.el",
+            "person": "él/ella/usted",
+            "form": "supone",
+            "spanish": "Él/ella supone.",
+            "english": "He/she supposes."
+          },
+          {
+            "id": "suponer.present.nosotros",
+            "person": "nosotros",
+            "form": "suponemos",
+            "spanish": "Nosotros suponemos.",
+            "english": "We suppose."
+          },
+          {
+            "id": "suponer.present.vosotros",
+            "person": "vosotros",
+            "form": "suponéis",
+            "spanish": "Vosotros suponéis.",
+            "english": "You all suppose."
+          },
+          {
+            "id": "suponer.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "suponen",
+            "spanish": "Ellos/ellas suponen.",
+            "english": "They suppose."
+          }
+        ]
+      }
+    },
+    {
+      "id": "comprender",
+      "type": "verb",
+      "infinitive": "comprender",
+      "rank": 79,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to understand",
+        "distractors": [
+          "to ask",
+          "to touch / to play",
+          "to recognize"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "comprender.present.yo",
+            "person": "yo",
+            "form": "comprendo",
+            "spanish": "Yo comprendo.",
+            "english": "I understand."
+          },
+          {
+            "id": "comprender.present.tu",
+            "person": "tú",
+            "form": "comprendes",
+            "spanish": "Tú comprendes.",
+            "english": "You understand."
+          },
+          {
+            "id": "comprender.present.el",
+            "person": "él/ella/usted",
+            "form": "comprende",
+            "spanish": "Él/ella comprende.",
+            "english": "He/she understands."
+          },
+          {
+            "id": "comprender.present.nosotros",
+            "person": "nosotros",
+            "form": "comprendemos",
+            "spanish": "Nosotros comprendemos.",
+            "english": "We understand."
+          },
+          {
+            "id": "comprender.present.vosotros",
+            "person": "vosotros",
+            "form": "comprendéis",
+            "spanish": "Vosotros comprendéis.",
+            "english": "You all understand."
+          },
+          {
+            "id": "comprender.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "comprenden",
+            "spanish": "Ellos/ellas comprenden.",
+            "english": "They understand."
+          }
+        ]
+      }
+    },
+    {
+      "id": "lograr",
+      "type": "verb",
+      "infinitive": "lograr",
+      "rank": 80,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to achieve",
+        "distractors": [
+          "to ask",
+          "to touch / to play",
+          "to recognize"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "lograr.present.yo",
+            "person": "yo",
+            "form": "logro",
+            "spanish": "Yo logro.",
+            "english": "I achieve."
+          },
+          {
+            "id": "lograr.present.tu",
+            "person": "tú",
+            "form": "logras",
+            "spanish": "Tú logras.",
+            "english": "You achieve."
+          },
+          {
+            "id": "lograr.present.el",
+            "person": "él/ella/usted",
+            "form": "logra",
+            "spanish": "Él/ella logra.",
+            "english": "He/she achieves."
+          },
+          {
+            "id": "lograr.present.nosotros",
+            "person": "nosotros",
+            "form": "logramos",
+            "spanish": "Nosotros logramos.",
+            "english": "We achieve."
+          },
+          {
+            "id": "lograr.present.vosotros",
+            "person": "vosotros",
+            "form": "lográis",
+            "spanish": "Vosotros lográis.",
+            "english": "You all achieve."
+          },
+          {
+            "id": "lograr.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "logran",
+            "spanish": "Ellos/ellas logran.",
+            "english": "They achieve."
+          }
+        ]
+      }
+    },
+    {
+      "id": "explicar",
+      "type": "verb",
+      "infinitive": "explicar",
+      "rank": 81,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to explain",
+        "distractors": [
+          "to touch / to play",
+          "to recognize",
+          "to study"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "explicar.present.yo",
+            "person": "yo",
+            "form": "explico",
+            "spanish": "Yo explico.",
+            "english": "I explain."
+          },
+          {
+            "id": "explicar.present.tu",
+            "person": "tú",
+            "form": "explicas",
+            "spanish": "Tú explicas.",
+            "english": "You explain."
+          },
+          {
+            "id": "explicar.present.el",
+            "person": "él/ella/usted",
+            "form": "explica",
+            "spanish": "Él/ella explica.",
+            "english": "He/she explains."
+          },
+          {
+            "id": "explicar.present.nosotros",
+            "person": "nosotros",
+            "form": "explicamos",
+            "spanish": "Nosotros explicamos.",
+            "english": "We explain."
+          },
+          {
+            "id": "explicar.present.vosotros",
+            "person": "vosotros",
+            "form": "explicáis",
+            "spanish": "Vosotros explicáis.",
+            "english": "You all explain."
+          },
+          {
+            "id": "explicar.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "explican",
+            "spanish": "Ellos/ellas explican.",
+            "english": "They explain."
+          }
+        ]
+      }
+    },
+    {
+      "id": "preguntar",
+      "type": "verb",
+      "infinitive": "preguntar",
+      "rank": 82,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to ask",
+        "distractors": [
+          "to recognize",
+          "to study",
+          "to reach"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "preguntar.present.yo",
+            "person": "yo",
+            "form": "pregunto",
+            "spanish": "Yo pregunto.",
+            "english": "I ask."
+          },
+          {
+            "id": "preguntar.present.tu",
+            "person": "tú",
+            "form": "preguntas",
+            "spanish": "Tú preguntas.",
+            "english": "You ask."
+          },
+          {
+            "id": "preguntar.present.el",
+            "person": "él/ella/usted",
+            "form": "pregunta",
+            "spanish": "Él/ella pregunta.",
+            "english": "He/she asks."
+          },
+          {
+            "id": "preguntar.present.nosotros",
+            "person": "nosotros",
+            "form": "preguntamos",
+            "spanish": "Nosotros preguntamos.",
+            "english": "We ask."
+          },
+          {
+            "id": "preguntar.present.vosotros",
+            "person": "vosotros",
+            "form": "preguntáis",
+            "spanish": "Vosotros preguntáis.",
+            "english": "You all ask."
+          },
+          {
+            "id": "preguntar.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "preguntan",
+            "spanish": "Ellos/ellas preguntan.",
+            "english": "They ask."
+          }
+        ]
+      }
+    },
+    {
+      "id": "tocar",
+      "type": "verb",
+      "infinitive": "tocar",
+      "rank": 83,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to touch / to play",
+        "distractors": [
+          "to study",
+          "to reach",
+          "to be born"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "tocar.present.yo",
+            "person": "yo",
+            "form": "toco",
+            "spanish": "Yo toco.",
+            "english": "I touch."
+          },
+          {
+            "id": "tocar.present.tu",
+            "person": "tú",
+            "form": "tocas",
+            "spanish": "Tú tocas.",
+            "english": "You touch."
+          },
+          {
+            "id": "tocar.present.el",
+            "person": "él/ella/usted",
+            "form": "toca",
+            "spanish": "Él/ella toca.",
+            "english": "He/she touches."
+          },
+          {
+            "id": "tocar.present.nosotros",
+            "person": "nosotros",
+            "form": "tocamos",
+            "spanish": "Nosotros tocamos.",
+            "english": "We touch."
+          },
+          {
+            "id": "tocar.present.vosotros",
+            "person": "vosotros",
+            "form": "tocáis",
+            "spanish": "Vosotros tocáis.",
+            "english": "You all touch."
+          },
+          {
+            "id": "tocar.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "tocan",
+            "spanish": "Ellos/ellas tocan.",
+            "english": "They touch."
+          }
+        ]
+      }
+    },
+    {
+      "id": "reconocer",
+      "type": "verb",
+      "infinitive": "reconocer",
+      "rank": 84,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to recognize",
+        "distractors": [
+          "to reach",
+          "to be born",
+          "to direct"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "reconocer.present.yo",
+            "person": "yo",
+            "form": "reconozco",
+            "spanish": "Yo reconozco.",
+            "english": "I recognize."
+          },
+          {
+            "id": "reconocer.present.tu",
+            "person": "tú",
+            "form": "reconoces",
+            "spanish": "Tú reconoces.",
+            "english": "You recognize."
+          },
+          {
+            "id": "reconocer.present.el",
+            "person": "él/ella/usted",
+            "form": "reconoce",
+            "spanish": "Él/ella reconoce.",
+            "english": "He/she recognizes."
+          },
+          {
+            "id": "reconocer.present.nosotros",
+            "person": "nosotros",
+            "form": "reconocemos",
+            "spanish": "Nosotros reconocemos.",
+            "english": "We recognize."
+          },
+          {
+            "id": "reconocer.present.vosotros",
+            "person": "vosotros",
+            "form": "reconocéis",
+            "spanish": "Vosotros reconocéis.",
+            "english": "You all recognize."
+          },
+          {
+            "id": "reconocer.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "reconocen",
+            "spanish": "Ellos/ellas reconocen.",
+            "english": "They recognize."
+          }
+        ]
+      }
+    },
+    {
+      "id": "estudiar",
+      "type": "verb",
+      "infinitive": "estudiar",
+      "rank": 85,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to study",
+        "distractors": [
+          "to be born",
+          "to direct",
+          "to run"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "estudiar.present.yo",
+            "person": "yo",
+            "form": "estudio",
+            "spanish": "Yo estudio.",
+            "english": "I study."
+          },
+          {
+            "id": "estudiar.present.tu",
+            "person": "tú",
+            "form": "estudias",
+            "spanish": "Tú estudias.",
+            "english": "You study."
+          },
+          {
+            "id": "estudiar.present.el",
+            "person": "él/ella/usted",
+            "form": "estudia",
+            "spanish": "Él/ella estudia.",
+            "english": "He/she studies."
+          },
+          {
+            "id": "estudiar.present.nosotros",
+            "person": "nosotros",
+            "form": "estudiamos",
+            "spanish": "Nosotros estudiamos.",
+            "english": "We study."
+          },
+          {
+            "id": "estudiar.present.vosotros",
+            "person": "vosotros",
+            "form": "estudiáis",
+            "spanish": "Vosotros estudiáis.",
+            "english": "You all study."
+          },
+          {
+            "id": "estudiar.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "estudian",
+            "spanish": "Ellos/ellas estudian.",
+            "english": "They study."
+          }
+        ]
+      }
+    },
+    {
+      "id": "alcanzar",
+      "type": "verb",
+      "infinitive": "alcanzar",
+      "rank": 86,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to reach",
+        "distractors": [
+          "to direct",
+          "to run",
+          "to use"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "alcanzar.present.yo",
+            "person": "yo",
+            "form": "alcanzo",
+            "spanish": "Yo alcanzo.",
+            "english": "I reach."
+          },
+          {
+            "id": "alcanzar.present.tu",
+            "person": "tú",
+            "form": "alcanzas",
+            "spanish": "Tú alcanzas.",
+            "english": "You reach."
+          },
+          {
+            "id": "alcanzar.present.el",
+            "person": "él/ella/usted",
+            "form": "alcanza",
+            "spanish": "Él/ella alcanza.",
+            "english": "He/she reaches."
+          },
+          {
+            "id": "alcanzar.present.nosotros",
+            "person": "nosotros",
+            "form": "alcanzamos",
+            "spanish": "Nosotros alcanzamos.",
+            "english": "We reach."
+          },
+          {
+            "id": "alcanzar.present.vosotros",
+            "person": "vosotros",
+            "form": "alcanzáis",
+            "spanish": "Vosotros alcanzáis.",
+            "english": "You all reach."
+          },
+          {
+            "id": "alcanzar.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "alcanzan",
+            "spanish": "Ellos/ellas alcanzan.",
+            "english": "They reach."
+          }
+        ]
+      }
+    },
+    {
+      "id": "nacer",
+      "type": "verb",
+      "infinitive": "nacer",
+      "rank": 87,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to be born",
+        "distractors": [
+          "to run",
+          "to use",
+          "to pay"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "nacer.present.yo",
+            "person": "yo",
+            "form": "nazco",
+            "spanish": "Yo nazco.",
+            "english": "I be born."
+          },
+          {
+            "id": "nacer.present.tu",
+            "person": "tú",
+            "form": "naces",
+            "spanish": "Tú naces.",
+            "english": "You be born."
+          },
+          {
+            "id": "nacer.present.el",
+            "person": "él/ella/usted",
+            "form": "nace",
+            "spanish": "Él/ella nace.",
+            "english": "He/she be born."
+          },
+          {
+            "id": "nacer.present.nosotros",
+            "person": "nosotros",
+            "form": "nacemos",
+            "spanish": "Nosotros nacemos.",
+            "english": "We be born."
+          },
+          {
+            "id": "nacer.present.vosotros",
+            "person": "vosotros",
+            "form": "nacéis",
+            "spanish": "Vosotros nacéis.",
+            "english": "You all be born."
+          },
+          {
+            "id": "nacer.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "nacen",
+            "spanish": "Ellos/ellas nacen.",
+            "english": "They be born."
+          }
+        ]
+      }
+    },
+    {
+      "id": "dirigir",
+      "type": "verb",
+      "infinitive": "dirigir",
+      "rank": 88,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to direct",
+        "distractors": [
+          "to use",
+          "to pay",
+          "to help"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "dirigir.present.yo",
+            "person": "yo",
+            "form": "dirijo",
+            "spanish": "Yo dirijo.",
+            "english": "I direct."
+          },
+          {
+            "id": "dirigir.present.tu",
+            "person": "tú",
+            "form": "diriges",
+            "spanish": "Tú diriges.",
+            "english": "You direct."
+          },
+          {
+            "id": "dirigir.present.el",
+            "person": "él/ella/usted",
+            "form": "dirige",
+            "spanish": "Él/ella dirige.",
+            "english": "He/she directs."
+          },
+          {
+            "id": "dirigir.present.nosotros",
+            "person": "nosotros",
+            "form": "dirigimos",
+            "spanish": "Nosotros dirigimos.",
+            "english": "We direct."
+          },
+          {
+            "id": "dirigir.present.vosotros",
+            "person": "vosotros",
+            "form": "dirigís",
+            "spanish": "Vosotros dirigís.",
+            "english": "You all direct."
+          },
+          {
+            "id": "dirigir.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "dirigen",
+            "spanish": "Ellos/ellas dirigen.",
+            "english": "They direct."
+          }
+        ]
+      }
+    },
+    {
+      "id": "correr",
+      "type": "verb",
+      "infinitive": "correr",
+      "rank": 89,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to run",
+        "distractors": [
+          "to pay",
+          "to help",
+          "to please / to like"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "correr.present.yo",
+            "person": "yo",
+            "form": "corro",
+            "spanish": "Yo corro.",
+            "english": "I run."
+          },
+          {
+            "id": "correr.present.tu",
+            "person": "tú",
+            "form": "corres",
+            "spanish": "Tú corres.",
+            "english": "You run."
+          },
+          {
+            "id": "correr.present.el",
+            "person": "él/ella/usted",
+            "form": "corre",
+            "spanish": "Él/ella corre.",
+            "english": "He/she runs."
+          },
+          {
+            "id": "correr.present.nosotros",
+            "person": "nosotros",
+            "form": "corremos",
+            "spanish": "Nosotros corremos.",
+            "english": "We run."
+          },
+          {
+            "id": "correr.present.vosotros",
+            "person": "vosotros",
+            "form": "corréis",
+            "spanish": "Vosotros corréis.",
+            "english": "You all run."
+          },
+          {
+            "id": "correr.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "corren",
+            "spanish": "Ellos/ellas corren.",
+            "english": "They run."
+          }
+        ]
+      }
+    },
+    {
+      "id": "utilizar",
+      "type": "verb",
+      "infinitive": "utilizar",
+      "rank": 90,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to use",
+        "distractors": [
+          "to help",
+          "to please / to like",
+          "to play"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "utilizar.present.yo",
+            "person": "yo",
+            "form": "utilizo",
+            "spanish": "Yo utilizo.",
+            "english": "I use."
+          },
+          {
+            "id": "utilizar.present.tu",
+            "person": "tú",
+            "form": "utilizas",
+            "spanish": "Tú utilizas.",
+            "english": "You use."
+          },
+          {
+            "id": "utilizar.present.el",
+            "person": "él/ella/usted",
+            "form": "utiliza",
+            "spanish": "Él/ella utiliza.",
+            "english": "He/she uses."
+          },
+          {
+            "id": "utilizar.present.nosotros",
+            "person": "nosotros",
+            "form": "utilizamos",
+            "spanish": "Nosotros utilizamos.",
+            "english": "We use."
+          },
+          {
+            "id": "utilizar.present.vosotros",
+            "person": "vosotros",
+            "form": "utilizáis",
+            "spanish": "Vosotros utilizáis.",
+            "english": "You all use."
+          },
+          {
+            "id": "utilizar.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "utilizan",
+            "spanish": "Ellos/ellas utilizan.",
+            "english": "They use."
+          }
+        ]
+      }
+    },
+    {
+      "id": "pagar",
+      "type": "verb",
+      "infinitive": "pagar",
+      "rank": 91,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to pay",
+        "distractors": [
+          "to please / to like",
+          "to play",
+          "to listen"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "pagar.present.yo",
+            "person": "yo",
+            "form": "pago",
+            "spanish": "Yo pago.",
+            "english": "I pay."
+          },
+          {
+            "id": "pagar.present.tu",
+            "person": "tú",
+            "form": "pagas",
+            "spanish": "Tú pagas.",
+            "english": "You pay."
+          },
+          {
+            "id": "pagar.present.el",
+            "person": "él/ella/usted",
+            "form": "paga",
+            "spanish": "Él/ella paga.",
+            "english": "He/she pays."
+          },
+          {
+            "id": "pagar.present.nosotros",
+            "person": "nosotros",
+            "form": "pagamos",
+            "spanish": "Nosotros pagamos.",
+            "english": "We pay."
+          },
+          {
+            "id": "pagar.present.vosotros",
+            "person": "vosotros",
+            "form": "pagáis",
+            "spanish": "Vosotros pagáis.",
+            "english": "You all pay."
+          },
+          {
+            "id": "pagar.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "pagan",
+            "spanish": "Ellos/ellas pagan.",
+            "english": "They pay."
+          }
+        ]
+      }
+    },
+    {
+      "id": "ayudar",
+      "type": "verb",
+      "infinitive": "ayudar",
+      "rank": 92,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to help",
+        "distractors": [
+          "to play",
+          "to listen",
+          "to offer"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "ayudar.present.yo",
+            "person": "yo",
+            "form": "ayudo",
+            "spanish": "Yo ayudo.",
+            "english": "I help."
+          },
+          {
+            "id": "ayudar.present.tu",
+            "person": "tú",
+            "form": "ayudas",
+            "spanish": "Tú ayudas.",
+            "english": "You help."
+          },
+          {
+            "id": "ayudar.present.el",
+            "person": "él/ella/usted",
+            "form": "ayuda",
+            "spanish": "Él/ella ayuda.",
+            "english": "He/she helps."
+          },
+          {
+            "id": "ayudar.present.nosotros",
+            "person": "nosotros",
+            "form": "ayudamos",
+            "spanish": "Nosotros ayudamos.",
+            "english": "We help."
+          },
+          {
+            "id": "ayudar.present.vosotros",
+            "person": "vosotros",
+            "form": "ayudáis",
+            "spanish": "Vosotros ayudáis.",
+            "english": "You all help."
+          },
+          {
+            "id": "ayudar.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "ayudan",
+            "spanish": "Ellos/ellas ayudan.",
+            "english": "They help."
+          }
+        ]
+      }
+    },
+    {
+      "id": "gustar",
+      "type": "verb",
+      "infinitive": "gustar",
+      "rank": 93,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to please / to like",
+        "distractors": [
+          "to listen",
+          "to offer",
+          "to discover"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "gustar.present.yo",
+            "person": "yo",
+            "form": "gusto",
+            "spanish": "Yo gusto.",
+            "english": "I please."
+          },
+          {
+            "id": "gustar.present.tu",
+            "person": "tú",
+            "form": "gustas",
+            "spanish": "Tú gustas.",
+            "english": "You please."
+          },
+          {
+            "id": "gustar.present.el",
+            "person": "él/ella/usted",
+            "form": "gusta",
+            "spanish": "Él/ella gusta.",
+            "english": "He/she pleases."
+          },
+          {
+            "id": "gustar.present.nosotros",
+            "person": "nosotros",
+            "form": "gustamos",
+            "spanish": "Nosotros gustamos.",
+            "english": "We please."
+          },
+          {
+            "id": "gustar.present.vosotros",
+            "person": "vosotros",
+            "form": "gustáis",
+            "spanish": "Vosotros gustáis.",
+            "english": "You all please."
+          },
+          {
+            "id": "gustar.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "gustan",
+            "spanish": "Ellos/ellas gustan.",
+            "english": "They please."
+          }
+        ]
+      }
+    },
+    {
+      "id": "jugar",
+      "type": "verb",
+      "infinitive": "jugar",
+      "rank": 94,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to play",
+        "distractors": [
+          "to offer",
+          "to discover",
+          "to try"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "jugar.present.yo",
+            "person": "yo",
+            "form": "juego",
+            "spanish": "Yo juego.",
+            "english": "I play."
+          },
+          {
+            "id": "jugar.present.tu",
+            "person": "tú",
+            "form": "juegas",
+            "spanish": "Tú juegas.",
+            "english": "You play."
+          },
+          {
+            "id": "jugar.present.el",
+            "person": "él/ella/usted",
+            "form": "juega",
+            "spanish": "Él/ella juega.",
+            "english": "He/she plays."
+          },
+          {
+            "id": "jugar.present.nosotros",
+            "person": "nosotros",
+            "form": "jugamos",
+            "spanish": "Nosotros jugamos.",
+            "english": "We play."
+          },
+          {
+            "id": "jugar.present.vosotros",
+            "person": "vosotros",
+            "form": "jugáis",
+            "spanish": "Vosotros jugáis.",
+            "english": "You all play."
+          },
+          {
+            "id": "jugar.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "juegan",
+            "spanish": "Ellos/ellas juegan.",
+            "english": "They play."
+          }
+        ]
+      }
+    },
+    {
+      "id": "escuchar",
+      "type": "verb",
+      "infinitive": "escuchar",
+      "rank": 95,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to listen",
+        "distractors": [
+          "to discover",
+          "to try",
+          "to decide"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "escuchar.present.yo",
+            "person": "yo",
+            "form": "escucho",
+            "spanish": "Yo escucho.",
+            "english": "I listen."
+          },
+          {
+            "id": "escuchar.present.tu",
+            "person": "tú",
+            "form": "escuchas",
+            "spanish": "Tú escuchas.",
+            "english": "You listen."
+          },
+          {
+            "id": "escuchar.present.el",
+            "person": "él/ella/usted",
+            "form": "escucha",
+            "spanish": "Él/ella escucha.",
+            "english": "He/she listens."
+          },
+          {
+            "id": "escuchar.present.nosotros",
+            "person": "nosotros",
+            "form": "escuchamos",
+            "spanish": "Nosotros escuchamos.",
+            "english": "We listen."
+          },
+          {
+            "id": "escuchar.present.vosotros",
+            "person": "vosotros",
+            "form": "escucháis",
+            "spanish": "Vosotros escucháis.",
+            "english": "You all listen."
+          },
+          {
+            "id": "escuchar.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "escuchan",
+            "spanish": "Ellos/ellas escuchan.",
+            "english": "They listen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "ofrecer",
+      "type": "verb",
+      "infinitive": "ofrecer",
+      "rank": 96,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to offer",
+        "distractors": [
+          "to try",
+          "to decide",
+          "to repeat"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "ofrecer.present.yo",
+            "person": "yo",
+            "form": "ofrezco",
+            "spanish": "Yo ofrezco.",
+            "english": "I offer."
+          },
+          {
+            "id": "ofrecer.present.tu",
+            "person": "tú",
+            "form": "ofreces",
+            "spanish": "Tú ofreces.",
+            "english": "You offer."
+          },
+          {
+            "id": "ofrecer.present.el",
+            "person": "él/ella/usted",
+            "form": "ofrece",
+            "spanish": "Él/ella ofrece.",
+            "english": "He/she offers."
+          },
+          {
+            "id": "ofrecer.present.nosotros",
+            "person": "nosotros",
+            "form": "ofrecemos",
+            "spanish": "Nosotros ofrecemos.",
+            "english": "We offer."
+          },
+          {
+            "id": "ofrecer.present.vosotros",
+            "person": "vosotros",
+            "form": "ofrecéis",
+            "spanish": "Vosotros ofrecéis.",
+            "english": "You all offer."
+          },
+          {
+            "id": "ofrecer.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "ofrecen",
+            "spanish": "Ellos/ellas ofrecen.",
+            "english": "They offer."
+          }
+        ]
+      }
+    },
+    {
+      "id": "descubrir",
+      "type": "verb",
+      "infinitive": "descubrir",
+      "rank": 97,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to discover",
+        "distractors": [
+          "to decide",
+          "to repeat",
+          "to be"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "descubrir.present.yo",
+            "person": "yo",
+            "form": "descubro",
+            "spanish": "Yo descubro.",
+            "english": "I discover."
+          },
+          {
+            "id": "descubrir.present.tu",
+            "person": "tú",
+            "form": "descubres",
+            "spanish": "Tú descubres.",
+            "english": "You discover."
+          },
+          {
+            "id": "descubrir.present.el",
+            "person": "él/ella/usted",
+            "form": "descubre",
+            "spanish": "Él/ella descubre.",
+            "english": "He/she discovers."
+          },
+          {
+            "id": "descubrir.present.nosotros",
+            "person": "nosotros",
+            "form": "descubrimos",
+            "spanish": "Nosotros descubrimos.",
+            "english": "We discover."
+          },
+          {
+            "id": "descubrir.present.vosotros",
+            "person": "vosotros",
+            "form": "descubrís",
+            "spanish": "Vosotros descubrís.",
+            "english": "You all discover."
+          },
+          {
+            "id": "descubrir.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "descubren",
+            "spanish": "Ellos/ellas descubren.",
+            "english": "They discover."
+          }
+        ]
+      }
+    },
+    {
+      "id": "intentar",
+      "type": "verb",
+      "infinitive": "intentar",
+      "rank": 98,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to try",
+        "distractors": [
+          "to repeat",
+          "to have (auxiliary)",
+          "to be"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "intentar.present.yo",
+            "person": "yo",
+            "form": "intento",
+            "spanish": "Yo intento.",
+            "english": "I try."
+          },
+          {
+            "id": "intentar.present.tu",
+            "person": "tú",
+            "form": "intentas",
+            "spanish": "Tú intentas.",
+            "english": "You try."
+          },
+          {
+            "id": "intentar.present.el",
+            "person": "él/ella/usted",
+            "form": "intenta",
+            "spanish": "Él/ella intenta.",
+            "english": "He/she tries."
+          },
+          {
+            "id": "intentar.present.nosotros",
+            "person": "nosotros",
+            "form": "intentamos",
+            "spanish": "Nosotros intentamos.",
+            "english": "We try."
+          },
+          {
+            "id": "intentar.present.vosotros",
+            "person": "vosotros",
+            "form": "intentáis",
+            "spanish": "Vosotros intentáis.",
+            "english": "You all try."
+          },
+          {
+            "id": "intentar.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "intentan",
+            "spanish": "Ellos/ellas intentan.",
+            "english": "They try."
+          }
+        ]
+      }
+    },
+    {
+      "id": "decidir",
+      "type": "verb",
+      "infinitive": "decidir",
+      "rank": 99,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to decide",
+        "distractors": [
+          "to be",
+          "to have (auxiliary)",
+          "to be"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "decidir.present.yo",
+            "person": "yo",
+            "form": "decido",
+            "spanish": "Yo decido.",
+            "english": "I decide."
+          },
+          {
+            "id": "decidir.present.tu",
+            "person": "tú",
+            "form": "decides",
+            "spanish": "Tú decides.",
+            "english": "You decide."
+          },
+          {
+            "id": "decidir.present.el",
+            "person": "él/ella/usted",
+            "form": "decide",
+            "spanish": "Él/ella decide.",
+            "english": "He/she decides."
+          },
+          {
+            "id": "decidir.present.nosotros",
+            "person": "nosotros",
+            "form": "decidimos",
+            "spanish": "Nosotros decidimos.",
+            "english": "We decide."
+          },
+          {
+            "id": "decidir.present.vosotros",
+            "person": "vosotros",
+            "form": "decidís",
+            "spanish": "Vosotros decidís.",
+            "english": "You all decide."
+          },
+          {
+            "id": "decidir.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "deciden",
+            "spanish": "Ellos/ellas deciden.",
+            "english": "They decide."
+          }
+        ]
+      }
+    },
+    {
+      "id": "repetir",
+      "type": "verb",
+      "infinitive": "repetir",
+      "rank": 100,
+      "region": "es-ES",
+      "source": "Seeded from a learner-focused common Spanish verb frequency order. Present indicative forms are checked against regular Spanish conjugation rules and explicit common-irregular overrides.",
+      "meaning": {
+        "correct": "to repeat",
+        "distractors": [
+          "to be",
+          "to have (auxiliary)",
+          "to be"
+        ]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "repetir.present.yo",
+            "person": "yo",
+            "form": "repito",
+            "spanish": "Yo repito.",
+            "english": "I repeat."
+          },
+          {
+            "id": "repetir.present.tu",
+            "person": "tú",
+            "form": "repites",
+            "spanish": "Tú repites.",
+            "english": "You repeat."
+          },
+          {
+            "id": "repetir.present.el",
+            "person": "él/ella/usted",
+            "form": "repite",
+            "spanish": "Él/ella repite.",
+            "english": "He/she repeats."
+          },
+          {
+            "id": "repetir.present.nosotros",
+            "person": "nosotros",
+            "form": "repetimos",
+            "spanish": "Nosotros repetimos.",
+            "english": "We repeat."
+          },
+          {
+            "id": "repetir.present.vosotros",
+            "person": "vosotros",
+            "form": "repetís",
+            "spanish": "Vosotros repetís.",
+            "english": "You all repeat."
+          },
+          {
+            "id": "repetir.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "repiten",
+            "spanish": "Ellos/ellas repiten.",
+            "english": "They repeat."
           }
         ]
       }

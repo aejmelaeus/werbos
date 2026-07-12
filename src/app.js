@@ -1,5 +1,5 @@
 import { loadVerbData } from "./data-loader.js";
-import { answerForm, answerMeaning, createVerbSession } from "./practice-engine.js";
+import { answerForm, answerMeaning, createVerbSession, pickRandomVerb } from "./practice-engine.js";
 import { loadProgress, recordAttempt } from "./progress-store.js";
 
 const app = document.querySelector("#app");
@@ -26,14 +26,15 @@ async function init() {
 
 function renderStart() {
   const attempts = progress.attempts.length;
+  const verbCount = verbData.items.length;
   app.innerHTML = `
     <section class="app-view start-view">
       ${renderHeader()}
       <article class="intro-card card">
         <div>
           <p class="eyebrow">Practice Spanish verbs</p>
-          <h1>Start with decir</h1>
-          <p class="intro-copy">Practice the meaning first, then identify a random sentence form. Progress is saved locally on this device.</p>
+          <h1>Start practice</h1>
+          <p class="intro-copy">Practice the meaning first, then identify a sentence form from a random verb. Progress is saved locally on this device.</p>
         </div>
         <button class="primary-action" data-action="start">Start</button>
       </article>
@@ -43,8 +44,8 @@ function renderStart() {
           <p>recent attempts</p>
         </div>
         <div>
-          <span>1</span>
-          <p>verb loaded</p>
+          <span>${verbCount}</span>
+          <p>verbs loaded</p>
         </div>
       </section>
     </section>
@@ -192,13 +193,12 @@ app.addEventListener("click", (event) => {
 
   const action = button.dataset.action;
   if (action === "start") {
-    session = createVerbSession(verbData.items[0]);
-    renderMeaningStep();
+    startRandomSession();
     return;
   }
 
   if (action === "next") {
-    renderStart();
+    startRandomSession();
     return;
   }
 
@@ -220,6 +220,11 @@ app.addEventListener("click", (event) => {
     finishAttempt(session.status, session.status === "completed" ? "success" : "failure");
   }
 });
+
+function startRandomSession() {
+  session = createVerbSession(pickRandomVerb(verbData.items));
+  renderMeaningStep();
+}
 
 function finishAttempt(status, soundName) {
   progress = recordAttempt(progress, {
