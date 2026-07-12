@@ -343,6 +343,34 @@ body {
   line-height: 1.65;
 }
 
+.sound-card {
+  padding: 1rem;
+}
+
+.sound-list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.sound-item {
+  display: grid;
+  gap: 0.75rem;
+  border-radius: 0.5rem;
+  background: var(--werbos-paper);
+  padding: 1rem;
+}
+
+.sound-copy {
+  margin: 0.35rem 0 0;
+  color: #69655e;
+  font-size: 0.875rem;
+  line-height: 1.45;
+}
+
+.sound-item audio {
+  width: 100%;
+}
+
 .type-caret::after {
   content: "";
   display: inline-block;

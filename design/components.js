@@ -9,6 +9,9 @@ const pwaIcon192 = new URL("brand/pwa-icon-192.png", assetBase).href;
 const pwaIcon512 = new URL("brand/pwa-icon-512.png", assetBase).href;
 const zorritoSpeech = new URL("brand/zorrito-speech.png", assetBase).href;
 const zorritoSpeech2x = new URL("brand/zorrito-speech@2x.png", assetBase).href;
+const successSound = new URL("sounds/werbos-success.wav", assetBase).href;
+const failureSound = new URL("sounds/werbos-failure.wav", assetBase).href;
+const lessonCompleteSound = new URL("sounds/werbos-lesson-complete.wav", assetBase).href;
 
 const components = {
   brand: `
@@ -86,6 +89,33 @@ const components = {
         <div class="speech-bubble">
           <p class="eyebrow">Zorrito explains</p>
           <p class="speech-text type-caret" data-speech-text></p>
+        </div>
+      </div>
+    </article>
+  `,
+  sounds: `
+    <article class="card sound-card">
+      <div class="sound-list">
+        <div class="sound-item">
+          <div>
+            <p class="eyebrow">Success</p>
+            <p class="sound-copy">Catchy positive feedback for a correct answer.</p>
+          </div>
+          <audio controls preload="metadata" src="${successSound}"></audio>
+        </div>
+        <div class="sound-item">
+          <div>
+            <p class="eyebrow">Failure</p>
+            <p class="sound-copy">Subtle, kind feedback for a missed answer.</p>
+          </div>
+          <audio controls preload="metadata" src="${failureSound}"></audio>
+        </div>
+        <div class="sound-item">
+          <div>
+            <p class="eyebrow">Lesson complete</p>
+            <p class="sound-copy">Completion cue for finishing a practice set.</p>
+          </div>
+          <audio controls preload="metadata" src="${lessonCompleteSound}"></audio>
         </div>
       </div>
     </article>
