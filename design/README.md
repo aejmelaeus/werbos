@@ -14,7 +14,11 @@ should later move these decisions into the compiled Tailwind build described in
 - `components/hero.html` - standalone hero word preview.
 - `components/description.html` - standalone short description preview.
 - `components/speech-bubble.html` - standalone Zorrito speech bubble preview.
+- `components/sounds.html` - standalone sound asset preview.
 - `components/quiz.html` - standalone quiz screen preview.
+- `sounds/werbos-success.wav` - correct-answer success sound.
+- `sounds/werbos-failure.wav` - subtle missed-answer sound.
+- `sounds/werbos-lesson-complete.wav` - lesson completion sound.
 - `brand/zorrito-speech.png` - speech-bubble-sized Zorrito avatar.
 - `brand/zorrito-speech@2x.png` - high-density source for the same avatar.
 
@@ -27,6 +31,7 @@ The artifact covers:
 - Short descriptive copy.
 - Zorrito speech bubble with animated text.
 - Zorrito speech-bubble avatar image.
+- Success, failure, and lesson-complete sounds.
 - Multiple-choice quiz screen with three to four answers.
 - Real logo and icon treatments.
 
