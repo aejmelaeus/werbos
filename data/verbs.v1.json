@@ -1,0 +1,196 @@
+{
+  "version": 1,
+  "language": "es",
+  "region": "es-ES",
+  "items": [
+    {
+      "id": "decir",
+      "type": "verb",
+      "infinitive": "decir",
+      "rank": 1,
+      "region": "es-ES",
+      "meaning": {
+        "correct": "to say / to tell",
+        "distractors": ["to hear", "to feel", "to think"]
+      },
+      "tenses": {
+        "present": [
+          {
+            "id": "decir.present.yo",
+            "person": "yo",
+            "form": "digo",
+            "spanish": "Digo la verdad.",
+            "english": "I tell the truth."
+          },
+          {
+            "id": "decir.present.tu",
+            "person": "t\u00fa",
+            "form": "dices",
+            "spanish": "Dices la verdad.",
+            "english": "You tell the truth."
+          },
+          {
+            "id": "decir.present.el",
+            "person": "\u00e9l/ella/usted",
+            "form": "dice",
+            "spanish": "Dice la verdad.",
+            "english": "He/she tells the truth."
+          },
+          {
+            "id": "decir.present.nosotros",
+            "person": "nosotros",
+            "form": "decimos",
+            "spanish": "Decimos la verdad.",
+            "english": "We tell the truth."
+          },
+          {
+            "id": "decir.present.vosotros",
+            "person": "vosotros",
+            "form": "dec\u00eds",
+            "spanish": "Dec\u00eds la verdad.",
+            "english": "You all tell the truth."
+          },
+          {
+            "id": "decir.present.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "dicen",
+            "spanish": "Dicen la verdad.",
+            "english": "They tell the truth."
+          }
+        ],
+        "preterite": [
+          {
+            "id": "decir.preterite.yo",
+            "person": "yo",
+            "form": "dije",
+            "spanish": "Dije la verdad.",
+            "english": "I told the truth."
+          },
+          {
+            "id": "decir.preterite.tu",
+            "person": "t\u00fa",
+            "form": "dijiste",
+            "spanish": "Dijiste la verdad.",
+            "english": "You told the truth."
+          },
+          {
+            "id": "decir.preterite.el",
+            "person": "\u00e9l/ella/usted",
+            "form": "dijo",
+            "spanish": "Dijo la verdad.",
+            "english": "He/she told the truth."
+          },
+          {
+            "id": "decir.preterite.nosotros",
+            "person": "nosotros",
+            "form": "dijimos",
+            "spanish": "Dijimos la verdad.",
+            "english": "We told the truth."
+          },
+          {
+            "id": "decir.preterite.vosotros",
+            "person": "vosotros",
+            "form": "dijisteis",
+            "spanish": "Dijisteis la verdad.",
+            "english": "You all told the truth."
+          },
+          {
+            "id": "decir.preterite.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "dijeron",
+            "spanish": "Dijeron la verdad.",
+            "english": "They told the truth."
+          }
+        ],
+        "imperfect": [
+          {
+            "id": "decir.imperfect.yo",
+            "person": "yo",
+            "form": "dec\u00eda",
+            "spanish": "Dec\u00eda la verdad.",
+            "english": "I used to tell the truth."
+          },
+          {
+            "id": "decir.imperfect.tu",
+            "person": "t\u00fa",
+            "form": "dec\u00edas",
+            "spanish": "Dec\u00edas la verdad.",
+            "english": "You used to tell the truth."
+          },
+          {
+            "id": "decir.imperfect.el",
+            "person": "\u00e9l/ella/usted",
+            "form": "dec\u00eda",
+            "spanish": "Dec\u00eda la verdad.",
+            "english": "He/she used to tell the truth."
+          },
+          {
+            "id": "decir.imperfect.nosotros",
+            "person": "nosotros",
+            "form": "dec\u00edamos",
+            "spanish": "Dec\u00edamos la verdad.",
+            "english": "We used to tell the truth."
+          },
+          {
+            "id": "decir.imperfect.vosotros",
+            "person": "vosotros",
+            "form": "dec\u00edais",
+            "spanish": "Dec\u00edais la verdad.",
+            "english": "You all used to tell the truth."
+          },
+          {
+            "id": "decir.imperfect.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "dec\u00edan",
+            "spanish": "Dec\u00edan la verdad.",
+            "english": "They used to tell the truth."
+          }
+        ],
+        "presentPerfect": [
+          {
+            "id": "decir.presentPerfect.yo",
+            "person": "yo",
+            "form": "he dicho",
+            "spanish": "He dicho la verdad.",
+            "english": "I have told the truth."
+          },
+          {
+            "id": "decir.presentPerfect.tu",
+            "person": "t\u00fa",
+            "form": "has dicho",
+            "spanish": "Has dicho la verdad.",
+            "english": "You have told the truth."
+          },
+          {
+            "id": "decir.presentPerfect.el",
+            "person": "\u00e9l/ella/usted",
+            "form": "ha dicho",
+            "spanish": "Ha dicho la verdad.",
+            "english": "He/she has told the truth."
+          },
+          {
+            "id": "decir.presentPerfect.nosotros",
+            "person": "nosotros",
+            "form": "hemos dicho",
+            "spanish": "Hemos dicho la verdad.",
+            "english": "We have told the truth."
+          },
+          {
+            "id": "decir.presentPerfect.vosotros",
+            "person": "vosotros",
+            "form": "hab\u00e9is dicho",
+            "spanish": "Hab\u00e9is dicho la verdad.",
+            "english": "You all have told the truth."
+          },
+          {
+            "id": "decir.presentPerfect.ellos",
+            "person": "ellos/ellas/ustedes",
+            "form": "han dicho",
+            "spanish": "Han dicho la verdad.",
+            "english": "They have told the truth."
+          }
+        ]
+      }
+    }
+  ]
+}

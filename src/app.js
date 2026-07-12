@@ -1,0 +1,258 @@
+import { loadVerbData } from "./data-loader.js";
+import { answerForm, answerMeaning, createVerbSession } from "./practice-engine.js";
+import { loadProgress, recordAttempt } from "./progress-store.js";
+
+const app = document.querySelector("#app");
+const sounds = {
+  success: new Audio("./design/sounds/werbos-success.wav"),
+  failure: new Audio("./design/sounds/werbos-failure.wav")
+};
+
+let verbData;
+let session;
+let progress = loadProgress();
+
+init();
+
+async function init() {
+  renderLoading();
+  try {
+    verbData = await loadVerbData();
+    renderStart();
+  } catch (error) {
+    renderError(error);
+  }
+}
+
+function renderStart() {
+  const attempts = progress.attempts.length;
+  app.innerHTML = `
+    <section class="app-view start-view">
+      ${renderHeader()}
+      <article class="intro-card card">
+        <div>
+          <p class="eyebrow">Practice Spanish verbs</p>
+          <h1>Start with decir</h1>
+          <p class="intro-copy">Practice the meaning first, then identify a random sentence form. Progress is saved locally on this device.</p>
+        </div>
+        <button class="primary-action" data-action="start">Start</button>
+      </article>
+      <section class="status-strip">
+        <div>
+          <span>${attempts}</span>
+          <p>recent attempts</p>
+        </div>
+        <div>
+          <span>1</span>
+          <p>verb loaded</p>
+        </div>
+      </section>
+    </section>
+  `;
+}
+
+function renderMeaningStep() {
+  const { verb } = session;
+  app.innerHTML = `
+    <section class="app-view">
+      ${renderHeader("Meaning")}
+      <article class="hero-card card">
+        <div class="hero-topline">
+          <span class="tag">Hero</span>
+          <span class="muted">${verb.region}</span>
+        </div>
+        <p class="hero-kicker">Infinitive</p>
+        <h1 class="hero-word">${escapeHtml(verb.infinitive)}</h1>
+      </article>
+      <article class="quiz-card card">
+        <div class="quiz-header">
+          <div>
+            <p class="eyebrow">Step 1</p>
+            <h2 class="quiz-title">What does <span>${escapeHtml(verb.infinitive)}</span> mean?</h2>
+          </div>
+          <div class="question-mark">?</div>
+        </div>
+        <div class="answer-list">
+          ${session.meaningAnswers.map((answer) => renderAnswerButton(answer, "meaning")).join("")}
+        </div>
+      </article>
+      ${renderCoach("Choose the English meaning. A correct answer unlocks a sentence question.")}
+    </section>
+  `;
+}
+
+function renderFormStep() {
+  const { form, verb } = session;
+  app.innerHTML = `
+    <section class="app-view">
+      ${renderHeader("Sentence")}
+      <article class="hero-card card">
+        <div class="hero-topline">
+          <span class="tag">${formatTense(form.tense)}</span>
+          <span class="muted">${escapeHtml(form.person)}</span>
+        </div>
+        <p class="hero-kicker">${escapeHtml(verb.infinitive)}</p>
+        <h1 class="form-word">${escapeHtml(form.form)}</h1>
+        <p class="sentence-text">${escapeHtml(form.spanish)}</p>
+      </article>
+      <article class="quiz-card card">
+        <div class="quiz-header">
+          <div>
+            <p class="eyebrow">Step 2</p>
+            <h2 class="quiz-title">Which sentence matches?</h2>
+          </div>
+          <div class="question-mark">2</div>
+        </div>
+        <div class="answer-list">
+          ${session.formAnswers.map((answer) => renderAnswerButton(answer, "form")).join("")}
+        </div>
+      </article>
+      ${renderCoach("Use the Spanish sentence and form to pick the best English match.")}
+    </section>
+  `;
+}
+
+function renderResult() {
+  const completed = session.status === "completed";
+  app.innerHTML = `
+    <section class="app-view result-view">
+      ${renderHeader(completed ? "Success" : "Try again")}
+      <article class="result-card card ${completed ? "is-success" : "is-failure"}">
+        <p class="eyebrow">${completed ? "Completed" : "Failed"}</p>
+        <h1>${completed ? "Nice work." : "Good practice."}</h1>
+        <p>${completed ? "You matched the meaning and sentence." : "This verb will come back later. Mistakes are useful."}</p>
+        <button class="primary-action" data-action="next">Next</button>
+      </article>
+      <article class="summary-card card">
+        <p class="eyebrow">Last prompt</p>
+        <p><strong>${escapeHtml(session.form.form)}</strong> &middot; ${escapeHtml(session.form.spanish)}</p>
+        <p>${escapeHtml(session.form.english)}</p>
+      </article>
+    </section>
+  `;
+}
+
+function renderHeader(label = "Verb") {
+  return `
+    <header class="app-header">
+      <div class="brand-lockup">
+        <img class="logo-mark" src="./design/brand/logo-mark-64.png" srcset="./design/brand/logo-mark-64.png 1x, ./design/brand/logo-mark-128.png 2x" alt="Werbos logo" />
+        <div>
+          <p class="eyebrow">Werbos</p>
+          <p class="muted">${label}</p>
+        </div>
+      </div>
+    </header>
+  `;
+}
+
+function renderCoach(message) {
+  return `
+    <article class="speech-card card">
+      <div class="speech-layout">
+        <img class="zorrito-mark" src="./design/brand/zorrito-speech.png" srcset="./design/brand/zorrito-speech.png 1x, ./design/brand/zorrito-speech@2x.png 2x" alt="Zorrito" />
+        <div class="speech-bubble">
+          <p class="eyebrow">Zorrito explains</p>
+          <p class="speech-text">${escapeHtml(message)}</p>
+        </div>
+      </div>
+    </article>
+  `;
+}
+
+function renderAnswerButton(answer, step) {
+  return `
+    <button class="answer-button" data-answer="${escapeAttribute(answer)}" data-step="${step}">
+      <span>${escapeHtml(answer)}</span>
+    </button>
+  `;
+}
+
+function renderLoading() {
+  app.innerHTML = `<section class="app-view"><article class="card intro-card"><p class="eyebrow">Werbos</p><h1>Loading...</h1></article></section>`;
+}
+
+function renderError(error) {
+  app.innerHTML = `
+    <section class="app-view">
+      <article class="card result-card is-failure">
+        <p class="eyebrow">Error</p>
+        <h1>Could not start practice.</h1>
+        <p>${escapeHtml(error.message)}</p>
+      </article>
+    </section>
+  `;
+}
+
+app.addEventListener("click", (event) => {
+  const button = event.target.closest("button");
+  if (!button) {
+    return;
+  }
+
+  const action = button.dataset.action;
+  if (action === "start") {
+    session = createVerbSession(verbData.items[0]);
+    renderMeaningStep();
+    return;
+  }
+
+  if (action === "next") {
+    renderStart();
+    return;
+  }
+
+  const answer = button.dataset.answer;
+  const step = button.dataset.step;
+  if (step === "meaning") {
+    session = answerMeaning(session, answer);
+    if (session.status === "failed") {
+      finishAttempt("failed", "failure");
+      return;
+    }
+    playSound("success");
+    renderFormStep();
+    return;
+  }
+
+  if (step === "form") {
+    session = answerForm(session, answer);
+    finishAttempt(session.status, session.status === "completed" ? "success" : "failure");
+  }
+});
+
+function finishAttempt(status, soundName) {
+  progress = recordAttempt(progress, {
+    verbId: session.verb.id,
+    formId: session.form.id,
+    status
+  });
+  playSound(soundName);
+  renderResult();
+}
+
+function playSound(name) {
+  const sound = sounds[name];
+  if (!sound) {
+    return;
+  }
+  sound.currentTime = 0;
+  sound.play().catch(() => {});
+}
+
+function formatTense(tense) {
+  return tense.replace(/([A-Z])/g, " $1").toLowerCase();
+}
+
+function escapeHtml(value) {
+  return String(value)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
+
+function escapeAttribute(value) {
+  return escapeHtml(value).replaceAll("`", "&#096;");
+}
