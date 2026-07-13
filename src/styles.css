@@ -98,6 +98,10 @@ button {
   gap: 1.25rem;
 }
 
+.start-card .primary-action {
+  width: 100%;
+}
+
 .start-greeting {
   display: flex;
   align-items: flex-start;
@@ -375,7 +379,7 @@ button {
 }
 
 @media (min-width: 700px) {
-  .intro-card {
+  .intro-card:not(.start-card) {
     grid-template-columns: 1fr auto;
     align-items: end;
   }

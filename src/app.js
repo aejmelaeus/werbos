@@ -84,7 +84,6 @@ function renderMeaningStep() {
           ${session.meaningAnswers.map((answer) => renderAnswerButton(answer, "meaning")).join("")}
         </div>
       </article>
-      ${renderCoach("Choose the English meaning. A correct answer unlocks a sentence question.")}
     </section>
   `);
 }
@@ -115,7 +114,6 @@ function renderFormStep() {
           ${session.formAnswers.map((answer) => renderAnswerButton(answer, "form")).join("")}
         </div>
       </article>
-      ${renderCoach("Use the Spanish sentence and form to pick the best English match.")}
     </section>
   `);
 }
@@ -151,20 +149,6 @@ function renderHeader(label = "Verb") {
         </div>
       </div>
     </header>
-  `;
-}
-
-function renderCoach(message) {
-  return `
-    <article class="speech-card card">
-      <div class="speech-layout">
-        <img class="zorrito-mark" src="./design/brand/zorrito-speech.png" srcset="./design/brand/zorrito-speech.png 1x, ./design/brand/zorrito-speech@2x.png 2x" alt="Zorrito" />
-        <div class="speech-bubble">
-          <p class="eyebrow">Zorrito explains</p>
-          ${renderAnimatedSpeechText(message)}
-        </div>
-      </div>
-    </article>
   `;
 }
 
