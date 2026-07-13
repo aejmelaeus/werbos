@@ -229,6 +229,14 @@ button {
   line-height: 1;
 }
 
+.reverse-prompt {
+  margin: 0.75rem 0 0;
+  color: var(--werbos-ink);
+  font-size: clamp(2.3rem, 10vw, 4rem);
+  font-weight: 900;
+  line-height: 1.05;
+}
+
 .sentence-text {
   margin: 1rem 0 0;
   color: #4e4a45;

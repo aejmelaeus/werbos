@@ -1,14 +1,22 @@
-export function createVerbSession(verb, random = Math.random) {
+export function createVerbSession(verb, random = Math.random, mode = pickRandomMode(random)) {
   const form = pickRandomForm(verb, random);
+  const isReverse = mode === "reverse";
   return {
     id: `${verb.id}.${Date.now()}`,
+    mode,
     verb,
     form,
     meaningAnswers: shuffle([verb.meaning.correct, ...verb.meaning.distractors], random),
-    formAnswers: shuffle([form.english, ...pickSentenceDistractors(verb, form, random)], random),
-    step: "meaning",
+    formAnswers: isReverse
+      ? shuffle([form.spanish, ...pickSpanishSentenceDistractors(verb, form, random)], random)
+      : shuffle([form.english, ...pickEnglishSentenceDistractors(verb, form, random)], random),
+    step: isReverse ? "form" : "meaning",
     status: "active"
   };
+}
+
+export function pickRandomMode(random = Math.random) {
+  return random() < 0.5 ? "forward" : "reverse";
 }
 
 export function pickRandomVerb(verbs, random = Math.random) {
@@ -29,7 +37,8 @@ export function answerMeaning(session, answer) {
 }
 
 export function answerForm(session, answer) {
-  const correct = answer === session.form.english;
+  const expectedAnswer = session.mode === "reverse" ? session.form.spanish : session.form.english;
+  const correct = answer === expectedAnswer;
   return {
     ...session,
     step: "result",
@@ -52,12 +61,28 @@ function pickRandomForm(verb, random) {
   return forms[Math.floor(random() * forms.length)];
 }
 
-function pickSentenceDistractors(verb, correctForm, random) {
+function pickEnglishSentenceDistractors(verb, correctForm, random) {
   const candidates = flattenForms(verb)
     .filter((form) => form.id !== correctForm.id)
     .map((form) => form.english);
 
   return shuffle([...new Set(candidates)], random).slice(0, 3);
+}
+
+function pickSpanishSentenceDistractors(verb, correctForm, random) {
+  const forms = flattenForms(verb).filter((form) => form.id !== correctForm.id);
+  const otherTenseCandidates = forms
+    .filter((form) => form.tense !== correctForm.tense)
+    .map((form) => form.spanish);
+  const sameTenseCandidates = forms
+    .filter((form) => form.tense === correctForm.tense)
+    .map((form) => form.spanish);
+  const candidates = [
+    ...shuffle([...new Set(otherTenseCandidates)], random),
+    ...shuffle([...new Set(sameTenseCandidates)], random)
+  ];
+
+  return candidates.slice(0, 3);
 }
 
 function shuffle(items, random) {

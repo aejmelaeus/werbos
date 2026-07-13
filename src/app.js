@@ -90,23 +90,28 @@ function renderMeaningStep() {
 
 function renderFormStep() {
   const { form, verb } = session;
+  const isReverse = session.mode === "reverse";
   setAppHtml(`
     <section class="app-view">
-      ${renderHeader("Sentence")}
+      ${renderHeader(isReverse ? "Reverse" : "Sentence")}
       <article class="hero-card card">
         <div class="hero-topline">
-          <span class="tag">${formatTense(form.tense)}</span>
+          <span class="tag">${isReverse ? "English" : formatTense(form.tense)}</span>
           <span class="muted">${escapeHtml(form.person)}</span>
         </div>
-        <p class="hero-kicker">${escapeHtml(verb.infinitive)}</p>
-        <h1 class="form-word">${escapeHtml(form.form)}</h1>
-        <p class="sentence-text">${escapeHtml(form.spanish)}</p>
+        <p class="hero-kicker">${isReverse ? "Choose the Spanish sentence" : escapeHtml(verb.infinitive)}</p>
+        ${
+          isReverse
+            ? `<h1 class="reverse-prompt">${escapeHtml(form.english)}</h1>`
+            : `<h1 class="form-word">${escapeHtml(form.form)}</h1>
+        <p class="sentence-text">${escapeHtml(form.spanish)}</p>`
+        }
       </article>
       <article class="quiz-card card">
         <div class="quiz-header">
           <div>
-            <p class="eyebrow">Step 2</p>
-            <h2 class="quiz-title">Which sentence matches?</h2>
+            <p class="eyebrow">${isReverse ? "Reverse mode" : "Step 2"}</p>
+            <h2 class="quiz-title">${isReverse ? "Which Spanish sentence matches?" : "Which sentence matches?"}</h2>
           </div>
           <div class="question-mark">2</div>
         </div>
@@ -260,6 +265,10 @@ app.addEventListener("click", (event) => {
 
 function startRandomSession() {
   session = createVerbSession(pickRandomVerb(verbData.items));
+  if (session.step === "form") {
+    renderFormStep();
+    return;
+  }
   renderMeaningStep();
 }
 
