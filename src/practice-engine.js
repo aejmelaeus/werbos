@@ -26,6 +26,24 @@ export function pickRandomVerb(verbs, random = Math.random) {
   return verbs[Math.floor(random() * verbs.length)];
 }
 
+export function createQuestSession(quest, random = Math.random) {
+  if (!quest?.items?.length) {
+    throw new Error("No quest questions are available.");
+  }
+
+  const question = quest.items[Math.floor(random() * quest.items.length)];
+  return {
+    id: `${quest.id}.${question.id}.${Date.now()}`,
+    mode: "quest",
+    questId: quest.id,
+    questTitle: quest.title,
+    question,
+    answers: shuffle([question.correct, ...question.distractors], random),
+    step: "quest",
+    status: "active"
+  };
+}
+
 export function answerMeaning(session, answer) {
   const correct = answer === session.verb.meaning.correct;
   return {
@@ -44,6 +62,16 @@ export function answerForm(session, answer) {
     step: "result",
     status: correct ? "completed" : "failed",
     formResult: correct
+  };
+}
+
+export function answerQuest(session, answer) {
+  const correct = answer === session.question.correct;
+  return {
+    ...session,
+    step: "result",
+    status: correct ? "completed" : "failed",
+    questResult: correct
   };
 }
 

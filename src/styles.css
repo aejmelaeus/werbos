@@ -155,6 +155,42 @@ button {
   margin-top: 1rem;
 }
 
+.quest-link-card {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding: 1.25rem;
+}
+
+.quest-link-card h2 {
+  margin: 0.35rem 0 0;
+  font-size: 1.75rem;
+  line-height: 1.05;
+}
+
+.quest-link-card p:not(.eyebrow) {
+  margin: 0.6rem 0 0;
+  color: #5d5953;
+  line-height: 1.5;
+}
+
+.secondary-link {
+  display: inline-grid;
+  min-height: 3.25rem;
+  place-items: center;
+  border: 1px solid var(--werbos-line);
+  border-radius: 0.5rem;
+  background: var(--werbos-paper);
+  color: var(--werbos-fern);
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.secondary-link:focus,
+.secondary-link:hover {
+  border-color: var(--werbos-fern);
+}
+
 .status-strip div {
   border-radius: 0.5rem;
   background: var(--werbos-white);

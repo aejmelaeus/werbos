@@ -1,5 +1,5 @@
-import { loadVerbData } from "./data-loader.js";
-import { answerForm, answerMeaning, createVerbSession, pickRandomVerb } from "./practice-engine.js";
+import { loadSerEstarQuest, loadVerbData } from "./data-loader.js";
+import { answerForm, answerMeaning, answerQuest, createQuestSession, createVerbSession, pickRandomVerb } from "./practice-engine.js";
 import { loadProgress, recordAttempt } from "./progress-store.js";
 
 const app = document.querySelector("#app");
@@ -9,6 +9,7 @@ const sounds = {
 };
 
 let verbData;
+let serEstarQuest;
 let session;
 let progress = loadProgress();
 
@@ -17,7 +18,11 @@ init();
 async function init() {
   renderLoading();
   try {
-    verbData = await loadVerbData();
+    [verbData, serEstarQuest] = await Promise.all([loadVerbData(), loadSerEstarQuest()]);
+    if (shouldStartSerEstarQuest()) {
+      startQuestSession("replace");
+      return;
+    }
     renderStart();
   } catch (error) {
     renderError(error);
@@ -45,6 +50,14 @@ function renderStart() {
         </div>
         <button class="primary-action" data-action="start">${actionLabel}</button>
       </article>
+      <article class="quest-link-card card">
+        <div>
+          <p class="eyebrow">Test mode</p>
+          <h2>Ser estar quest</h2>
+          <p>Practice choosing between <strong>ser</strong> and <strong>estar</strong> from context.</p>
+        </div>
+        <a class="secondary-link" href="./?quest=ser-estar" data-action="start-quest">Start quest</a>
+      </article>
       <section class="status-strip">
         <div>
           <span>${attempts}</span>
@@ -55,6 +68,35 @@ function renderStart() {
           <p>verbs loaded</p>
         </div>
       </section>
+    </section>
+  `);
+}
+
+function renderQuestStep() {
+  const { question } = session;
+  setAppHtml(`
+    <section class="app-view">
+      ${renderHeader("Ser estar quest")}
+      <article class="hero-card card">
+        <div class="hero-topline">
+          <span class="tag">${escapeHtml(question.kind)}</span>
+          <span class="muted">ser vs estar</span>
+        </div>
+        <p class="hero-kicker">Choose the Spanish sentence</p>
+        <h1 class="reverse-prompt">${escapeHtml(question.prompt)}</h1>
+      </article>
+      <article class="quiz-card card">
+        <div class="quiz-header">
+          <div>
+            <p class="eyebrow">Quest question</p>
+            <h2 class="quiz-title">Which sentence fits the context?</h2>
+          </div>
+          <div class="question-mark">?</div>
+        </div>
+        <div class="answer-list">
+          ${session.answers.map((answer) => renderAnswerButton(answer, "quest")).join("")}
+        </div>
+      </article>
     </section>
   `);
 }
@@ -125,22 +167,50 @@ function renderFormStep() {
 
 function renderResult() {
   const completed = session.status === "completed";
+  const isQuest = session.mode === "quest";
   setAppHtml(`
     <section class="app-view result-view">
       ${renderHeader(completed ? "Success" : "Try again")}
       <article class="result-card card ${completed ? "is-success" : "is-failure"}">
         <p class="eyebrow">${completed ? "Completed" : "Failed"}</p>
         <h1>${completed ? "Nice work." : "Good practice."}</h1>
-        <p>${completed ? "You matched the meaning and sentence." : "This verb will come back later. Mistakes are useful."}</p>
+        <p>${renderResultMessage(completed)}</p>
         <button class="primary-action" data-action="next">Next</button>
       </article>
-      <article class="summary-card card">
-        <p class="eyebrow">Practice recap</p>
-        <p><strong>${escapeHtml(session.form.form)}</strong> &middot; ${escapeHtml(session.form.spanish)}</p>
-        <p>${escapeHtml(session.form.english)}</p>
-      </article>
+      ${isQuest ? renderQuestRecap() : renderPracticeRecap()}
     </section>
   `);
+}
+
+function renderResultMessage(completed) {
+  if (session.mode === "quest") {
+    return completed
+      ? "You chose the sentence that fits the ser/estar context."
+      : "Check the context clue and try another ser/estar question.";
+  }
+  return completed
+    ? "You matched the meaning and sentence."
+    : "This verb will come back later. Mistakes are useful.";
+}
+
+function renderPracticeRecap() {
+  return `
+    <article class="summary-card card">
+      <p class="eyebrow">Practice recap</p>
+      <p><strong>${escapeHtml(session.form.form)}</strong> &middot; ${escapeHtml(session.form.spanish)}</p>
+      <p>${escapeHtml(session.form.english)}</p>
+    </article>
+  `;
+}
+
+function renderQuestRecap() {
+  return `
+    <article class="summary-card card">
+      <p class="eyebrow">Quest recap</p>
+      <p><strong>${escapeHtml(session.question.correct)}</strong></p>
+      <p>${escapeHtml(session.question.explanation)}</p>
+    </article>
+  `;
 }
 
 function renderHeader(label = "Verb") {
@@ -228,7 +298,7 @@ function animateSpeechText(root) {
 }
 
 app.addEventListener("click", (event) => {
-  const button = event.target.closest("button");
+  const button = event.target.closest("button, a");
   if (!button) {
     return;
   }
@@ -239,7 +309,17 @@ app.addEventListener("click", (event) => {
     return;
   }
 
+  if (action === "start-quest") {
+    event.preventDefault();
+    startQuestSession("push");
+    return;
+  }
+
   if (action === "next") {
+    if (session?.mode === "quest") {
+      startQuestSession("replace");
+      return;
+    }
     startRandomSession();
     return;
   }
@@ -260,6 +340,12 @@ app.addEventListener("click", (event) => {
   if (step === "form") {
     session = answerForm(session, answer);
     finishAttempt(session.status, session.status === "completed" ? "success" : "failure");
+    return;
+  }
+
+  if (step === "quest") {
+    session = answerQuest(session, answer);
+    finishAttempt(session.status, session.status === "completed" ? "success" : "failure");
   }
 });
 
@@ -272,14 +358,38 @@ function startRandomSession() {
   renderMeaningStep();
 }
 
+function startQuestSession(historyMode = "push") {
+  session = createQuestSession(serEstarQuest);
+  if (historyMode === "push") {
+    window.history.pushState({}, "", "./?quest=ser-estar");
+  } else if (historyMode === "replace") {
+    window.history.replaceState({}, "", "./?quest=ser-estar");
+  }
+  renderQuestStep();
+}
+
 function finishAttempt(status, soundName) {
-  progress = recordAttempt(progress, {
-    verbId: session.verb.id,
-    formId: session.form.id,
-    status
-  });
+  if (session.mode === "quest") {
+    progress = recordAttempt(progress, {
+      questId: session.questId,
+      questionId: session.question.id,
+      status
+    });
+  } else {
+    progress = recordAttempt(progress, {
+      verbId: session.verb.id,
+      formId: session.form.id,
+      status
+    });
+  }
   playSound(soundName);
   renderResult();
+}
+
+function shouldStartSerEstarQuest() {
+  const path = window.location.pathname.replace(/\/+$/, "");
+  const query = new URLSearchParams(window.location.search);
+  return path.endsWith("/quest-ser-estar") || query.get("quest") === "ser-estar";
 }
 
 function playSound(name) {
