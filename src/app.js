@@ -130,7 +130,7 @@ function renderResult() {
         <button class="primary-action" data-action="next">Next</button>
       </article>
       <article class="summary-card card">
-        <p class="eyebrow">Last prompt</p>
+        <p class="eyebrow">Practice recap</p>
         <p><strong>${escapeHtml(session.form.form)}</strong> &middot; ${escapeHtml(session.form.spanish)}</p>
         <p>${escapeHtml(session.form.english)}</p>
       </article>
