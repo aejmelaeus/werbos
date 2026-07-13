@@ -162,6 +162,23 @@ button {
   padding: 1.25rem;
 }
 
+.quest-intro-card {
+  display: grid;
+  gap: 1.25rem;
+  padding: 1.25rem;
+}
+
+.quest-intro-card h1 {
+  margin: 0;
+  font-size: clamp(2.7rem, 13vw, 4.75rem);
+  font-weight: 900;
+  line-height: 0.95;
+}
+
+.quest-greeting {
+  margin-top: 0.25rem;
+}
+
 .quest-link-card h2 {
   margin: 0.35rem 0 0;
   font-size: 1.75rem;

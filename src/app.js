@@ -20,7 +20,7 @@ async function init() {
   try {
     [verbData, serEstarQuest] = await Promise.all([loadVerbData(), loadSerEstarQuest()]);
     if (shouldStartSerEstarQuest()) {
-      startQuestSession("replace");
+      renderQuestIntro("replace");
       return;
     }
     renderStart();
@@ -56,7 +56,7 @@ function renderStart() {
           <h2>Ser estar quest</h2>
           <p>Practice choosing between <strong>ser</strong> and <strong>estar</strong> from context.</p>
         </div>
-        <a class="secondary-link" href="./?quest=ser-estar" data-action="start-quest">Start quest</a>
+        <a class="secondary-link" href="./?quest=ser-estar" data-action="show-quest-intro">Start quest</a>
       </article>
       <section class="status-strip">
         <div>
@@ -68,6 +68,32 @@ function renderStart() {
           <p>verbs loaded</p>
         </div>
       </section>
+    </section>
+  `);
+}
+
+function renderQuestIntro(historyMode = "push") {
+  if (historyMode === "push") {
+    window.history.pushState({}, "", "./?quest=ser-estar");
+  } else if (historyMode === "replace") {
+    window.history.replaceState({}, "", "./?quest=ser-estar");
+  }
+
+  setAppHtml(`
+    <section class="app-view start-view">
+      ${renderHeader("Quest")}
+      <article class="quest-intro-card card">
+        <p class="eyebrow">Quest</p>
+        <h1>The Two Be's</h1>
+        <div class="start-greeting quest-greeting">
+          <img class="start-zorrito" src="./design/brand/zorrito-speech.png" srcset="./design/brand/zorrito-speech.png 1x, ./design/brand/zorrito-speech@2x.png 2x" alt="Zorrito" />
+          <div class="speech-bubble start-bubble">
+            <p class="eyebrow">Zorrito</p>
+            ${renderAnimatedSpeechText("Spanish has two common ways to say be: ser and estar. I will show you a clue in English, and you choose the Spanish sentence that fits best.")}
+          </div>
+        </div>
+        <button class="primary-action" data-action="start-quest">Start quest</button>
+      </article>
     </section>
   `);
 }
@@ -309,15 +335,20 @@ app.addEventListener("click", (event) => {
     return;
   }
 
-  if (action === "start-quest") {
+  if (action === "show-quest-intro") {
     event.preventDefault();
-    startQuestSession("push");
+    renderQuestIntro("push");
+    return;
+  }
+
+  if (action === "start-quest") {
+    startQuestSession();
     return;
   }
 
   if (action === "next") {
     if (session?.mode === "quest") {
-      startQuestSession("replace");
+      startQuestSession();
       return;
     }
     startRandomSession();
@@ -358,13 +389,8 @@ function startRandomSession() {
   renderMeaningStep();
 }
 
-function startQuestSession(historyMode = "push") {
+function startQuestSession() {
   session = createQuestSession(serEstarQuest);
-  if (historyMode === "push") {
-    window.history.pushState({}, "", "./?quest=ser-estar");
-  } else if (historyMode === "replace") {
-    window.history.replaceState({}, "", "./?quest=ser-estar");
-  }
   renderQuestStep();
 }
 
