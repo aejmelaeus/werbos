@@ -27,16 +27,23 @@ async function init() {
 function renderStart() {
   const attempts = progress.attempts.length;
   const verbCount = verbData.items.length;
-  app.innerHTML = `
+  const isReturningPlayer = attempts > 0;
+  const greeting = isReturningPlayer
+    ? "Hola, welcome back!"
+    : "Hola, my name is Zorrito and we are going to practice some Spanish together";
+  const actionLabel = isReturningPlayer ? "Continue" : "Start";
+  setAppHtml(`
     <section class="app-view start-view">
       ${renderHeader()}
-      <article class="intro-card card">
-        <div>
-          <p class="eyebrow">Practice Spanish verbs</p>
-          <h1>Start practice</h1>
-          <p class="intro-copy">Practice the meaning first, then identify a sentence form from a random verb. Progress is saved locally on this device.</p>
+      <article class="intro-card start-card card">
+        <div class="start-greeting">
+          <img class="start-zorrito" src="./design/brand/zorrito-speech.png" srcset="./design/brand/zorrito-speech.png 1x, ./design/brand/zorrito-speech@2x.png 2x" alt="Zorrito" />
+          <div class="speech-bubble start-bubble">
+            <p class="eyebrow">Zorrito</p>
+            ${renderAnimatedSpeechText(greeting)}
+          </div>
         </div>
-        <button class="primary-action" data-action="start">Start</button>
+        <button class="primary-action" data-action="start">${actionLabel}</button>
       </article>
       <section class="status-strip">
         <div>
@@ -49,12 +56,12 @@ function renderStart() {
         </div>
       </section>
     </section>
-  `;
+  `);
 }
 
 function renderMeaningStep() {
   const { verb } = session;
-  app.innerHTML = `
+  setAppHtml(`
     <section class="app-view">
       ${renderHeader("Meaning")}
       <article class="hero-card card">
@@ -79,12 +86,12 @@ function renderMeaningStep() {
       </article>
       ${renderCoach("Choose the English meaning. A correct answer unlocks a sentence question.")}
     </section>
-  `;
+  `);
 }
 
 function renderFormStep() {
   const { form, verb } = session;
-  app.innerHTML = `
+  setAppHtml(`
     <section class="app-view">
       ${renderHeader("Sentence")}
       <article class="hero-card card">
@@ -110,12 +117,12 @@ function renderFormStep() {
       </article>
       ${renderCoach("Use the Spanish sentence and form to pick the best English match.")}
     </section>
-  `;
+  `);
 }
 
 function renderResult() {
   const completed = session.status === "completed";
-  app.innerHTML = `
+  setAppHtml(`
     <section class="app-view result-view">
       ${renderHeader(completed ? "Success" : "Try again")}
       <article class="result-card card ${completed ? "is-success" : "is-failure"}">
@@ -130,7 +137,7 @@ function renderResult() {
         <p>${escapeHtml(session.form.english)}</p>
       </article>
     </section>
-  `;
+  `);
 }
 
 function renderHeader(label = "Verb") {
@@ -154,10 +161,21 @@ function renderCoach(message) {
         <img class="zorrito-mark" src="./design/brand/zorrito-speech.png" srcset="./design/brand/zorrito-speech.png 1x, ./design/brand/zorrito-speech@2x.png 2x" alt="Zorrito" />
         <div class="speech-bubble">
           <p class="eyebrow">Zorrito explains</p>
-          <p class="speech-text">${escapeHtml(message)}</p>
+          ${renderAnimatedSpeechText(message)}
         </div>
       </div>
     </article>
+  `;
+}
+
+function renderAnimatedSpeechText(message) {
+  return `
+    <p
+      class="speech-text type-caret"
+      data-speech-text
+      data-speech-message="${escapeAttribute(message)}"
+      aria-label="${escapeAttribute(message)}"
+    ></p>
   `;
 }
 
@@ -170,11 +188,11 @@ function renderAnswerButton(answer, step) {
 }
 
 function renderLoading() {
-  app.innerHTML = `<section class="app-view"><article class="card intro-card"><p class="eyebrow">Werbos</p><h1>Loading...</h1></article></section>`;
+  setAppHtml(`<section class="app-view"><article class="card intro-card"><p class="eyebrow">Werbos</p><h1>Loading...</h1></article></section>`);
 }
 
 function renderError(error) {
-  app.innerHTML = `
+  setAppHtml(`
     <section class="app-view">
       <article class="card result-card is-failure">
         <p class="eyebrow">Error</p>
@@ -182,7 +200,42 @@ function renderError(error) {
         <p>${escapeHtml(error.message)}</p>
       </article>
     </section>
-  `;
+  `);
+}
+
+function setAppHtml(html) {
+  app.innerHTML = html;
+  animateSpeechText(app);
+}
+
+function animateSpeechText(root) {
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  root.querySelectorAll("[data-speech-text]").forEach((target) => {
+    const message = target.dataset.speechMessage || "";
+    if (reduceMotion) {
+      target.textContent = message;
+      target.classList.remove("type-caret");
+      return;
+    }
+
+    let index = 0;
+    target.textContent = "";
+
+    function typeNext() {
+      if (!target.isConnected) {
+        return;
+      }
+      target.textContent = message.slice(0, index);
+      if (index < message.length) {
+        index += 1;
+        window.setTimeout(typeNext, 34);
+        return;
+      }
+      target.classList.remove("type-caret");
+    }
+
+    typeNext();
+  });
 }
 
 app.addEventListener("click", (event) => {
