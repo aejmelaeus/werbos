@@ -43,7 +43,10 @@ function renderStart() {
             ${renderAnimatedSpeechText(greeting)}
           </div>
         </div>
-        <button class="primary-action" data-action="start">${actionLabel}</button>
+        <div class="start-actions">
+          <button class="primary-action" data-action="start">${actionLabel}</button>
+          <button class="secondary-action" data-action="start-reverse">Reverse</button>
+        </div>
       </article>
       <section class="status-strip">
         <div>
@@ -90,23 +93,28 @@ function renderMeaningStep() {
 
 function renderFormStep() {
   const { form, verb } = session;
+  const isReverse = session.mode === "reverse";
   setAppHtml(`
     <section class="app-view">
-      ${renderHeader("Sentence")}
+      ${renderHeader(isReverse ? "Reverse" : "Sentence")}
       <article class="hero-card card">
         <div class="hero-topline">
-          <span class="tag">${formatTense(form.tense)}</span>
+          <span class="tag">${isReverse ? "English" : formatTense(form.tense)}</span>
           <span class="muted">${escapeHtml(form.person)}</span>
         </div>
-        <p class="hero-kicker">${escapeHtml(verb.infinitive)}</p>
-        <h1 class="form-word">${escapeHtml(form.form)}</h1>
-        <p class="sentence-text">${escapeHtml(form.spanish)}</p>
+        <p class="hero-kicker">${isReverse ? "Choose the Spanish sentence" : escapeHtml(verb.infinitive)}</p>
+        ${
+          isReverse
+            ? `<h1 class="reverse-prompt">${escapeHtml(form.english)}</h1>`
+            : `<h1 class="form-word">${escapeHtml(form.form)}</h1>
+        <p class="sentence-text">${escapeHtml(form.spanish)}</p>`
+        }
       </article>
       <article class="quiz-card card">
         <div class="quiz-header">
           <div>
-            <p class="eyebrow">Step 2</p>
-            <h2 class="quiz-title">Which sentence matches?</h2>
+            <p class="eyebrow">${isReverse ? "Reverse mode" : "Step 2"}</p>
+            <h2 class="quiz-title">${isReverse ? "Which Spanish sentence matches?" : "Which sentence matches?"}</h2>
           </div>
           <div class="question-mark">2</div>
         </div>
@@ -230,12 +238,17 @@ app.addEventListener("click", (event) => {
 
   const action = button.dataset.action;
   if (action === "start") {
-    startRandomSession();
+    startRandomSession("forward");
+    return;
+  }
+
+  if (action === "start-reverse") {
+    startRandomSession("reverse");
     return;
   }
 
   if (action === "next") {
-    startRandomSession();
+    startRandomSession(session?.mode || "forward");
     return;
   }
 
@@ -258,8 +271,12 @@ app.addEventListener("click", (event) => {
   }
 });
 
-function startRandomSession() {
-  session = createVerbSession(pickRandomVerb(verbData.items));
+function startRandomSession(mode = "forward") {
+  session = createVerbSession(pickRandomVerb(verbData.items), Math.random, mode);
+  if (session.step === "form") {
+    renderFormStep();
+    return;
+  }
   renderMeaningStep();
 }
 
