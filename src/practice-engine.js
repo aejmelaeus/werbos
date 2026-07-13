@@ -1,4 +1,4 @@
-export function createVerbSession(verb, random = Math.random, mode = "forward") {
+export function createVerbSession(verb, random = Math.random, mode = pickRandomMode(random)) {
   const form = pickRandomForm(verb, random);
   const isReverse = mode === "reverse";
   return {
@@ -13,6 +13,10 @@ export function createVerbSession(verb, random = Math.random, mode = "forward") 
     step: isReverse ? "form" : "meaning",
     status: "active"
   };
+}
+
+export function pickRandomMode(random = Math.random) {
+  return random() < 0.5 ? "forward" : "reverse";
 }
 
 export function pickRandomVerb(verbs, random = Math.random) {

@@ -43,10 +43,7 @@ function renderStart() {
             ${renderAnimatedSpeechText(greeting)}
           </div>
         </div>
-        <div class="start-actions">
-          <button class="primary-action" data-action="start">${actionLabel}</button>
-          <button class="secondary-action" data-action="start-reverse">Reverse</button>
-        </div>
+        <button class="primary-action" data-action="start">${actionLabel}</button>
       </article>
       <section class="status-strip">
         <div>
@@ -238,17 +235,12 @@ app.addEventListener("click", (event) => {
 
   const action = button.dataset.action;
   if (action === "start") {
-    startRandomSession("forward");
-    return;
-  }
-
-  if (action === "start-reverse") {
-    startRandomSession("reverse");
+    startRandomSession();
     return;
   }
 
   if (action === "next") {
-    startRandomSession(session?.mode || "forward");
+    startRandomSession();
     return;
   }
 
@@ -271,8 +263,8 @@ app.addEventListener("click", (event) => {
   }
 });
 
-function startRandomSession(mode = "forward") {
-  session = createVerbSession(pickRandomVerb(verbData.items), Math.random, mode);
+function startRandomSession() {
+  session = createVerbSession(pickRandomVerb(verbData.items));
   if (session.step === "form") {
     renderFormStep();
     return;
