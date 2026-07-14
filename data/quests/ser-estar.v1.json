@@ -1,0 +1,164 @@
+{
+  "version": 1,
+  "id": "ser-estar",
+  "title": "Ser estar quest",
+  "description": "Practice choosing between ser and estar from context.",
+  "items": [
+    {
+      "id": "ser-estar.identity.teacher",
+      "kind": "identity",
+      "clue": "profession",
+      "prompt": "She is a teacher.",
+      "correct": "Ella es profesora.",
+      "distractors": [
+        "Ella está profesora.",
+        "Ella es en la escuela.",
+        "Ella está enseñando ahora."
+      ],
+      "explanation": "Use ser for identity, roles, and professions."
+    },
+    {
+      "id": "ser-estar.location.library",
+      "kind": "location",
+      "clue": "location",
+      "prompt": "We are in the library.",
+      "correct": "Estamos en la biblioteca.",
+      "distractors": [
+        "Somos en la biblioteca.",
+        "Estamos estudiantes.",
+        "Somos la biblioteca."
+      ],
+      "explanation": "Use estar for location."
+    },
+    {
+      "id": "ser-estar.trait.patient",
+      "kind": "trait",
+      "clue": "personality",
+      "prompt": "You are patient.",
+      "correct": "Tú eres paciente.",
+      "distractors": [
+        "Tú estás paciente.",
+        "Tú eres tranquilo ahora.",
+        "Tú estás esperando."
+      ],
+      "explanation": "Use ser for a lasting trait or characteristic."
+    },
+    {
+      "id": "ser-estar.state.tired",
+      "kind": "state",
+      "clue": "temporary state",
+      "prompt": "They are tired today.",
+      "correct": "Ellos están cansados hoy.",
+      "distractors": [
+        "Ellos son cansados hoy.",
+        "Ellos están en casa hoy.",
+        "Ellos son tranquilos hoy."
+      ],
+      "explanation": "Use estar for temporary states and conditions."
+    },
+    {
+      "id": "ser-estar.origin.mexico",
+      "kind": "origin",
+      "clue": "origin",
+      "prompt": "I am from Mexico.",
+      "correct": "Soy de México.",
+      "distractors": [
+        "Estoy de México.",
+        "Soy en México.",
+        "Estoy mexicano."
+      ],
+      "explanation": "Use ser for origin."
+    },
+    {
+      "id": "ser-estar.condition.door-open",
+      "kind": "condition",
+      "clue": "condition",
+      "prompt": "The door is open.",
+      "correct": "La puerta está abierta.",
+      "distractors": [
+        "La puerta es abierta.",
+        "La puerta está cerrada.",
+        "La puerta es grande."
+      ],
+      "explanation": "Use estar for the result of a condition or state."
+    },
+    {
+      "id": "ser-estar.time.three",
+      "kind": "time",
+      "clue": "time",
+      "prompt": "It is three o'clock.",
+      "correct": "Son las tres.",
+      "distractors": [
+        "Están las tres.",
+        "Está tres.",
+        "Es en las tres."
+      ],
+      "explanation": "Use ser for telling time."
+    },
+    {
+      "id": "ser-estar.action.studying",
+      "kind": "action",
+      "clue": "action in progress",
+      "prompt": "I am studying right now.",
+      "correct": "Estoy estudiando ahora.",
+      "distractors": [
+        "Soy estudiando ahora.",
+        "Soy estudiante ahora.",
+        "Estoy estudiante ahora."
+      ],
+      "explanation": "Use estar with the present participle for actions in progress."
+    },
+    {
+      "id": "ser-estar.material.wood",
+      "kind": "material",
+      "clue": "material",
+      "prompt": "The table is made of wood.",
+      "correct": "La mesa es de madera.",
+      "distractors": [
+        "La mesa está de madera.",
+        "La mesa está en la cocina.",
+        "La mesa es grande."
+      ],
+      "explanation": "Use ser for material or composition."
+    },
+    {
+      "id": "ser-estar.location-party",
+      "kind": "event",
+      "clue": "event location",
+      "prompt": "The party is at my house.",
+      "correct": "La fiesta es en mi casa.",
+      "distractors": [
+        "La fiesta está en mi casa.",
+        "La fiesta está en la calle.",
+        "La fiesta está divertida."
+      ],
+      "explanation": "Use ser for the location of an event."
+    },
+    {
+      "id": "ser-estar.description.boring",
+      "kind": "description",
+      "clue": "description",
+      "prompt": "The class is boring.",
+      "correct": "La clase es aburrida.",
+      "distractors": [
+        "La clase está aburrida.",
+        "La clase está en la escuela.",
+        "La clase es corta."
+      ],
+      "explanation": "Use ser for a general description of what something is like."
+    },
+    {
+      "id": "ser-estar.feeling.bored",
+      "kind": "feeling",
+      "clue": "feeling",
+      "prompt": "I am bored.",
+      "correct": "Estoy aburrido.",
+      "distractors": [
+        "Soy aburrido.",
+        "Estoy en casa.",
+        "Soy tranquilo."
+      ],
+      "explanation": "Use estar for how someone feels."
+    }
+  ]
+}

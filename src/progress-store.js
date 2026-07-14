@@ -24,8 +24,7 @@ export function recordAttempt(progress, attempt) {
     attempts: [
       ...progress.attempts,
       {
-        verbId: attempt.verbId,
-        formId: attempt.formId,
+        ...attempt,
         status: attempt.status,
         completedAt: new Date().toISOString()
       }
