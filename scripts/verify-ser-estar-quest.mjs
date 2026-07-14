@@ -46,6 +46,10 @@ for (const item of quest.items ?? []) {
     errors.push(`${item.id} prompt must be a complete sentence.`);
   }
 
+  if (!item.clue || typeof item.clue !== "string") {
+    errors.push(`${item.id} must have a clue label.`);
+  }
+
   if (!item.correct?.endsWith(".")) {
     errors.push(`${item.id} correct answer must be a complete sentence.`);
   }

@@ -179,6 +179,46 @@ button {
   margin-top: 0.25rem;
 }
 
+.quest-rule-grid {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.quest-rule-card {
+  border: 1px solid var(--werbos-line);
+  border-radius: 0.5rem;
+  background: var(--werbos-paper);
+  padding: 1rem;
+}
+
+.quest-rule-card h2 {
+  margin: 0.35rem 0 0;
+  font-size: 1.45rem;
+  line-height: 1.05;
+}
+
+.quest-rule-card p:not(.eyebrow) {
+  margin: 0.65rem 0 0;
+  color: #5d5953;
+  line-height: 1.45;
+}
+
+.quest-rule-card ul {
+  display: grid;
+  gap: 0.45rem;
+  margin: 0.85rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.quest-rule-card li {
+  border-radius: 0.375rem;
+  background: var(--werbos-white);
+  padding: 0.45rem 0.6rem;
+  color: #3d3934;
+  font-weight: 800;
+}
+
 .quest-link-card h2 {
   margin: 0.35rem 0 0;
   font-size: 1.75rem;

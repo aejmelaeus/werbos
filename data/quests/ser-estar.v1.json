@@ -7,6 +7,7 @@
     {
       "id": "ser-estar.identity.teacher",
       "kind": "identity",
+      "clue": "profession",
       "prompt": "She is a teacher.",
       "correct": "Ella es profesora.",
       "distractors": [
@@ -19,6 +20,7 @@
     {
       "id": "ser-estar.location.library",
       "kind": "location",
+      "clue": "location",
       "prompt": "We are in the library.",
       "correct": "Estamos en la biblioteca.",
       "distractors": [
@@ -31,6 +33,7 @@
     {
       "id": "ser-estar.trait.patient",
       "kind": "trait",
+      "clue": "personality",
       "prompt": "You are patient.",
       "correct": "Tú eres paciente.",
       "distractors": [
@@ -43,6 +46,7 @@
     {
       "id": "ser-estar.state.tired",
       "kind": "state",
+      "clue": "temporary state",
       "prompt": "They are tired today.",
       "correct": "Ellos están cansados hoy.",
       "distractors": [
@@ -55,6 +59,7 @@
     {
       "id": "ser-estar.origin.mexico",
       "kind": "origin",
+      "clue": "origin",
       "prompt": "I am from Mexico.",
       "correct": "Soy de México.",
       "distractors": [
@@ -67,6 +72,7 @@
     {
       "id": "ser-estar.condition.door-open",
       "kind": "condition",
+      "clue": "condition",
       "prompt": "The door is open.",
       "correct": "La puerta está abierta.",
       "distractors": [
@@ -79,6 +85,7 @@
     {
       "id": "ser-estar.time.three",
       "kind": "time",
+      "clue": "time",
       "prompt": "It is three o'clock.",
       "correct": "Son las tres.",
       "distractors": [
@@ -91,6 +98,7 @@
     {
       "id": "ser-estar.action.studying",
       "kind": "action",
+      "clue": "action in progress",
       "prompt": "I am studying right now.",
       "correct": "Estoy estudiando ahora.",
       "distractors": [
@@ -103,6 +111,7 @@
     {
       "id": "ser-estar.material.wood",
       "kind": "material",
+      "clue": "material",
       "prompt": "The table is made of wood.",
       "correct": "La mesa es de madera.",
       "distractors": [
@@ -115,6 +124,7 @@
     {
       "id": "ser-estar.location-party",
       "kind": "event",
+      "clue": "event location",
       "prompt": "The party is at my house.",
       "correct": "La fiesta es en mi casa.",
       "distractors": [
@@ -127,6 +137,7 @@
     {
       "id": "ser-estar.description.boring",
       "kind": "description",
+      "clue": "description",
       "prompt": "The class is boring.",
       "correct": "La clase es aburrida.",
       "distractors": [
@@ -139,6 +150,7 @@
     {
       "id": "ser-estar.feeling.bored",
       "kind": "feeling",
+      "clue": "feeling",
       "prompt": "I am bored.",
       "correct": "Estoy aburrido.",
       "distractors": [

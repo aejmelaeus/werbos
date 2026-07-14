@@ -88,10 +88,37 @@ function renderQuestIntro(historyMode = "push") {
         <div class="start-greeting quest-greeting">
           <img class="start-zorrito" src="./design/brand/zorrito-speech.png" srcset="./design/brand/zorrito-speech.png 1x, ./design/brand/zorrito-speech@2x.png 2x" alt="Zorrito" />
           <div class="speech-bubble start-bubble">
-            <p class="eyebrow">Zorrito</p>
-            ${renderAnimatedSpeechText("Spanish has two common ways to say be: ser and estar. I will show you a clue in English, and you choose the Spanish sentence that fits best.")}
+            <p class="eyebrow">Zorrito explains</p>
+            ${renderAnimatedSpeechText("Think of ser as what something is, and estar as where something is or how it is right now. Use the clue to decide which one fits.")}
           </div>
         </div>
+        <section class="quest-rule-grid" aria-label="Ser and estar clues">
+          <article class="quest-rule-card">
+            <p class="eyebrow">Ser</p>
+            <h2>What something is</h2>
+            <p>Use <strong>ser</strong> for things that define someone or something.</p>
+            <ul>
+              <li>profession</li>
+              <li>nationality or origin</li>
+              <li>personality or description</li>
+              <li>material</li>
+              <li>ownership</li>
+              <li>time and event location</li>
+            </ul>
+          </article>
+          <article class="quest-rule-card">
+            <p class="eyebrow">Estar</p>
+            <h2>Where or how right now</h2>
+            <p>Use <strong>estar</strong> for location, condition, and things that can change.</p>
+            <ul>
+              <li>place or position</li>
+              <li>feelings</li>
+              <li>temporary states</li>
+              <li>conditions</li>
+              <li>actions in progress</li>
+            </ul>
+          </article>
+        </section>
         <button class="primary-action" data-action="start-quest">Start quest</button>
       </article>
     </section>
@@ -108,7 +135,7 @@ function renderQuestStep() {
           <span class="tag">${escapeHtml(question.kind)}</span>
           <span class="muted">ser vs estar</span>
         </div>
-        <p class="hero-kicker">Choose the Spanish sentence</p>
+        <p class="hero-kicker">Clue: ${escapeHtml(question.clue ?? question.kind)}</p>
         <h1 class="reverse-prompt">${escapeHtml(question.prompt)}</h1>
       </article>
       <article class="quiz-card card">
