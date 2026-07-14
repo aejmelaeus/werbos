@@ -48,6 +48,37 @@ for (const item of concepts.items ?? []) {
     }
   }
 
+  if (!Array.isArray(item.verbHints) || item.verbHints.length === 0) {
+    errors.push(`${item.id} must have verb hints.`);
+  }
+
+  const exampleText = (item.examples ?? []).join(" ");
+  const verbHintTerms = new Set();
+  for (const example of item.examples ?? []) {
+    if (!item.verbHints?.some((verbHint) => verbHint.term && example.includes(verbHint.term))) {
+      errors.push(`${item.id} example must include at least one verb hint: ${example}`);
+    }
+  }
+
+  for (const verbHint of item.verbHints ?? []) {
+    if (!verbHint.term || typeof verbHint.term !== "string") {
+      errors.push(`${item.id} has a verb hint without a term.`);
+    }
+
+    if (!verbHint.englishMeaning || typeof verbHint.englishMeaning !== "string") {
+      errors.push(`${item.id} verb hint ${verbHint.term ?? "unknown"} must have an English meaning.`);
+    }
+
+    if (verbHint.term && verbHintTerms.has(verbHint.term)) {
+      errors.push(`${item.id} has duplicate verb hint term: ${verbHint.term}`);
+    }
+    verbHintTerms.add(verbHint.term);
+
+    if (verbHint.term && !exampleText.includes(verbHint.term)) {
+      errors.push(`${item.id} verb hint term does not appear in examples: ${verbHint.term}`);
+    }
+  }
+
   if (!Array.isArray(item.choices) || item.choices.length !== 4) {
     errors.push(`${item.id} must have exactly 4 answer choices.`);
   }

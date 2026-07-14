@@ -13,6 +13,12 @@
         "El libro está encima de la mesa.",
         "El sombrero está encima de la cabeza."
       ],
+      "verbHints": [
+        {
+          "term": "está",
+          "englishMeaning": "is"
+        }
+      ],
       "choices": [
         "debajo de",
         "delante de",
@@ -32,6 +38,16 @@
         "El gato está debajo de la silla.",
         "Los zapatos están debajo de la cama.",
         "La carta está debajo del libro."
+      ],
+      "verbHints": [
+        {
+          "term": "está",
+          "englishMeaning": "is"
+        },
+        {
+          "term": "están",
+          "englishMeaning": "are"
+        }
       ],
       "choices": [
         "encima de",
@@ -53,6 +69,12 @@
         "La plaza está entre la escuela y el mercado.",
         "El número cinco está entre cuatro y seis."
       ],
+      "verbHints": [
+        {
+          "term": "está",
+          "englishMeaning": "is"
+        }
+      ],
       "choices": [
         "cerca de",
         "lejos de",
@@ -72,6 +94,20 @@
         "Me lavo las manos antes de comer.",
         "Leo el mensaje antes de responder.",
         "Estudiamos antes del examen."
+      ],
+      "verbHints": [
+        {
+          "term": "Me lavo",
+          "englishMeaning": "I wash"
+        },
+        {
+          "term": "Leo",
+          "englishMeaning": "I read"
+        },
+        {
+          "term": "Estudiamos",
+          "englishMeaning": "we study"
+        }
       ],
       "choices": [
         "antes",
@@ -93,6 +129,20 @@
         "Bebemos agua después de correr.",
         "Hablamos después de la clase."
       ],
+      "verbHints": [
+        {
+          "term": "Descanso",
+          "englishMeaning": "I rest"
+        },
+        {
+          "term": "Bebemos",
+          "englishMeaning": "we drink"
+        },
+        {
+          "term": "Hablamos",
+          "englishMeaning": "we talk"
+        }
+      ],
       "choices": [
         "mientras",
         "ya",
@@ -112,6 +162,20 @@
         "Tengo mucho trabajo hoy.",
         "Hay mucho ruido en la calle.",
         "Ella lee mucho por la noche."
+      ],
+      "verbHints": [
+        {
+          "term": "Tengo",
+          "englishMeaning": "I have"
+        },
+        {
+          "term": "Hay",
+          "englishMeaning": "there is"
+        },
+        {
+          "term": "lee",
+          "englishMeaning": "reads"
+        }
       ],
       "choices": [
         "poco",
@@ -133,6 +197,20 @@
         "Queda poca leche.",
         "Hay pocos estudiantes hoy."
       ],
+      "verbHints": [
+        {
+          "term": "Tengo",
+          "englishMeaning": "I have"
+        },
+        {
+          "term": "Queda",
+          "englishMeaning": "is left"
+        },
+        {
+          "term": "Hay",
+          "englishMeaning": "there are"
+        }
+      ],
       "choices": [
         "demasiado",
         "suficiente",
@@ -152,6 +230,20 @@
         "Camino hacia la estación.",
         "El perro corre hacia la puerta.",
         "Miramos hacia el mar."
+      ],
+      "verbHints": [
+        {
+          "term": "Camino",
+          "englishMeaning": "I walk"
+        },
+        {
+          "term": "corre",
+          "englishMeaning": "runs"
+        },
+        {
+          "term": "Miramos",
+          "englishMeaning": "we look"
+        }
       ],
       "choices": [
         "desde",
@@ -173,6 +265,32 @@
         "Estudio porque tengo un examen.",
         "Sonríe porque está contenta."
       ],
+      "verbHints": [
+        {
+          "term": "Me quedo",
+          "englishMeaning": "I stay"
+        },
+        {
+          "term": "llueve",
+          "englishMeaning": "it rains"
+        },
+        {
+          "term": "Estudio",
+          "englishMeaning": "I study"
+        },
+        {
+          "term": "tengo",
+          "englishMeaning": "I have"
+        },
+        {
+          "term": "Sonríe",
+          "englishMeaning": "smiles"
+        },
+        {
+          "term": "está",
+          "englishMeaning": "is"
+        }
+      ],
       "choices": [
         "aunque",
         "porque",
@@ -192,6 +310,32 @@
         "Salgo aunque hace frío.",
         "Leo aunque estoy cansado.",
         "Jugamos aunque llueve."
+      ],
+      "verbHints": [
+        {
+          "term": "Salgo",
+          "englishMeaning": "I go out"
+        },
+        {
+          "term": "hace",
+          "englishMeaning": "it is"
+        },
+        {
+          "term": "Leo",
+          "englishMeaning": "I read"
+        },
+        {
+          "term": "estoy",
+          "englishMeaning": "I am"
+        },
+        {
+          "term": "Jugamos",
+          "englishMeaning": "we play"
+        },
+        {
+          "term": "llueve",
+          "englishMeaning": "it rains"
+        }
       ],
       "choices": [
         "entonces",

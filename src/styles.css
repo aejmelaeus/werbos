@@ -370,6 +370,24 @@ button {
   line-height: 1.35;
 }
 
+.concept-term-button {
+  display: inline;
+  min-height: 0;
+  border: 0;
+  border-bottom: 2px solid var(--werbos-maize);
+  background: transparent;
+  padding: 0;
+  color: var(--werbos-fern);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 900;
+}
+
+.concept-term-button:focus,
+.concept-term-button:hover {
+  border-bottom-color: var(--werbos-fern);
+}
+
 .concept-recap-card {
   display: grid;
   gap: 1rem;

@@ -15,8 +15,11 @@ Each challenge shows:
 - exactly four Spanish answer choices
 - one clearly correct concept
 - a short Zorrito hint in Spanish after an incorrect answer
+- clickable verb or verb-phrase hints inside the example sentences
 
 The learner taps an answer. A correct answer plays the success sound and records the concept attempt. An incorrect answer plays the failure sound, keeps the same card visible, and reveals the hint so the learner can try again.
+
+The learner can also tap marked verbs or verb phrases inside the example sentences. This keeps the same challenge visible and lets Zorrito show a short English meaning, for example `Sonríe = smiles.` These hints support self-guided reading without changing the answer state.
 
 ## Content Model
 
@@ -28,6 +31,7 @@ Each item has:
 - `concept`: the target Spanish concept
 - `family`: concept family used for meaningful distractors
 - `examples`: exactly three Spanish sentences
+- `verbHints`: clickable verb or verb-phrase support for words used in `examples`
 - `choices`: exactly four Spanish concepts
 - `correctAnswer`: the concept that all examples share
 - `englishConcept`: English reinforcement for the concept
@@ -37,6 +41,11 @@ Each item has:
 Distractors should come from the same family as the correct answer. For example, a position concept should be tested against other position concepts, not against time or quantity concepts.
 
 The challenge card stays Spanish-first: examples, prompt, and answer choices are in Spanish. After feedback, Werbos may show the Spanish concept and clue with English translations underneath to reinforce meaning.
+
+Verb hints are learner support, not answer choices. Each hint has:
+
+- `term`: exact Spanish text that appears in an example sentence
+- `englishMeaning`: short English meaning shown by Zorrito
 
 ## Initial Families
 

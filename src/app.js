@@ -194,9 +194,10 @@ function renderConceptStep() {
         </div>
         <p class="hero-kicker">Tres frases</p>
         <ol class="concept-examples">
-          ${challenge.examples.map((example) => `<li>${escapeHtml(example)}</li>`).join("")}
+          ${challenge.examples.map((example) => `<li>${renderConceptExample(example, challenge.verbHints)}</li>`).join("")}
         </ol>
       </article>
+      ${session.selectedVerbHint ? renderConceptVerbHint(session.selectedVerbHint) : ""}
       <article class="quiz-card card">
         <div class="quiz-header">
           <div>
@@ -355,6 +356,20 @@ function renderPracticeRecap() {
   `;
 }
 
+function renderConceptVerbHint(verbHint) {
+  return `
+    <article class="speech-card card">
+      <div class="speech-layout">
+        <img class="zorrito-mark" src="./design/brand/zorrito-speech.png" srcset="./design/brand/zorrito-speech.png 1x, ./design/brand/zorrito-speech@2x.png 2x" alt="Zorrito" />
+        <div class="speech-bubble">
+          <p class="eyebrow">Zorrito</p>
+          ${renderAnimatedSpeechText(`${verbHint.term} = ${verbHint.englishMeaning}.`)}
+        </div>
+      </div>
+    </article>
+  `;
+}
+
 function renderConceptHint(challenge) {
   return `
     <article class="speech-card card">
@@ -380,6 +395,26 @@ function renderQuestRecap() {
       <p>${escapeHtml(session.question.explanation)}</p>
     </article>
   `;
+}
+
+function renderConceptExample(example, verbHints = []) {
+  const sortedHints = [...verbHints].sort((first, second) => second.term.length - first.term.length);
+  let output = "";
+  let index = 0;
+
+  while (index < example.length) {
+    const match = sortedHints.find((hint) => example.startsWith(hint.term, index));
+    if (!match) {
+      output += escapeHtml(example[index]);
+      index += 1;
+      continue;
+    }
+
+    output += `<button class="concept-term-button" data-action="show-concept-verb-hint" data-term="${escapeAttribute(match.term)}">${escapeHtml(match.term)}</button>`;
+    index += match.term.length;
+  }
+
+  return output;
 }
 
 function renderConceptRecap() {
@@ -513,6 +548,19 @@ app.addEventListener("click", (event) => {
 
   if (action === "start-concepts") {
     startConceptSession();
+    return;
+  }
+
+  if (action === "show-concept-verb-hint") {
+    const term = button.dataset.term;
+    const verbHint = session?.challenge?.verbHints?.find((hint) => hint.term === term);
+    if (verbHint) {
+      session = {
+        ...session,
+        selectedVerbHint: verbHint
+      };
+      renderConceptStep();
+    }
     return;
   }
 
