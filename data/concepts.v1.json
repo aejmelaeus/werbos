@@ -1,0 +1,188 @@
+{
+  "version": 1,
+  "id": "concepts",
+  "title": "Conceptos",
+  "description": "Inferir un concepto español desde tres frases en español.",
+  "items": [
+    {
+      "id": "encima-de-01",
+      "concept": "encima de",
+      "family": "posicion",
+      "examples": [
+        "El avión está encima de las nubes.",
+        "El libro está encima de la mesa.",
+        "El sombrero está encima de la cabeza."
+      ],
+      "choices": [
+        "debajo de",
+        "delante de",
+        "encima de",
+        "entre"
+      ],
+      "correctAnswer": "encima de",
+      "hint": "Todos están en una posición más alta."
+    },
+    {
+      "id": "debajo-de-01",
+      "concept": "debajo de",
+      "family": "posicion",
+      "examples": [
+        "El gato está debajo de la silla.",
+        "Los zapatos están debajo de la cama.",
+        "La carta está debajo del libro."
+      ],
+      "choices": [
+        "encima de",
+        "debajo de",
+        "detrás de",
+        "fuera de"
+      ],
+      "correctAnswer": "debajo de",
+      "hint": "Todo está en una posición más baja."
+    },
+    {
+      "id": "entre-01",
+      "concept": "entre",
+      "family": "posicion",
+      "examples": [
+        "La niña está entre sus padres.",
+        "La plaza está entre la escuela y el mercado.",
+        "El número cinco está entre cuatro y seis."
+      ],
+      "choices": [
+        "cerca de",
+        "lejos de",
+        "entre",
+        "dentro de"
+      ],
+      "correctAnswer": "entre",
+      "hint": "Hay algo en medio de dos cosas."
+    },
+    {
+      "id": "antes-01",
+      "concept": "antes",
+      "family": "tiempo",
+      "examples": [
+        "Me lavo las manos antes de comer.",
+        "Leo el mensaje antes de responder.",
+        "Estudiamos antes del examen."
+      ],
+      "choices": [
+        "antes",
+        "después",
+        "durante",
+        "todavía"
+      ],
+      "correctAnswer": "antes",
+      "hint": "La acción pasa primero."
+    },
+    {
+      "id": "despues-01",
+      "concept": "después",
+      "family": "tiempo",
+      "examples": [
+        "Descanso después del trabajo.",
+        "Bebemos agua después de correr.",
+        "Hablamos después de la clase."
+      ],
+      "choices": [
+        "mientras",
+        "ya",
+        "antes",
+        "después"
+      ],
+      "correctAnswer": "después",
+      "hint": "La acción pasa más tarde."
+    },
+    {
+      "id": "mucho-01",
+      "concept": "mucho",
+      "family": "cantidad",
+      "examples": [
+        "Tengo mucho trabajo hoy.",
+        "Hay mucho ruido en la calle.",
+        "Ella lee mucho por la noche."
+      ],
+      "choices": [
+        "poco",
+        "mucho",
+        "casi",
+        "suficiente"
+      ],
+      "correctAnswer": "mucho",
+      "hint": "Hay una cantidad grande."
+    },
+    {
+      "id": "poco-01",
+      "concept": "poco",
+      "family": "cantidad",
+      "examples": [
+        "Tengo poco tiempo.",
+        "Queda poca leche.",
+        "Hay pocos estudiantes hoy."
+      ],
+      "choices": [
+        "demasiado",
+        "suficiente",
+        "poco",
+        "mucho"
+      ],
+      "correctAnswer": "poco",
+      "hint": "Hay una cantidad pequeña."
+    },
+    {
+      "id": "hacia-01",
+      "concept": "hacia",
+      "family": "direccion",
+      "examples": [
+        "Camino hacia la estación.",
+        "El perro corre hacia la puerta.",
+        "Miramos hacia el mar."
+      ],
+      "choices": [
+        "desde",
+        "hasta",
+        "por",
+        "hacia"
+      ],
+      "correctAnswer": "hacia",
+      "hint": "El movimiento o la mirada va en esa dirección."
+    },
+    {
+      "id": "porque-01",
+      "concept": "porque",
+      "family": "conexion",
+      "examples": [
+        "Me quedo en casa porque llueve.",
+        "Estudio porque tengo un examen.",
+        "Sonríe porque está contenta."
+      ],
+      "choices": [
+        "aunque",
+        "porque",
+        "además",
+        "pero"
+      ],
+      "correctAnswer": "porque",
+      "hint": "La segunda parte dice la razón."
+    },
+    {
+      "id": "aunque-01",
+      "concept": "aunque",
+      "family": "conexion",
+      "examples": [
+        "Salgo aunque hace frío.",
+        "Leo aunque estoy cansado.",
+        "Jugamos aunque llueve."
+      ],
+      "choices": [
+        "entonces",
+        "pero",
+        "porque",
+        "aunque"
+      ],
+      "correctAnswer": "aunque",
+      "hint": "Una cosa pasa con una dificultad o contraste."
+    }
+  ]
+}

@@ -20,6 +20,17 @@ export async function loadSerEstarQuest() {
   return data;
 }
 
+export async function loadConceptData() {
+  const response = await fetch("./data/concepts.v1.json");
+  if (!response.ok) {
+    throw new Error(`Could not load concept data: ${response.status}`);
+  }
+
+  const data = await response.json();
+  validateConceptData(data);
+  return data;
+}
+
 function validateVerbData(data) {
   if (data.version !== 1 || !Array.isArray(data.items) || data.items.length === 0) {
     throw new Error("Unexpected verb data shape.");
@@ -29,5 +40,11 @@ function validateVerbData(data) {
 function validateQuestData(data) {
   if (data.version !== 1 || data.id !== "ser-estar" || !Array.isArray(data.items) || data.items.length === 0) {
     throw new Error("Unexpected ser estar quest data shape.");
+  }
+}
+
+function validateConceptData(data) {
+  if (data.version !== 1 || data.id !== "concepts" || !Array.isArray(data.items) || data.items.length === 0) {
+    throw new Error("Unexpected concept data shape.");
   }
 }
