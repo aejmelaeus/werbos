@@ -375,14 +375,18 @@ button {
   gap: 0.25rem;
 }
 
+.concept-translation-pair strong,
 .concept-primary-hint {
-  color: var(--werbos-ink);
+  color: var(--werbos-fern);
+  font-size: 1rem;
   font-weight: 900;
   line-height: 1.5;
 }
 
 .concept-primary-hint .speech-text {
   min-height: 0;
+  color: var(--werbos-fern);
+  font-size: 1rem;
   font-weight: 900;
 }
 
