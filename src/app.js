@@ -1,5 +1,14 @@
-import { loadSerEstarQuest, loadVerbData } from "./data-loader.js";
-import { answerForm, answerMeaning, answerQuest, createQuestSession, createVerbSession, pickRandomVerb } from "./practice-engine.js";
+import { loadConceptData, loadSerEstarQuest, loadVerbData } from "./data-loader.js";
+import {
+  answerConcept,
+  answerForm,
+  answerMeaning,
+  answerQuest,
+  createConceptSession,
+  createQuestSession,
+  createVerbSession,
+  pickRandomVerb
+} from "./practice-engine.js";
 import { loadProgress, recordAttempt } from "./progress-store.js";
 
 const app = document.querySelector("#app");
@@ -10,6 +19,7 @@ const sounds = {
 
 let verbData;
 let serEstarQuest;
+let conceptData;
 let session;
 let progress = loadProgress();
 
@@ -18,9 +28,13 @@ init();
 async function init() {
   renderLoading();
   try {
-    [verbData, serEstarQuest] = await Promise.all([loadVerbData(), loadSerEstarQuest()]);
+    [verbData, serEstarQuest, conceptData] = await Promise.all([loadVerbData(), loadSerEstarQuest(), loadConceptData()]);
     if (shouldStartSerEstarQuest()) {
       renderQuestIntro("replace");
+      return;
+    }
+    if (shouldStartConcepts()) {
+      renderConceptIntro("replace");
       return;
     }
     renderStart();
@@ -58,6 +72,14 @@ function renderStart() {
         </div>
         <a class="secondary-link" href="./?quest=ser-estar" data-action="show-quest-intro">Start quest</a>
       </article>
+      <article class="quest-link-card card">
+        <div>
+          <p class="eyebrow">Test mode</p>
+          <h2>Conceptos</h2>
+          <p>Find the shared Spanish concept from three Spanish examples.</p>
+        </div>
+        <a class="secondary-link" href="./?mode=concepts" data-action="show-concept-intro">Start concepts</a>
+      </article>
       <section class="status-strip">
         <div>
           <span>${attempts}</span>
@@ -68,6 +90,41 @@ function renderStart() {
           <p>verbs loaded</p>
         </div>
       </section>
+    </section>
+  `);
+}
+
+function renderConceptIntro(historyMode = "push") {
+  if (historyMode === "push") {
+    window.history.pushState({}, "", "./?mode=concepts");
+  } else if (historyMode === "replace") {
+    window.history.replaceState({}, "", "./?mode=concepts");
+  }
+
+  setAppHtml(`
+    <section class="app-view start-view">
+      ${renderHeader("Conceptos")}
+      <article class="quest-intro-card card">
+        <p class="eyebrow">Modo de prueba</p>
+        <h1>Conceptos</h1>
+        <div class="start-greeting quest-greeting">
+          <img class="start-zorrito" src="./design/brand/zorrito-speech.png" srcset="./design/brand/zorrito-speech.png 1x, ./design/brand/zorrito-speech@2x.png 2x" alt="Zorrito" />
+          <div class="speech-bubble start-bubble">
+            <p class="eyebrow">Zorrito explica</p>
+            ${renderAnimatedSpeechText("Lee tres frases en español. Todas comparten una idea. Elige el concepto que aparece en las tres.")}
+          </div>
+        </div>
+        <section class="concept-rule-card" aria-label="Reglas del modo conceptos">
+          <p class="eyebrow">Reglas</p>
+          <ul>
+            <li>Tres frases completas.</li>
+            <li>Cuatro opciones en español.</li>
+            <li>Una idea en común.</li>
+            <li>Una pista si necesitas ayuda.</li>
+          </ul>
+        </section>
+        <button class="primary-action" data-action="start-concepts">Empezar</button>
+      </article>
     </section>
   `);
 }
@@ -121,6 +178,39 @@ function renderQuestIntro(historyMode = "push") {
         </section>
         <button class="primary-action" data-action="start-quest">Start quest</button>
       </article>
+    </section>
+  `);
+}
+
+function renderConceptStep() {
+  const { challenge } = session;
+  setAppHtml(`
+    <section class="app-view">
+      ${renderHeader("Conceptos")}
+      <article class="hero-card card concept-card">
+        <div class="hero-topline">
+          <span class="tag">${escapeHtml(challenge.family)}</span>
+          <span class="muted">concepto</span>
+        </div>
+        <p class="hero-kicker">Tres frases</p>
+        <ol class="concept-examples">
+          ${challenge.examples.map((example) => `<li>${renderConceptExample(example, challenge.verbHints)}</li>`).join("")}
+        </ol>
+      </article>
+      ${session.selectedVerbHint ? renderConceptVerbHint(session.selectedVerbHint) : ""}
+      <article class="quiz-card card">
+        <div class="quiz-header">
+          <div>
+            <p class="eyebrow">Pregunta</p>
+            <h2 class="quiz-title">¿Qué concepto tienen en común estas frases?</h2>
+          </div>
+          <div class="question-mark">?</div>
+        </div>
+        <div class="answer-list">
+          ${session.answers.map((answer) => renderAnswerButton(answer, "concept")).join("")}
+        </div>
+      </article>
+      ${session.hintVisible ? renderConceptHint(challenge) : ""}
     </section>
   `);
 }
@@ -221,21 +311,31 @@ function renderFormStep() {
 function renderResult() {
   const completed = session.status === "completed";
   const isQuest = session.mode === "quest";
+  const isConcept = session.mode === "concept";
+  const headerLabel = isConcept ? (completed ? "Bien" : "Pista") : completed ? "Success" : "Try again";
+  const eyebrowLabel = isConcept ? (completed ? "Correcto" : "Intenta otra vez") : completed ? "Completed" : "Failed";
+  const titleLabel = isConcept ? (completed ? "Concepto encontrado." : "Sigue pensando.") : completed ? "Nice work." : "Good practice.";
+  const actionLabel = isConcept ? "Siguiente" : "Next";
   setAppHtml(`
     <section class="app-view result-view">
-      ${renderHeader(completed ? "Success" : "Try again")}
+      ${renderHeader(headerLabel)}
       <article class="result-card card ${completed ? "is-success" : "is-failure"}">
-        <p class="eyebrow">${completed ? "Completed" : "Failed"}</p>
-        <h1>${completed ? "Nice work." : "Good practice."}</h1>
+        <p class="eyebrow">${eyebrowLabel}</p>
+        <h1>${titleLabel}</h1>
         <p>${renderResultMessage(completed)}</p>
-        <button class="primary-action" data-action="next">Next</button>
+        <button class="primary-action" data-action="next">${actionLabel}</button>
       </article>
-      ${isQuest ? renderQuestRecap() : renderPracticeRecap()}
+      ${isConcept ? renderConceptRecap() : isQuest ? renderQuestRecap() : renderPracticeRecap()}
     </section>
   `);
 }
 
 function renderResultMessage(completed) {
+  if (session.mode === "concept") {
+    return completed
+      ? "Encontraste el concepto común en las tres frases."
+      : "Mira la pista y prueba otra vez.";
+  }
   if (session.mode === "quest") {
     return completed
       ? "You chose the sentence that fits the ser/estar context."
@@ -256,12 +356,79 @@ function renderPracticeRecap() {
   `;
 }
 
+function renderConceptVerbHint(verbHint) {
+  return `
+    <article class="speech-card card">
+      <div class="speech-layout">
+        <img class="zorrito-mark" src="./design/brand/zorrito-speech.png" srcset="./design/brand/zorrito-speech.png 1x, ./design/brand/zorrito-speech@2x.png 2x" alt="Zorrito" />
+        <div class="speech-bubble">
+          <p class="eyebrow">Zorrito</p>
+          ${renderAnimatedSpeechText(`${verbHint.term} = ${verbHint.englishMeaning}.`)}
+        </div>
+      </div>
+    </article>
+  `;
+}
+
+function renderConceptHint(challenge) {
+  return `
+    <article class="speech-card card">
+      <div class="speech-layout">
+        <img class="zorrito-mark" src="./design/brand/zorrito-speech.png" srcset="./design/brand/zorrito-speech.png 1x, ./design/brand/zorrito-speech@2x.png 2x" alt="Zorrito" />
+        <div class="speech-bubble">
+          <p class="eyebrow">Zorrito</p>
+          <div class="concept-primary-hint">
+            ${renderAnimatedSpeechText(challenge.hint)}
+          </div>
+          <p class="translation-text">${escapeHtml(challenge.englishHint)}</p>
+        </div>
+      </div>
+    </article>
+  `;
+}
+
 function renderQuestRecap() {
   return `
     <article class="summary-card card">
       <p class="eyebrow">Quest recap</p>
       <p><strong>${escapeHtml(session.question.correct)}</strong></p>
       <p>${escapeHtml(session.question.explanation)}</p>
+    </article>
+  `;
+}
+
+function renderConceptExample(example, verbHints = []) {
+  const sortedHints = [...verbHints].sort((first, second) => second.term.length - first.term.length);
+  let output = "";
+  let index = 0;
+
+  while (index < example.length) {
+    const match = sortedHints.find((hint) => example.startsWith(hint.term, index));
+    if (!match) {
+      output += escapeHtml(example[index]);
+      index += 1;
+      continue;
+    }
+
+    output += `<button class="concept-term-button" data-action="show-concept-verb-hint" data-term="${escapeAttribute(match.term)}">${escapeHtml(match.term)}</button>`;
+    index += match.term.length;
+  }
+
+  return output;
+}
+
+function renderConceptRecap() {
+  return `
+    <article class="summary-card card concept-recap-card">
+      <p class="eyebrow">Concepto</p>
+      <div class="concept-translation-pair">
+        <p class="concept-primary-line">${escapeHtml(session.challenge.correctAnswer)}</p>
+        <span>${escapeHtml(session.challenge.englishConcept)}</span>
+      </div>
+      <div class="concept-translation-pair">
+        <p class="concept-primary-line">${escapeHtml(session.challenge.hint)}</p>
+        <span>${escapeHtml(session.challenge.englishHint)}</span>
+      </div>
     </article>
   `;
 }
@@ -368,12 +535,40 @@ app.addEventListener("click", (event) => {
     return;
   }
 
+  if (action === "show-concept-intro") {
+    event.preventDefault();
+    renderConceptIntro("push");
+    return;
+  }
+
   if (action === "start-quest") {
     startQuestSession();
     return;
   }
 
+  if (action === "start-concepts") {
+    startConceptSession();
+    return;
+  }
+
+  if (action === "show-concept-verb-hint") {
+    const term = button.dataset.term;
+    const verbHint = session?.challenge?.verbHints?.find((hint) => hint.term === term);
+    if (verbHint) {
+      session = {
+        ...session,
+        selectedVerbHint: verbHint
+      };
+      renderConceptStep();
+    }
+    return;
+  }
+
   if (action === "next") {
+    if (session?.mode === "concept") {
+      startConceptSession();
+      return;
+    }
     if (session?.mode === "quest") {
       startQuestSession();
       return;
@@ -404,6 +599,17 @@ app.addEventListener("click", (event) => {
   if (step === "quest") {
     session = answerQuest(session, answer);
     finishAttempt(session.status, session.status === "completed" ? "success" : "failure");
+    return;
+  }
+
+  if (step === "concept") {
+    session = answerConcept(session, answer);
+    if (session.status === "completed") {
+      finishAttempt("completed", "success");
+      return;
+    }
+    playSound("failure");
+    renderConceptStep();
   }
 });
 
@@ -421,15 +627,30 @@ function startQuestSession() {
   renderQuestStep();
 }
 
+function startConceptSession() {
+  session = createConceptSession(conceptData);
+  renderConceptStep();
+}
+
 function finishAttempt(status, soundName) {
-  if (session.mode === "quest") {
+  if (session.mode === "concept") {
     progress = recordAttempt(progress, {
+      mode: session.mode,
+      conceptId: session.conceptId,
+      challengeId: session.challenge.id,
+      misses: session.misses,
+      status
+    });
+  } else if (session.mode === "quest") {
+    progress = recordAttempt(progress, {
+      mode: session.mode,
       questId: session.questId,
       questionId: session.question.id,
       status
     });
   } else {
     progress = recordAttempt(progress, {
+      mode: session.mode,
       verbId: session.verb.id,
       formId: session.form.id,
       status
@@ -443,6 +664,12 @@ function shouldStartSerEstarQuest() {
   const path = window.location.pathname.replace(/\/+$/, "");
   const query = new URLSearchParams(window.location.search);
   return path.endsWith("/quest-ser-estar") || query.get("quest") === "ser-estar";
+}
+
+function shouldStartConcepts() {
+  const path = window.location.pathname.replace(/\/+$/, "");
+  const query = new URLSearchParams(window.location.search);
+  return path.endsWith("/concepts") || query.get("mode") === "concepts";
 }
 
 function playSound(name) {

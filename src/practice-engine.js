@@ -44,6 +44,25 @@ export function createQuestSession(quest, random = Math.random) {
   };
 }
 
+export function createConceptSession(concepts, random = Math.random) {
+  if (!concepts?.items?.length) {
+    throw new Error("No concept challenges are available.");
+  }
+
+  const challenge = concepts.items[Math.floor(random() * concepts.items.length)];
+  return {
+    id: `${concepts.id}.${challenge.id}.${Date.now()}`,
+    mode: "concept",
+    conceptId: challenge.concept,
+    challenge,
+    answers: shuffle(challenge.choices, random),
+    step: "concept",
+    status: "active",
+    hintVisible: false,
+    misses: 0
+  };
+}
+
 export function answerMeaning(session, answer) {
   const correct = answer === session.verb.meaning.correct;
   return {
@@ -72,6 +91,18 @@ export function answerQuest(session, answer) {
     step: "result",
     status: correct ? "completed" : "failed",
     questResult: correct
+  };
+}
+
+export function answerConcept(session, answer) {
+  const correct = answer === session.challenge.correctAnswer;
+  return {
+    ...session,
+    step: correct ? "result" : "concept",
+    status: correct ? "completed" : "active",
+    conceptResult: correct,
+    hintVisible: !correct,
+    misses: correct ? session.misses : session.misses + 1
   };
 }
 
