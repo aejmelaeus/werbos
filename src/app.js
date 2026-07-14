@@ -138,15 +138,14 @@ function renderNearPastIntro(historyMode = "push") {
           <p class="eyebrow">Example</p>
           <div class="near-past-split">
             <span>
-              <strong>he</strong>
+              <strong>hemos</strong>
               <small>who?</small>
             </span>
             <span>
-              <strong>hablado</strong>
+              <strong>estudiado</strong>
               <small>what happened?</small>
             </span>
           </div>
-          <p>Done. No grammar. No tables.</p>
         </section>
         <button class="primary-action" data-action="start-near-past">Start quest</button>
       </article>
