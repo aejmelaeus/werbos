@@ -362,7 +362,9 @@ function renderConceptHint(challenge) {
         <img class="zorrito-mark" src="./design/brand/zorrito-speech.png" srcset="./design/brand/zorrito-speech.png 1x, ./design/brand/zorrito-speech@2x.png 2x" alt="Zorrito" />
         <div class="speech-bubble">
           <p class="eyebrow">Zorrito</p>
-          ${renderAnimatedSpeechText(challenge.hint)}
+          <div class="concept-primary-hint">
+            ${renderAnimatedSpeechText(challenge.hint)}
+          </div>
           <p class="translation-text">${escapeHtml(challenge.englishHint)}</p>
         </div>
       </div>
@@ -388,7 +390,7 @@ function renderConceptRecap() {
         <strong>${escapeHtml(session.challenge.correctAnswer)}</strong>
         <span>${escapeHtml(session.challenge.englishConcept)}</span>
       </p>
-      <p>${escapeHtml(session.challenge.hint)}</p>
+      <p class="concept-primary-hint">${escapeHtml(session.challenge.hint)}</p>
       <p class="translation-text">${escapeHtml(session.challenge.englishHint)}</p>
     </article>
   `;

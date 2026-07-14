@@ -375,11 +375,22 @@ button {
   gap: 0.25rem;
 }
 
+.concept-primary-hint {
+  color: var(--werbos-ink);
+  font-weight: 900;
+  line-height: 1.5;
+}
+
+.concept-primary-hint .speech-text {
+  min-height: 0;
+  font-weight: 900;
+}
+
 .concept-translation-pair span,
 .translation-text {
   color: #69655e;
   font-size: 0.95rem;
-  font-weight: 700;
+  font-weight: 400;
   line-height: 1.45;
 }
 
