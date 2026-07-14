@@ -20,6 +20,17 @@ export async function loadSerEstarQuest() {
   return data;
 }
 
+export async function loadNearPastQuest() {
+  const response = await fetch("./data/quests/near-past.v1.json");
+  if (!response.ok) {
+    throw new Error(`Could not load near past quest: ${response.status}`);
+  }
+
+  const data = await response.json();
+  validateNearPastQuestData(data);
+  return data;
+}
+
 export async function loadConceptData() {
   const response = await fetch("./data/concepts.v1.json");
   if (!response.ok) {
@@ -40,6 +51,12 @@ function validateVerbData(data) {
 function validateQuestData(data) {
   if (data.version !== 1 || data.id !== "ser-estar" || !Array.isArray(data.items) || data.items.length === 0) {
     throw new Error("Unexpected ser estar quest data shape.");
+  }
+}
+
+function validateNearPastQuestData(data) {
+  if (data.version !== 1 || data.id !== "near-past" || !Array.isArray(data.items) || data.items.length === 0) {
+    throw new Error("Unexpected near past quest data shape.");
   }
 }
 

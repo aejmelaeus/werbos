@@ -1,0 +1,140 @@
+{
+  "version": 1,
+  "id": "near-past",
+  "title": "The Near Past",
+  "description": "Practice recognizing the helper word in recent past phrases.",
+  "items": [
+    {
+      "id": "near-past.who.yo-hablar",
+      "kind": "who",
+      "phrase": "He hablado.",
+      "question": "¿Quién ha hablado?",
+      "correctAnswer": "Yo",
+      "choices": ["Yo", "Tú", "Él / Ella", "Nosotros"],
+      "helper": "he",
+      "actionWord": "hablado",
+      "explanation": "he tells us Yo. hablado tells us what happened."
+    },
+    {
+      "id": "near-past.who.tu-comer",
+      "kind": "who",
+      "phrase": "Has comido.",
+      "question": "¿Quién ha comido?",
+      "correctAnswer": "Tú",
+      "choices": ["Yo", "Tú", "Vosotros", "Ellos / Ellas"],
+      "helper": "has",
+      "actionWord": "comido",
+      "explanation": "has tells us Tú. comido tells us what happened."
+    },
+    {
+      "id": "near-past.who.el-vivir",
+      "kind": "who",
+      "phrase": "Ha vivido.",
+      "question": "¿Quién ha vivido?",
+      "correctAnswer": "Él / Ella",
+      "choices": ["Yo", "Tú", "Él / Ella", "Nosotros"],
+      "helper": "ha",
+      "actionWord": "vivido",
+      "explanation": "ha tells us Él / Ella. vivido tells us what happened."
+    },
+    {
+      "id": "near-past.who.nosotros-estudiar",
+      "kind": "who",
+      "phrase": "Hemos estudiado.",
+      "question": "¿Quién ha estudiado?",
+      "correctAnswer": "Nosotros",
+      "choices": ["Tú", "Él / Ella", "Nosotros", "Vosotros"],
+      "helper": "hemos",
+      "actionWord": "estudiado",
+      "explanation": "hemos tells us Nosotros. estudiado tells us what happened."
+    },
+    {
+      "id": "near-past.who.vosotros-escuchar",
+      "kind": "who",
+      "phrase": "Habéis escuchado.",
+      "question": "¿Quién ha escuchado?",
+      "correctAnswer": "Vosotros",
+      "choices": ["Yo", "Nosotros", "Vosotros", "Ellos / Ellas"],
+      "helper": "habéis",
+      "actionWord": "escuchado",
+      "explanation": "habéis tells us Vosotros. escuchado tells us what happened."
+    },
+    {
+      "id": "near-past.who.ellos-salir",
+      "kind": "who",
+      "phrase": "Han salido.",
+      "question": "¿Quién ha salido?",
+      "correctAnswer": "Ellos / Ellas",
+      "choices": ["Tú", "Él / Ella", "Nosotros", "Ellos / Ellas"],
+      "helper": "han",
+      "actionWord": "salido",
+      "explanation": "han tells us Ellos / Ellas. salido tells us what happened."
+    },
+    {
+      "id": "near-past.helper.yo",
+      "kind": "helper",
+      "phrase": "Yo",
+      "question": "Choose the helper.",
+      "correctAnswer": "he",
+      "choices": ["he", "has", "ha", "hemos"],
+      "helper": "he",
+      "actionWord": "hablado",
+      "explanation": "Yo uses he."
+    },
+    {
+      "id": "near-past.helper.tu",
+      "kind": "helper",
+      "phrase": "Tú",
+      "question": "Choose the helper.",
+      "correctAnswer": "has",
+      "choices": ["he", "has", "ha", "han"],
+      "helper": "has",
+      "actionWord": "comido",
+      "explanation": "Tú uses has."
+    },
+    {
+      "id": "near-past.helper.el",
+      "kind": "helper",
+      "phrase": "Él / Ella",
+      "question": "Choose the helper.",
+      "correctAnswer": "ha",
+      "choices": ["has", "ha", "hemos", "han"],
+      "helper": "ha",
+      "actionWord": "vivido",
+      "explanation": "Él / Ella uses ha."
+    },
+    {
+      "id": "near-past.helper.nosotros",
+      "kind": "helper",
+      "phrase": "Nosotros",
+      "question": "Choose the helper.",
+      "correctAnswer": "hemos",
+      "choices": ["he", "has", "ha", "hemos"],
+      "helper": "hemos",
+      "actionWord": "estudiado",
+      "explanation": "Nosotros uses hemos."
+    },
+    {
+      "id": "near-past.helper.vosotros",
+      "kind": "helper",
+      "phrase": "Vosotros",
+      "question": "Choose the helper.",
+      "correctAnswer": "habéis",
+      "choices": ["has", "ha", "habéis", "han"],
+      "helper": "habéis",
+      "actionWord": "escuchado",
+      "explanation": "Vosotros uses habéis."
+    },
+    {
+      "id": "near-past.helper.ellos",
+      "kind": "helper",
+      "phrase": "Ellos / Ellas",
+      "question": "Choose the helper.",
+      "correctAnswer": "han",
+      "choices": ["ha", "hemos", "habéis", "han"],
+      "helper": "han",
+      "actionWord": "salido",
+      "explanation": "Ellos / Ellas uses han."
+    }
+  ]
+}

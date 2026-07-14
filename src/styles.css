@@ -236,6 +236,20 @@ button {
   line-height: 1.4;
 }
 
+.near-past-example {
+  border: 1px solid var(--werbos-line);
+  border-radius: 0.5rem;
+  background: var(--werbos-paper);
+  padding: 1rem;
+}
+
+.near-past-example p:not(.eyebrow) {
+  margin: 0.85rem 0 0;
+  color: #5d5953;
+  font-weight: 800;
+  line-height: 1.45;
+}
+
 .quest-link-card h2 {
   margin: 0.35rem 0 0;
   font-size: 1.75rem;
@@ -350,6 +364,61 @@ button {
 .concept-card {
   display: grid;
   gap: 1rem;
+}
+
+.near-past-card {
+  display: grid;
+  gap: 1rem;
+}
+
+.near-past-phrase {
+  margin: 0;
+  font-size: clamp(3rem, 14vw, 5rem);
+  font-weight: 900;
+  line-height: 0.95;
+}
+
+.near-past-split {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.near-past-split span,
+.near-past-build {
+  border-radius: 0.5rem;
+  background: var(--werbos-paper);
+  padding: 0.85rem;
+}
+
+.near-past-split strong,
+.near-past-blank {
+  display: block;
+  color: var(--werbos-fern);
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+
+.near-past-split small {
+  display: block;
+  margin-top: 0.2rem;
+  color: #69655e;
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.near-past-build {
+  margin: 0;
+  color: var(--werbos-ink);
+  font-size: 1.35rem;
+  font-weight: 900;
+}
+
+.near-past-blank {
+  display: inline-block;
+  min-width: 3.5rem;
+  margin-right: 0.35rem;
+  text-align: center;
 }
 
 .concept-examples {

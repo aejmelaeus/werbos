@@ -44,6 +44,24 @@ export function createQuestSession(quest, random = Math.random) {
   };
 }
 
+export function createNearPastQuestSession(quest, random = Math.random) {
+  if (!quest?.items?.length) {
+    throw new Error("No near-past quest questions are available.");
+  }
+
+  const question = quest.items[Math.floor(random() * quest.items.length)];
+  return {
+    id: `${quest.id}.${question.id}.${Date.now()}`,
+    mode: "nearPastQuest",
+    questId: quest.id,
+    questTitle: quest.title,
+    question,
+    answers: shuffle(question.choices, random),
+    step: "nearPastQuest",
+    status: "active"
+  };
+}
+
 export function createConceptSession(concepts, random = Math.random) {
   if (!concepts?.items?.length) {
     throw new Error("No concept challenges are available.");
@@ -86,6 +104,16 @@ export function answerForm(session, answer) {
 
 export function answerQuest(session, answer) {
   const correct = answer === session.question.correct;
+  return {
+    ...session,
+    step: "result",
+    status: correct ? "completed" : "failed",
+    questResult: correct
+  };
+}
+
+export function answerNearPastQuest(session, answer) {
+  const correct = answer === session.question.correctAnswer;
   return {
     ...session,
     step: "result",
