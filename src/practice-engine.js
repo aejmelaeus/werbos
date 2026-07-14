@@ -10,7 +10,7 @@ export function createVerbSession(verb, random = Math.random, mode = pickRandomM
     formAnswers: isReverse
       ? shuffle([form.spanish, ...pickSpanishSentenceDistractors(verb, form, random)], random)
       : shuffle([form.english, ...pickEnglishSentenceDistractors(verb, form, random)], random),
-    step: isReverse ? "form" : "meaning",
+    step: "meaning",
     status: "active"
   };
 }
