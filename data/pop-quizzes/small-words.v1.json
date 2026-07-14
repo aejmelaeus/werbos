@@ -1,0 +1,221 @@
+{
+  "version": 1,
+  "id": "small-words",
+  "title": "Palabras pequeñas",
+  "description": "A two-choice pop quiz for high-frequency small Spanish words.",
+  "introMessage": "Small words do big work. They connect ideas, show direction, and make sentences move. Catch them quickly and Spanish starts to feel less mysterious.",
+  "successMessage": "Perfect streak. You caught every small word, and that is exactly how strong reading starts.",
+  "failureMessage": "That one is useful to notice. Small words come back all the time, so you will get another clean shot soon.",
+  "items": [
+    {
+      "id": "small-word-a",
+      "word": "a",
+      "english": "to / at",
+      "prompt": "Voy ___ la escuela.",
+      "translation": "I go to school.",
+      "correctAnswer": "a",
+      "distractor": "de",
+      "explanation": "Use a for movement toward a place."
+    },
+    {
+      "id": "small-word-de",
+      "word": "de",
+      "english": "of / from",
+      "prompt": "Soy ___ Finlandia.",
+      "translation": "I am from Finland.",
+      "correctAnswer": "de",
+      "distractor": "en",
+      "explanation": "Use de for origin, source, or belonging."
+    },
+    {
+      "id": "small-word-en",
+      "word": "en",
+      "english": "in / on / at",
+      "prompt": "Vivo ___ Madrid.",
+      "translation": "I live in Madrid.",
+      "correctAnswer": "en",
+      "distractor": "a",
+      "explanation": "Use en for being in, on, or at a place."
+    },
+    {
+      "id": "small-word-con",
+      "word": "con",
+      "english": "with",
+      "prompt": "Estudio ___ mi amigo.",
+      "translation": "I study with my friend.",
+      "correctAnswer": "con",
+      "distractor": "sin",
+      "explanation": "Use con when someone or something is included."
+    },
+    {
+      "id": "small-word-sin",
+      "word": "sin",
+      "english": "without",
+      "prompt": "Tomo café ___ azúcar.",
+      "translation": "I drink coffee without sugar.",
+      "correctAnswer": "sin",
+      "distractor": "con",
+      "explanation": "Use sin when something is missing or not included."
+    },
+    {
+      "id": "small-word-por",
+      "word": "por",
+      "english": "through / because of / by",
+      "prompt": "Camino ___ el parque.",
+      "translation": "I walk through the park.",
+      "correctAnswer": "por",
+      "distractor": "para",
+      "explanation": "Use por for routes, causes, and means."
+    },
+    {
+      "id": "small-word-y",
+      "word": "y",
+      "english": "and",
+      "prompt": "Pan ___ agua.",
+      "translation": "Bread and water.",
+      "correctAnswer": "y",
+      "distractor": "o",
+      "explanation": "Use y to add one thing to another."
+    },
+    {
+      "id": "small-word-e",
+      "word": "e",
+      "english": "and",
+      "prompt": "Padre ___ hijo.",
+      "translation": "Father and son.",
+      "correctAnswer": "e",
+      "distractor": "y",
+      "explanation": "Use e instead of y before a word that starts with an i sound."
+    },
+    {
+      "id": "small-word-o",
+      "word": "o",
+      "english": "or",
+      "prompt": "Café ___ té.",
+      "translation": "Coffee or tea.",
+      "correctAnswer": "o",
+      "distractor": "y",
+      "explanation": "Use o to offer a choice."
+    },
+    {
+      "id": "small-word-u",
+      "word": "u",
+      "english": "or",
+      "prompt": "Siete ___ ocho.",
+      "translation": "Seven or eight.",
+      "correctAnswer": "u",
+      "distractor": "o",
+      "explanation": "Use u instead of o before a word that starts with an o sound."
+    },
+    {
+      "id": "small-word-ni",
+      "word": "ni",
+      "english": "nor / neither",
+      "prompt": "No tengo pan ___ agua.",
+      "translation": "I have neither bread nor water.",
+      "correctAnswer": "ni",
+      "distractor": "y",
+      "explanation": "Use ni when adding another negative idea."
+    },
+    {
+      "id": "small-word-que",
+      "word": "que",
+      "english": "that / than",
+      "prompt": "Creo ___ tienes razón.",
+      "translation": "I think that you are right.",
+      "correctAnswer": "que",
+      "distractor": "como",
+      "explanation": "Use que to connect a thought to what someone says or believes."
+    },
+    {
+      "id": "small-word-se",
+      "word": "se",
+      "english": "self / oneself",
+      "prompt": "Ella ___ lava las manos.",
+      "translation": "She washes her hands.",
+      "correctAnswer": "se",
+      "distractor": "me",
+      "explanation": "Use se when the action points back to he, she, they, or you formal."
+    },
+    {
+      "id": "small-word-me",
+      "word": "me",
+      "english": "me / myself",
+      "prompt": "Yo ___ llamo Ana.",
+      "translation": "My name is Ana.",
+      "correctAnswer": "me",
+      "distractor": "te",
+      "explanation": "Use me when the action points to I or me."
+    },
+    {
+      "id": "small-word-te",
+      "word": "te",
+      "english": "you / yourself",
+      "prompt": "Tú ___ llamas Luis.",
+      "translation": "Your name is Luis.",
+      "correctAnswer": "te",
+      "distractor": "me",
+      "explanation": "Use te when the action points to you."
+    },
+    {
+      "id": "small-word-lo",
+      "word": "lo",
+      "english": "it / him",
+      "prompt": "No ___ entiendo.",
+      "translation": "I do not understand it.",
+      "correctAnswer": "lo",
+      "distractor": "la",
+      "explanation": "Use lo for a masculine thing, a male person, or a general it."
+    },
+    {
+      "id": "small-word-la",
+      "word": "la",
+      "english": "the / it / her",
+      "prompt": "No ___ veo.",
+      "translation": "I do not see her.",
+      "correctAnswer": "la",
+      "distractor": "lo",
+      "explanation": "Use la for a feminine thing or person."
+    },
+    {
+      "id": "small-word-los",
+      "word": "los",
+      "english": "the / them",
+      "prompt": "Veo ___ libros.",
+      "translation": "I see the books.",
+      "correctAnswer": "los",
+      "distractor": "las",
+      "explanation": "Use los for masculine plural nouns."
+    },
+    {
+      "id": "small-word-las",
+      "word": "las",
+      "english": "the / them",
+      "prompt": "Veo ___ casas.",
+      "translation": "I see the houses.",
+      "correctAnswer": "las",
+      "distractor": "los",
+      "explanation": "Use las for feminine plural nouns."
+    },
+    {
+      "id": "small-word-un",
+      "word": "un",
+      "english": "a / one",
+      "prompt": "Tengo ___ libro.",
+      "translation": "I have a book.",
+      "correctAnswer": "un",
+      "distractor": "una",
+      "explanation": "Use un before a masculine singular noun."
+    },
+    {
+      "id": "small-word-una",
+      "word": "una",
+      "english": "a / one",
+      "prompt": "Tengo ___ casa.",
+      "translation": "I have a house.",
+      "correctAnswer": "una",
+      "distractor": "un",
+      "explanation": "Use una before a feminine singular noun."
+    }
+  ]
+}

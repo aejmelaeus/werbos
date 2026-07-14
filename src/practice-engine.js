@@ -81,6 +81,30 @@ export function createConceptSession(concepts, random = Math.random) {
   };
 }
 
+export function createPopQuizSession(popQuiz, random = Math.random) {
+  if (!popQuiz?.items?.length) {
+    throw new Error("No pop quiz questions are available.");
+  }
+
+  const questions = shuffle(popQuiz.items, random).map((question) => ({
+    ...question,
+    answers: shuffle([question.correctAnswer, question.distractor], random)
+  }));
+
+  return {
+    id: `${popQuiz.id}.${Date.now()}`,
+    mode: "popQuiz",
+    quizId: popQuiz.id,
+    quizTitle: popQuiz.title,
+    quiz: popQuiz,
+    questions,
+    currentIndex: 0,
+    correctCount: 0,
+    step: "popQuiz",
+    status: "active"
+  };
+}
+
 export function answerMeaning(session, answer) {
   const correct = answer === session.verb.meaning.correct;
   return {
@@ -143,6 +167,33 @@ export function answerConcept(session, answer) {
     conceptResult: correct,
     hintVisible: !correct,
     misses: correct ? session.misses : session.misses + 1
+  };
+}
+
+export function answerPopQuiz(session, answer) {
+  const question = session.questions[session.currentIndex];
+  const correct = answer === question.correctAnswer;
+
+  if (!correct) {
+    return {
+      ...session,
+      step: "result",
+      status: "failed",
+      selectedAnswer: answer,
+      failedQuestion: question,
+      correctAnswer: question.correctAnswer
+    };
+  }
+
+  const nextIndex = session.currentIndex + 1;
+  const completed = nextIndex >= session.questions.length;
+  return {
+    ...session,
+    currentIndex: nextIndex,
+    correctCount: session.correctCount + 1,
+    step: completed ? "result" : "popQuiz",
+    status: completed ? "completed" : "active",
+    selectedAnswer: answer
   };
 }
 

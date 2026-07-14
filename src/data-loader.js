@@ -42,6 +42,17 @@ export async function loadConceptData() {
   return data;
 }
 
+export async function loadSmallWordsPopQuiz() {
+  const response = await fetch("./data/pop-quizzes/small-words.v1.json");
+  if (!response.ok) {
+    throw new Error(`Could not load small words pop quiz: ${response.status}`);
+  }
+
+  const data = await response.json();
+  validateSmallWordsPopQuiz(data);
+  return data;
+}
+
 function validateVerbData(data) {
   if (data.version !== 1 || !Array.isArray(data.items) || data.items.length === 0) {
     throw new Error("Unexpected verb data shape.");
@@ -63,5 +74,11 @@ function validateNearPastQuestData(data) {
 function validateConceptData(data) {
   if (data.version !== 1 || data.id !== "concepts" || !Array.isArray(data.items) || data.items.length === 0) {
     throw new Error("Unexpected concept data shape.");
+  }
+}
+
+function validateSmallWordsPopQuiz(data) {
+  if (data.version !== 1 || data.id !== "small-words" || !Array.isArray(data.items) || data.items.length === 0) {
+    throw new Error("Unexpected small words pop quiz data shape.");
   }
 }

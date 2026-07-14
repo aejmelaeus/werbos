@@ -143,6 +143,34 @@ const components = {
         <p>Correct answers turn solid green. Distractors stay quiet so feedback feels clear without becoming noisy.</p>
       </footer>
     </article>
+  `,
+  "pop-quiz": `
+    <article class="card quiz-card">
+      <div class="quiz-header">
+        <div>
+          <p class="eyebrow">Pop quiz</p>
+          <h2 class="quiz-title">Which small word completes the sentence?</h2>
+        </div>
+        <div class="question-mark">2</div>
+      </div>
+      <article class="hero-card pop-quiz-preview">
+        <div class="hero-topline">
+          <span class="tag">Small word</span>
+          <span class="muted">3 / 21</span>
+        </div>
+        <p class="hero-kicker">in / on / at</p>
+        <h1 class="reverse-prompt">Vivo ___ Madrid.</h1>
+        <p class="sentence-text">I live in Madrid.</p>
+      </article>
+      <div class="answer-list two-answer-list">
+        <button class="answer-button"><span>en</span><span class="answer-key">A</span></button>
+        <button class="answer-button"><span>a</span><span class="answer-key">B</span></button>
+      </div>
+      <footer class="feedback-card">
+        <p class="eyebrow">Streak rule</p>
+        <p>Every item must be answered correctly in one run. A miss ends the chapter and shows the correct small word.</p>
+      </footer>
+    </article>
   `
 };
 

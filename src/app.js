@@ -1,12 +1,14 @@
-import { loadConceptData, loadNearPastQuest, loadSerEstarQuest, loadVerbData } from "./data-loader.js";
+import { loadConceptData, loadNearPastQuest, loadSerEstarQuest, loadSmallWordsPopQuiz, loadVerbData } from "./data-loader.js";
 import {
   answerConcept,
   answerForm,
   answerMeaning,
   answerNearPastQuest,
+  answerPopQuiz,
   answerQuest,
   createConceptSession,
   createNearPastQuestSession,
+  createPopQuizSession,
   createQuestSession,
   createVerbSession,
   pickRandomVerb
@@ -22,6 +24,7 @@ const sounds = {
 let verbData;
 let serEstarQuest;
 let nearPastQuest;
+let smallWordsPopQuiz;
 let conceptData;
 let session;
 let progress = loadProgress();
@@ -31,10 +34,11 @@ init();
 async function init() {
   renderLoading();
   try {
-    [verbData, serEstarQuest, nearPastQuest, conceptData] = await Promise.all([
+    [verbData, serEstarQuest, nearPastQuest, smallWordsPopQuiz, conceptData] = await Promise.all([
       loadVerbData(),
       loadSerEstarQuest(),
       loadNearPastQuest(),
+      loadSmallWordsPopQuiz(),
       loadConceptData()
     ]);
     if (shouldStartSerEstarQuest()) {
@@ -47,6 +51,10 @@ async function init() {
     }
     if (shouldStartConcepts()) {
       renderConceptIntro("replace");
+      return;
+    }
+    if (shouldStartSmallWordsPopQuiz()) {
+      renderSmallWordsPopQuizIntro("replace");
       return;
     }
     renderStart();
@@ -99,6 +107,14 @@ function renderStart() {
           <p>Find the shared Spanish concept from three Spanish examples.</p>
         </div>
         <a class="secondary-link" href="./?mode=concepts" data-action="show-concept-intro">Start concepts</a>
+      </article>
+      <article class="quest-link-card card">
+        <div>
+          <p class="eyebrow">Pop quiz</p>
+          <h2>Palabras pequeñas</h2>
+          <p>Complete a perfect streak with the small Spanish words that hold sentences together.</p>
+        </div>
+        <a class="secondary-link" href="./?quiz=small-words" data-action="show-small-words-pop-quiz-intro">Start pop quiz</a>
       </article>
       <section class="status-strip">
         <div>
@@ -188,6 +204,40 @@ function renderConceptIntro(historyMode = "push") {
   `);
 }
 
+function renderSmallWordsPopQuizIntro(historyMode = "push") {
+  if (historyMode === "push") {
+    window.history.pushState({}, "", "./?quiz=small-words");
+  } else if (historyMode === "replace") {
+    window.history.replaceState({}, "", "./?quiz=small-words");
+  }
+
+  setAppHtml(`
+    <section class="app-view start-view">
+      ${renderHeader("Pop quiz")}
+      <article class="quest-intro-card card">
+        <p class="eyebrow">Pop quiz</p>
+        <h1>Palabras pequeñas</h1>
+        <div class="start-greeting quest-greeting">
+          <img class="start-zorrito" src="./design/brand/zorrito-speech.png" srcset="./design/brand/zorrito-speech.png 1x, ./design/brand/zorrito-speech@2x.png 2x" alt="Zorrito" />
+          <div class="speech-bubble start-bubble">
+            <p class="eyebrow">Zorrito</p>
+            ${renderAnimatedSpeechText(smallWordsPopQuiz.introMessage)}
+          </div>
+        </div>
+        <section class="concept-rule-card" aria-label="Small words pop quiz rules">
+          <p class="eyebrow">Rules</p>
+          <ul>
+            <li>Two choices per word.</li>
+            <li>One miss ends the pop quiz.</li>
+            <li>Answer every word correctly to complete the chapter.</li>
+          </ul>
+        </section>
+        <button class="primary-action" data-action="start-small-words-pop-quiz">Start pop quiz</button>
+      </article>
+    </section>
+  `);
+}
+
 function renderQuestIntro(historyMode = "push") {
   if (historyMode === "push") {
     window.history.pushState({}, "", "./?quest=ser-estar");
@@ -270,6 +320,36 @@ function renderConceptStep() {
         </div>
       </article>
       ${session.hintVisible ? renderConceptHint(challenge) : ""}
+    </section>
+  `);
+}
+
+function renderPopQuizStep() {
+  const question = session.questions[session.currentIndex];
+  setAppHtml(`
+    <section class="app-view">
+      ${renderHeader("Pop quiz")}
+      <article class="hero-card card pop-quiz-card">
+        <div class="hero-topline">
+          <span class="tag">Small word</span>
+          <span class="muted">${session.currentIndex + 1} / ${session.questions.length}</span>
+        </div>
+        <p class="hero-kicker">${escapeHtml(question.english)}</p>
+        <h1 class="reverse-prompt">${escapeHtml(question.prompt)}</h1>
+        <p class="sentence-text">${escapeHtml(question.translation)}</p>
+      </article>
+      <article class="quiz-card card">
+        <div class="quiz-header">
+          <div>
+            <p class="eyebrow">Choose one</p>
+            <h2 class="quiz-title">Which small word completes the sentence?</h2>
+          </div>
+          <div class="question-mark">2</div>
+        </div>
+        <div class="answer-list two-answer-list">
+          ${question.answers.map((answer) => renderAnswerButton(answer, "pop-quiz")).join("")}
+        </div>
+      </article>
     </section>
   `);
 }
@@ -441,9 +521,10 @@ function renderResult() {
   const isQuest = session.mode === "quest";
   const isNearPastQuest = session.mode === "nearPastQuest";
   const isConcept = session.mode === "concept";
-  const headerLabel = isConcept ? (completed ? "Bien" : "Pista") : completed ? "Success" : "Try again";
-  const eyebrowLabel = isConcept ? (completed ? "Correcto" : "Intenta otra vez") : completed ? "Completed" : "Failed";
-  const titleLabel = isConcept ? (completed ? "Concepto encontrado." : "Sigue pensando.") : completed ? "Nice work." : "Good practice.";
+  const isPopQuiz = session.mode === "popQuiz";
+  const headerLabel = isConcept ? (completed ? "Bien" : "Pista") : isPopQuiz ? "Pop quiz" : completed ? "Success" : "Try again";
+  const eyebrowLabel = isConcept ? (completed ? "Correcto" : "Intenta otra vez") : isPopQuiz ? (completed ? "Perfect streak" : "Pop quiz ended") : completed ? "Completed" : "Failed";
+  const titleLabel = isConcept ? (completed ? "Concepto encontrado." : "Sigue pensando.") : isPopQuiz ? (completed ? "Chapter complete." : "Small word found.") : completed ? "Nice work." : "Good practice.";
   const actionLabel = isConcept ? "Siguiente" : "Next";
   setAppHtml(`
     <section class="app-view result-view">
@@ -454,7 +535,7 @@ function renderResult() {
         <p>${renderResultMessage(completed)}</p>
         <button class="primary-action" data-action="next">${actionLabel}</button>
       </article>
-      ${isConcept ? renderConceptRecap() : isNearPastQuest ? renderNearPastRecap() : isQuest ? renderQuestRecap() : renderPracticeRecap()}
+      ${isPopQuiz ? renderPopQuizRecap() : isConcept ? renderConceptRecap() : isNearPastQuest ? renderNearPastRecap() : isQuest ? renderQuestRecap() : renderPracticeRecap()}
     </section>
   `);
 }
@@ -469,6 +550,9 @@ function renderResultMessage(completed) {
     return completed
       ? "Encontraste el concepto común en las tres frases."
       : "Mira la pista y prueba otra vez.";
+  }
+  if (session.mode === "popQuiz") {
+    return completed ? session.quiz.successMessage : session.quiz.failureMessage;
   }
   if (session.mode === "quest") {
     return completed
@@ -486,6 +570,30 @@ function renderPracticeRecap() {
       <p class="eyebrow">Practice recap</p>
       <p><strong>${escapeHtml(session.form.form)}</strong> &middot; ${escapeHtml(session.form.spanish)}</p>
       <p>${escapeHtml(session.form.english)}</p>
+    </article>
+  `;
+}
+
+function renderPopQuizRecap() {
+  if (session.status === "completed") {
+    return `
+      <article class="summary-card card concept-recap-card">
+        <p class="eyebrow">Pop quiz recap</p>
+        <div class="concept-translation-pair">
+          <p class="concept-primary-line">${session.correctCount} / ${session.questions.length}</p>
+          <span>All small words completed in one streak.</span>
+        </div>
+      </article>
+    `;
+  }
+
+  return `
+    <article class="summary-card card concept-recap-card">
+      <p class="eyebrow">Correct word</p>
+      <div class="concept-translation-pair">
+        <p class="concept-primary-line">${escapeHtml(session.failedQuestion.correctAnswer)}</p>
+        <span>${escapeHtml(session.failedQuestion.explanation)}</span>
+      </div>
     </article>
   `;
 }
@@ -744,6 +852,12 @@ app.addEventListener("click", (event) => {
     return;
   }
 
+  if (action === "show-small-words-pop-quiz-intro") {
+    event.preventDefault();
+    renderSmallWordsPopQuizIntro("push");
+    return;
+  }
+
   if (action === "start-quest") {
     startQuestSession();
     return;
@@ -756,6 +870,11 @@ app.addEventListener("click", (event) => {
 
   if (action === "start-concepts") {
     startConceptSession();
+    return;
+  }
+
+  if (action === "start-small-words-pop-quiz") {
+    startSmallWordsPopQuizSession();
     return;
   }
 
@@ -796,6 +915,10 @@ app.addEventListener("click", (event) => {
     }
     if (session?.mode === "quest") {
       startQuestSession();
+      return;
+    }
+    if (session?.mode === "popQuiz") {
+      renderSmallWordsPopQuizIntro("push");
       return;
     }
     startRandomSession();
@@ -842,6 +965,16 @@ app.addEventListener("click", (event) => {
     playSound("failure");
     renderConceptStep();
   }
+
+  if (step === "pop-quiz") {
+    session = answerPopQuiz(session, answer);
+    if (session.status === "active") {
+      playSound("success");
+      renderPopQuizStep();
+      return;
+    }
+    finishAttempt(session.status, session.status === "completed" ? "success" : "failure");
+  }
 });
 
 function startRandomSession() {
@@ -868,6 +1001,11 @@ function startConceptSession() {
   renderConceptStep();
 }
 
+function startSmallWordsPopQuizSession() {
+  session = createPopQuizSession(smallWordsPopQuiz);
+  renderPopQuizStep();
+}
+
 function finishAttempt(status, soundName) {
   if (session.mode === "concept") {
     progress = recordAttempt(progress, {
@@ -889,6 +1027,15 @@ function finishAttempt(status, soundName) {
       mode: session.mode,
       questId: session.questId,
       questionId: session.question.id,
+      status
+    });
+  } else if (session.mode === "popQuiz") {
+    progress = recordAttempt(progress, {
+      mode: session.mode,
+      quizId: session.quizId,
+      questionId: session.failedQuestion?.id ?? "completed",
+      correctCount: session.correctCount,
+      totalCount: session.questions.length,
       status
     });
   } else {
@@ -919,6 +1066,12 @@ function shouldStartConcepts() {
   const path = window.location.pathname.replace(/\/+$/, "");
   const query = new URLSearchParams(window.location.search);
   return path.endsWith("/concepts") || query.get("mode") === "concepts";
+}
+
+function shouldStartSmallWordsPopQuiz() {
+  const path = window.location.pathname.replace(/\/+$/, "");
+  const query = new URLSearchParams(window.location.search);
+  return path.endsWith("/pop-quiz-small-words") || query.get("quiz") === "small-words";
 }
 
 function playSound(name) {
