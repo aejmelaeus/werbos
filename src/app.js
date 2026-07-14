@@ -384,14 +384,16 @@ function renderQuestRecap() {
 
 function renderConceptRecap() {
   return `
-    <article class="summary-card card">
+    <article class="summary-card card concept-recap-card">
       <p class="eyebrow">Concepto</p>
-      <p class="concept-translation-pair">
-        <strong>${escapeHtml(session.challenge.correctAnswer)}</strong>
+      <div class="concept-translation-pair">
+        <p class="concept-primary-line">${escapeHtml(session.challenge.correctAnswer)}</p>
         <span>${escapeHtml(session.challenge.englishConcept)}</span>
-      </p>
-      <p class="concept-primary-hint">${escapeHtml(session.challenge.hint)}</p>
-      <p class="translation-text">${escapeHtml(session.challenge.englishHint)}</p>
+      </div>
+      <div class="concept-translation-pair">
+        <p class="concept-primary-line">${escapeHtml(session.challenge.hint)}</p>
+        <span>${escapeHtml(session.challenge.englishHint)}</span>
+      </div>
     </article>
   `;
 }
