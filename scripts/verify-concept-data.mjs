@@ -18,8 +18,8 @@ if (concepts.id !== "concepts") {
   errors.push(`Expected concept id concepts, got ${concepts.id}.`);
 }
 
-if (!Array.isArray(concepts.items) || concepts.items.length < 8) {
-  errors.push(`Expected at least 8 concept challenges, got ${concepts.items?.length ?? "none"}.`);
+if (!Array.isArray(concepts.items) || concepts.items.length < 300) {
+  errors.push(`Expected at least 300 concept challenges, got ${concepts.items?.length ?? "none"}.`);
 }
 
 const ids = new Set();
