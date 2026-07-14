@@ -38,7 +38,7 @@ export function createQuestSession(quest, random = Math.random) {
     questId: quest.id,
     questTitle: quest.title,
     question,
-    answers: shuffle([question.correct, ...question.distractors], random),
+    answers: shuffle(getQuestAnswers(question), random),
     step: "quest",
     status: "active"
   };
@@ -103,13 +103,25 @@ export function answerForm(session, answer) {
 }
 
 export function answerQuest(session, answer) {
-  const correct = answer === session.question.correct;
+  const correct = answer === getQuestCorrectAnswer(session.question);
   return {
     ...session,
     step: "result",
     status: correct ? "completed" : "failed",
     questResult: correct
   };
+}
+
+function getQuestAnswers(question) {
+  if (Array.isArray(question.choices)) {
+    return question.choices;
+  }
+
+  return [question.correct, ...question.distractors];
+}
+
+function getQuestCorrectAnswer(question) {
+  return question.correctAnswer ?? question.correct;
 }
 
 export function answerNearPastQuest(session, answer) {
