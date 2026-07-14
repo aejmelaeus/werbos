@@ -311,6 +311,11 @@ function renderNearPastStep() {
 
 function renderQuestStep() {
   const { question } = session;
+  if (question.kind === "reason") {
+    renderSerEstarReasonStep(question);
+    return;
+  }
+
   setAppHtml(`
     <section class="app-view">
       ${renderHeader("Ser estar quest")}
@@ -327,6 +332,35 @@ function renderQuestStep() {
           <div>
             <p class="eyebrow">Quest question</p>
             <h2 class="quiz-title">Which sentence fits the context?</h2>
+          </div>
+          <div class="question-mark">?</div>
+        </div>
+        <div class="answer-list">
+          ${session.answers.map((answer) => renderAnswerButton(answer, "quest")).join("")}
+        </div>
+      </article>
+    </section>
+  `);
+}
+
+function renderSerEstarReasonStep(question) {
+  setAppHtml(`
+    <section class="app-view">
+      ${renderHeader("Ser estar quest")}
+      <article class="hero-card card concept-card">
+        <div class="hero-topline">
+          <span class="tag">${escapeHtml(question.clue)}</span>
+          <span class="muted">ser vs estar</span>
+        </div>
+        <p class="hero-kicker">Explain the choice</p>
+        <h1 class="reverse-prompt">${renderSerEstarHintableSentence(question)}</h1>
+      </article>
+      ${session.selectedQuestHint ? renderQuestKeywordHint(session.selectedQuestHint) : ""}
+      <article class="quiz-card card">
+        <div class="quiz-header">
+          <div>
+            <p class="eyebrow">Quest question</p>
+            <h2 class="quiz-title">${escapeHtml(question.prompt)}</h2>
           </div>
           <div class="question-mark">?</div>
         </div>
@@ -470,6 +504,20 @@ function renderConceptVerbHint(verbHint) {
   `;
 }
 
+function renderQuestKeywordHint(keywordHint) {
+  return `
+    <article class="speech-card card">
+      <div class="speech-layout">
+        <img class="zorrito-mark" src="./design/brand/zorrito-speech.png" srcset="./design/brand/zorrito-speech.png 1x, ./design/brand/zorrito-speech@2x.png 2x" alt="Zorrito" />
+        <div class="speech-bubble">
+          <p class="eyebrow">Zorrito</p>
+          ${renderAnimatedSpeechText(`${keywordHint.term}: ${keywordHint.hint}`)}
+        </div>
+      </div>
+    </article>
+  `;
+}
+
 function renderNearPastSplit(question) {
   return `
     <div class="near-past-split">
@@ -483,6 +531,28 @@ function renderNearPastSplit(question) {
       </span>
     </div>
   `;
+}
+
+function renderSerEstarHintableSentence(question) {
+  const hints = question.keywordHints ?? [];
+  const sortedHints = [...hints].sort((first, second) => second.term.length - first.term.length);
+  const sentence = question.sentence;
+  let output = "";
+  let index = 0;
+
+  while (index < sentence.length) {
+    const match = sortedHints.find((hint) => sentence.startsWith(hint.term, index));
+    if (!match) {
+      output += escapeHtml(sentence[index]);
+      index += 1;
+      continue;
+    }
+
+    output += `<button class="concept-term-button sentence-term-button" data-action="show-quest-keyword-hint" data-term="${escapeAttribute(match.term)}">${escapeHtml(match.term)}</button>`;
+    index += match.term.length;
+  }
+
+  return output;
 }
 
 function renderConceptHint(challenge) {
@@ -506,7 +576,7 @@ function renderQuestRecap() {
   return `
     <article class="summary-card card">
       <p class="eyebrow">Quest recap</p>
-      <p><strong>${escapeHtml(session.question.correct)}</strong></p>
+      <p><strong>${escapeHtml(session.question.correctAnswer ?? session.question.correct)}</strong></p>
       <p>${escapeHtml(session.question.explanation)}</p>
     </article>
   `;
@@ -698,6 +768,19 @@ app.addEventListener("click", (event) => {
         selectedVerbHint: verbHint
       };
       renderConceptStep();
+    }
+    return;
+  }
+
+  if (action === "show-quest-keyword-hint") {
+    const term = button.dataset.term;
+    const keywordHint = session?.question?.keywordHints?.find((hint) => hint.term === term);
+    if (keywordHint) {
+      session = {
+        ...session,
+        selectedQuestHint: keywordHint
+      };
+      renderQuestStep();
     }
     return;
   }
