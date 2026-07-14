@@ -1,10 +1,12 @@
-import { loadConceptData, loadSerEstarQuest, loadVerbData } from "./data-loader.js";
+import { loadConceptData, loadNearPastQuest, loadSerEstarQuest, loadVerbData } from "./data-loader.js";
 import {
   answerConcept,
   answerForm,
   answerMeaning,
+  answerNearPastQuest,
   answerQuest,
   createConceptSession,
+  createNearPastQuestSession,
   createQuestSession,
   createVerbSession,
   pickRandomVerb
@@ -19,6 +21,7 @@ const sounds = {
 
 let verbData;
 let serEstarQuest;
+let nearPastQuest;
 let conceptData;
 let session;
 let progress = loadProgress();
@@ -28,9 +31,18 @@ init();
 async function init() {
   renderLoading();
   try {
-    [verbData, serEstarQuest, conceptData] = await Promise.all([loadVerbData(), loadSerEstarQuest(), loadConceptData()]);
+    [verbData, serEstarQuest, nearPastQuest, conceptData] = await Promise.all([
+      loadVerbData(),
+      loadSerEstarQuest(),
+      loadNearPastQuest(),
+      loadConceptData()
+    ]);
     if (shouldStartSerEstarQuest()) {
       renderQuestIntro("replace");
+      return;
+    }
+    if (shouldStartNearPastQuest()) {
+      renderNearPastIntro("replace");
       return;
     }
     if (shouldStartConcepts()) {
@@ -75,6 +87,14 @@ function renderStart() {
       <article class="quest-link-card card">
         <div>
           <p class="eyebrow">Test mode</p>
+          <h2>The Near Past</h2>
+          <p>Practice the helper word in recent past phrases.</p>
+        </div>
+        <a class="secondary-link" href="./?quest=near-past" data-action="show-near-past-intro">Start quest</a>
+      </article>
+      <article class="quest-link-card card">
+        <div>
+          <p class="eyebrow">Test mode</p>
           <h2>Conceptos</h2>
           <p>Find the shared Spanish concept from three Spanish examples.</p>
         </div>
@@ -90,6 +110,46 @@ function renderStart() {
           <p>verbs loaded</p>
         </div>
       </section>
+    </section>
+  `);
+}
+
+function renderNearPastIntro(historyMode = "push") {
+  if (historyMode === "push") {
+    window.history.pushState({}, "", "./?quest=near-past");
+  } else if (historyMode === "replace") {
+    window.history.replaceState({}, "", "./?quest=near-past");
+  }
+
+  setAppHtml(`
+    <section class="app-view start-view">
+      ${renderHeader("Quest")}
+      <article class="quest-intro-card card">
+        <p class="eyebrow">Quest</p>
+        <h1>The Near Past</h1>
+        <div class="start-greeting quest-greeting">
+          <img class="start-zorrito" src="./design/brand/zorrito-speech.png" srcset="./design/brand/zorrito-speech.png 1x, ./design/brand/zorrito-speech@2x.png 2x" alt="Zorrito" />
+          <div class="speech-bubble start-bubble">
+            <p class="eyebrow">Zorrito explains</p>
+            ${renderAnimatedSpeechText("In Spain, when we talk about something that happened recently, we often use two words. The first word tells us who. The second word tells us what happened.")}
+          </div>
+        </div>
+        <section class="near-past-example" aria-label="Near past example">
+          <p class="eyebrow">Example</p>
+          <div class="near-past-split">
+            <span>
+              <strong>he</strong>
+              <small>who?</small>
+            </span>
+            <span>
+              <strong>hablado</strong>
+              <small>what happened?</small>
+            </span>
+          </div>
+          <p>Done. No grammar. No tables.</p>
+        </section>
+        <button class="primary-action" data-action="start-near-past">Start quest</button>
+      </article>
     </section>
   `);
 }
@@ -215,6 +275,41 @@ function renderConceptStep() {
   `);
 }
 
+function renderNearPastStep() {
+  const { question } = session;
+  const isHelperQuestion = question.kind === "helper";
+  setAppHtml(`
+    <section class="app-view">
+      ${renderHeader("The Near Past")}
+      <article class="hero-card card near-past-card">
+        <div class="hero-topline">
+          <span class="tag">${isHelperQuestion ? "Helper" : "Who"}</span>
+          <span class="muted">recent past</span>
+        </div>
+        <p class="hero-kicker">${isHelperQuestion ? "Person" : "Two words"}</p>
+        <h1 class="near-past-phrase">${escapeHtml(question.phrase)}</h1>
+        ${
+          isHelperQuestion
+            ? `<p class="near-past-build"><span class="near-past-blank">?</span> ${escapeHtml(question.actionWord)}</p>`
+            : renderNearPastSplit(question)
+        }
+      </article>
+      <article class="quiz-card card">
+        <div class="quiz-header">
+          <div>
+            <p class="eyebrow">Quest question</p>
+            <h2 class="quiz-title">${escapeHtml(question.question)}</h2>
+          </div>
+          <div class="question-mark">?</div>
+        </div>
+        <div class="answer-list">
+          ${session.answers.map((answer) => renderAnswerButton(answer, "near-past")).join("")}
+        </div>
+      </article>
+    </section>
+  `);
+}
+
 function renderQuestStep() {
   const { question } = session;
   setAppHtml(`
@@ -311,6 +406,7 @@ function renderFormStep() {
 function renderResult() {
   const completed = session.status === "completed";
   const isQuest = session.mode === "quest";
+  const isNearPastQuest = session.mode === "nearPastQuest";
   const isConcept = session.mode === "concept";
   const headerLabel = isConcept ? (completed ? "Bien" : "Pista") : completed ? "Success" : "Try again";
   const eyebrowLabel = isConcept ? (completed ? "Correcto" : "Intenta otra vez") : completed ? "Completed" : "Failed";
@@ -325,12 +421,17 @@ function renderResult() {
         <p>${renderResultMessage(completed)}</p>
         <button class="primary-action" data-action="next">${actionLabel}</button>
       </article>
-      ${isConcept ? renderConceptRecap() : isQuest ? renderQuestRecap() : renderPracticeRecap()}
+      ${isConcept ? renderConceptRecap() : isNearPastQuest ? renderNearPastRecap() : isQuest ? renderQuestRecap() : renderPracticeRecap()}
     </section>
   `);
 }
 
 function renderResultMessage(completed) {
+  if (session.mode === "nearPastQuest") {
+    return completed
+      ? "You found the helper that matches the person."
+      : "Look at the first word and try another near-past question.";
+  }
   if (session.mode === "concept") {
     return completed
       ? "Encontraste el concepto común en las tres frases."
@@ -370,6 +471,21 @@ function renderConceptVerbHint(verbHint) {
   `;
 }
 
+function renderNearPastSplit(question) {
+  return `
+    <div class="near-past-split">
+      <span>
+        <strong>${escapeHtml(question.helper)}</strong>
+        <small>who?</small>
+      </span>
+      <span>
+        <strong>${escapeHtml(question.actionWord)}</strong>
+        <small>what happened?</small>
+      </span>
+    </div>
+  `;
+}
+
 function renderConceptHint(challenge) {
   return `
     <article class="speech-card card">
@@ -393,6 +509,18 @@ function renderQuestRecap() {
       <p class="eyebrow">Quest recap</p>
       <p><strong>${escapeHtml(session.question.correct)}</strong></p>
       <p>${escapeHtml(session.question.explanation)}</p>
+    </article>
+  `;
+}
+
+function renderNearPastRecap() {
+  return `
+    <article class="summary-card card concept-recap-card">
+      <p class="eyebrow">Quest recap</p>
+      <div class="concept-translation-pair">
+        <p class="concept-primary-line">${escapeHtml(session.question.correctAnswer)}</p>
+        <span>${escapeHtml(session.question.explanation)}</span>
+      </div>
     </article>
   `;
 }
@@ -535,6 +663,12 @@ app.addEventListener("click", (event) => {
     return;
   }
 
+  if (action === "show-near-past-intro") {
+    event.preventDefault();
+    renderNearPastIntro("push");
+    return;
+  }
+
   if (action === "show-concept-intro") {
     event.preventDefault();
     renderConceptIntro("push");
@@ -543,6 +677,11 @@ app.addEventListener("click", (event) => {
 
   if (action === "start-quest") {
     startQuestSession();
+    return;
+  }
+
+  if (action === "start-near-past") {
+    startNearPastSession();
     return;
   }
 
@@ -567,6 +706,10 @@ app.addEventListener("click", (event) => {
   if (action === "next") {
     if (session?.mode === "concept") {
       startConceptSession();
+      return;
+    }
+    if (session?.mode === "nearPastQuest") {
+      startNearPastSession();
       return;
     }
     if (session?.mode === "quest") {
@@ -602,6 +745,12 @@ app.addEventListener("click", (event) => {
     return;
   }
 
+  if (step === "near-past") {
+    session = answerNearPastQuest(session, answer);
+    finishAttempt(session.status, session.status === "completed" ? "success" : "failure");
+    return;
+  }
+
   if (step === "concept") {
     session = answerConcept(session, answer);
     if (session.status === "completed") {
@@ -627,6 +776,11 @@ function startQuestSession() {
   renderQuestStep();
 }
 
+function startNearPastSession() {
+  session = createNearPastQuestSession(nearPastQuest);
+  renderNearPastStep();
+}
+
 function startConceptSession() {
   session = createConceptSession(conceptData);
   renderConceptStep();
@@ -639,6 +793,13 @@ function finishAttempt(status, soundName) {
       conceptId: session.conceptId,
       challengeId: session.challenge.id,
       misses: session.misses,
+      status
+    });
+  } else if (session.mode === "nearPastQuest") {
+    progress = recordAttempt(progress, {
+      mode: session.mode,
+      questId: session.questId,
+      questionId: session.question.id,
       status
     });
   } else if (session.mode === "quest") {
@@ -664,6 +825,12 @@ function shouldStartSerEstarQuest() {
   const path = window.location.pathname.replace(/\/+$/, "");
   const query = new URLSearchParams(window.location.search);
   return path.endsWith("/quest-ser-estar") || query.get("quest") === "ser-estar";
+}
+
+function shouldStartNearPastQuest() {
+  const path = window.location.pathname.replace(/\/+$/, "");
+  const query = new URLSearchParams(window.location.search);
+  return path.endsWith("/quest-near-past") || query.get("quest") === "near-past";
 }
 
 function shouldStartConcepts() {
