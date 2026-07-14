@@ -370,6 +370,23 @@ button {
   line-height: 1.35;
 }
 
+.concept-translation-pair {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.concept-translation-pair span,
+.translation-text {
+  color: #69655e;
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.translation-text {
+  margin-top: 0.35rem;
+}
+
 .sentence-text {
   margin: 1rem 0 0;
   color: #4e4a45;

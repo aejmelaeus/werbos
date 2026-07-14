@@ -60,6 +60,10 @@ for (const item of concepts.items ?? []) {
     errors.push(`${item.id} correct answer must appear in choices.`);
   }
 
+  if (!item.englishConcept || typeof item.englishConcept !== "string") {
+    errors.push(`${item.id} must have an English concept translation.`);
+  }
+
   if (item.correctAnswer !== item.concept) {
     errors.push(`${item.id} correct answer must match its concept.`);
   }
@@ -72,6 +76,10 @@ for (const item of concepts.items ?? []) {
 
   if (!item.hint?.endsWith(".")) {
     errors.push(`${item.id} hint must be a complete Spanish sentence.`);
+  }
+
+  if (!item.englishHint?.endsWith(".")) {
+    errors.push(`${item.id} English hint must be a complete sentence.`);
   }
 }
 

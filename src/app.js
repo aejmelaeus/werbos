@@ -209,7 +209,7 @@ function renderConceptStep() {
           ${session.answers.map((answer) => renderAnswerButton(answer, "concept")).join("")}
         </div>
       </article>
-      ${session.hintVisible ? renderConceptHint(challenge.hint) : ""}
+      ${session.hintVisible ? renderConceptHint(challenge) : ""}
     </section>
   `);
 }
@@ -355,14 +355,15 @@ function renderPracticeRecap() {
   `;
 }
 
-function renderConceptHint(hint) {
+function renderConceptHint(challenge) {
   return `
     <article class="speech-card card">
       <div class="speech-layout">
         <img class="zorrito-mark" src="./design/brand/zorrito-speech.png" srcset="./design/brand/zorrito-speech.png 1x, ./design/brand/zorrito-speech@2x.png 2x" alt="Zorrito" />
         <div class="speech-bubble">
           <p class="eyebrow">Zorrito</p>
-          ${renderAnimatedSpeechText(hint)}
+          ${renderAnimatedSpeechText(challenge.hint)}
+          <p class="translation-text">${escapeHtml(challenge.englishHint)}</p>
         </div>
       </div>
     </article>
@@ -383,8 +384,12 @@ function renderConceptRecap() {
   return `
     <article class="summary-card card">
       <p class="eyebrow">Concepto</p>
-      <p><strong>${escapeHtml(session.challenge.correctAnswer)}</strong></p>
+      <p class="concept-translation-pair">
+        <strong>${escapeHtml(session.challenge.correctAnswer)}</strong>
+        <span>${escapeHtml(session.challenge.englishConcept)}</span>
+      </p>
       <p>${escapeHtml(session.challenge.hint)}</p>
+      <p class="translation-text">${escapeHtml(session.challenge.englishHint)}</p>
     </article>
   `;
 }

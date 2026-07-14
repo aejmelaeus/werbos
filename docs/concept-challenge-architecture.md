@@ -30,9 +30,13 @@ Each item has:
 - `examples`: exactly three Spanish sentences
 - `choices`: exactly four Spanish concepts
 - `correctAnswer`: the concept that all examples share
+- `englishConcept`: English reinforcement for the concept
 - `hint`: one short Spanish clue from Zorrito
+- `englishHint`: English reinforcement for the clue or explanation
 
 Distractors should come from the same family as the correct answer. For example, a position concept should be tested against other position concepts, not against time or quantity concepts.
+
+The challenge card stays Spanish-first: examples, prompt, and answer choices are in Spanish. After feedback, Werbos may show the Spanish concept and clue with English translations underneath to reinforce meaning.
 
 ## Initial Families
 

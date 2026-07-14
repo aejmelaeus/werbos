@@ -20,7 +20,9 @@
         "entre"
       ],
       "correctAnswer": "encima de",
-      "hint": "Todos están en una posición más alta."
+      "englishConcept": "on top of",
+      "hint": "Todos están en una posición más alta.",
+      "englishHint": "Everything is in a higher position."
     },
     {
       "id": "debajo-de-01",
@@ -38,7 +40,9 @@
         "fuera de"
       ],
       "correctAnswer": "debajo de",
-      "hint": "Todo está en una posición más baja."
+      "englishConcept": "under",
+      "hint": "Todo está en una posición más baja.",
+      "englishHint": "Everything is in a lower position."
     },
     {
       "id": "entre-01",
@@ -56,7 +60,9 @@
         "dentro de"
       ],
       "correctAnswer": "entre",
-      "hint": "Hay algo en medio de dos cosas."
+      "englishConcept": "between",
+      "hint": "Hay algo en medio de dos cosas.",
+      "englishHint": "Something is in the middle of two things."
     },
     {
       "id": "antes-01",
@@ -74,7 +80,9 @@
         "todavía"
       ],
       "correctAnswer": "antes",
-      "hint": "La acción pasa primero."
+      "englishConcept": "before",
+      "hint": "La acción pasa primero.",
+      "englishHint": "The action happens first."
     },
     {
       "id": "despues-01",
@@ -92,7 +100,9 @@
         "después"
       ],
       "correctAnswer": "después",
-      "hint": "La acción pasa más tarde."
+      "englishConcept": "after",
+      "hint": "La acción pasa más tarde.",
+      "englishHint": "The action happens later."
     },
     {
       "id": "mucho-01",
@@ -110,7 +120,9 @@
         "suficiente"
       ],
       "correctAnswer": "mucho",
-      "hint": "Hay una cantidad grande."
+      "englishConcept": "a lot",
+      "hint": "Hay una cantidad grande.",
+      "englishHint": "There is a large amount."
     },
     {
       "id": "poco-01",
@@ -128,7 +140,9 @@
         "mucho"
       ],
       "correctAnswer": "poco",
-      "hint": "Hay una cantidad pequeña."
+      "englishConcept": "little",
+      "hint": "Hay una cantidad pequeña.",
+      "englishHint": "There is a small amount."
     },
     {
       "id": "hacia-01",
@@ -146,7 +160,9 @@
         "hacia"
       ],
       "correctAnswer": "hacia",
-      "hint": "El movimiento o la mirada va en esa dirección."
+      "englishConcept": "toward",
+      "hint": "El movimiento o la mirada va en esa dirección.",
+      "englishHint": "The movement or gaze goes in that direction."
     },
     {
       "id": "porque-01",
@@ -164,7 +180,9 @@
         "pero"
       ],
       "correctAnswer": "porque",
-      "hint": "La segunda parte dice la razón."
+      "englishConcept": "because",
+      "hint": "La segunda parte dice la razón.",
+      "englishHint": "The second part gives the reason."
     },
     {
       "id": "aunque-01",
@@ -182,7 +200,9 @@
         "aunque"
       ],
       "correctAnswer": "aunque",
-      "hint": "Una cosa pasa con una dificultad o contraste."
+      "englishConcept": "although",
+      "hint": "Una cosa pasa con una dificultad o contraste.",
+      "englishHint": "One thing happens despite a difficulty or contrast."
     }
   ]
 }
