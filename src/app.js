@@ -112,7 +112,7 @@ function renderStart() {
         <div>
           <p class="eyebrow">Pop quiz</p>
           <h2>Palabras pequeñas</h2>
-          <p>Complete a perfect streak with the small Spanish words that hold sentences together.</p>
+          <p>Train the small Spanish words directly, both from Spanish to English and back again.</p>
         </div>
         <a class="secondary-link" href="./?quiz=small-words" data-action="show-small-words-pop-quiz-intro">Start pop quiz</a>
       </article>
@@ -227,9 +227,9 @@ function renderSmallWordsPopQuizIntro(historyMode = "push") {
         <section class="concept-rule-card" aria-label="Small words pop quiz rules">
           <p class="eyebrow">Rules</p>
           <ul>
-            <li>Two choices per word.</li>
+            <li>Two choices per prompt.</li>
             <li>One miss ends the pop quiz.</li>
-            <li>Answer every word correctly to complete the chapter.</li>
+            <li>Answer every word both directions to complete the chapter.</li>
           </ul>
         </section>
         <button class="primary-action" data-action="start-small-words-pop-quiz">Start pop quiz</button>
@@ -326,23 +326,24 @@ function renderConceptStep() {
 
 function renderPopQuizStep() {
   const question = session.questions[session.currentIndex];
+  const isReverse = question.direction === "meaning-to-word";
   setAppHtml(`
     <section class="app-view">
       ${renderHeader("Pop quiz")}
       <article class="hero-card card pop-quiz-card">
         <div class="hero-topline">
-          <span class="tag">Small word</span>
+          <span class="tag">${isReverse ? "English to Spanish" : "Spanish to English"}</span>
           <span class="muted">${session.currentIndex + 1} / ${session.questions.length}</span>
         </div>
-        <p class="hero-kicker">${escapeHtml(question.english)}</p>
+        <p class="hero-kicker">${isReverse ? "Meaning" : "Small word"}</p>
         <h1 class="reverse-prompt">${escapeHtml(question.prompt)}</h1>
-        <p class="sentence-text">${escapeHtml(question.translation)}</p>
+        <p class="sentence-text">${escapeHtml(question.example)}</p>
       </article>
       <article class="quiz-card card">
         <div class="quiz-header">
           <div>
             <p class="eyebrow">Choose one</p>
-            <h2 class="quiz-title">Which small word completes the sentence?</h2>
+            <h2 class="quiz-title">${isReverse ? "Which Spanish word matches?" : "What does this word mean?"}</h2>
           </div>
           <div class="question-mark">2</div>
         </div>
@@ -581,7 +582,7 @@ function renderPopQuizRecap() {
         <p class="eyebrow">Pop quiz recap</p>
         <div class="concept-translation-pair">
           <p class="concept-primary-line">${session.correctCount} / ${session.questions.length}</p>
-          <span>All small words completed in one streak.</span>
+          <span>All small words completed both directions in one streak.</span>
         </div>
       </article>
     `;

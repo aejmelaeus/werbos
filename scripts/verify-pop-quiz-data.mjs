@@ -3,6 +3,7 @@ import { readFile } from "node:fs/promises";
 const popQuiz = JSON.parse(await readFile(new URL("../data/pop-quizzes/small-words.v1.json", import.meta.url), "utf8"));
 const errors = [];
 const expectedWords = new Set(["a", "de", "en", "con", "sin", "por", "y", "e", "o", "u", "ni"]);
+const expectedDirections = new Set(["word-to-meaning", "meaning-to-word"]);
 
 if (popQuiz.version !== 1) {
   errors.push(`Expected pop quiz version 1, got ${popQuiz.version}.`);
@@ -31,30 +32,38 @@ for (const item of popQuiz.items ?? []) {
   ids.add(item.id);
   words.add(item.word);
 
-  for (const field of ["id", "word", "english", "prompt", "translation", "correctAnswer", "distractor", "explanation"]) {
+  for (const field of ["id", "direction", "word", "english", "prompt", "correctAnswer", "distractor", "example", "explanation"]) {
     if (!item[field] || typeof item[field] !== "string") {
       errors.push(`${item.id ?? "unknown"} must have string field ${field}.`);
     }
   }
 
-  if (item.correctAnswer !== item.word) {
-    errors.push(`${item.id} correctAnswer must match word.`);
+  if (!expectedDirections.has(item.direction)) {
+    errors.push(`${item.id} has unexpected direction: ${item.direction}.`);
+  }
+
+  if (item.direction === "word-to-meaning" && item.prompt !== item.word) {
+    errors.push(`${item.id} word-to-meaning prompt must be the Spanish word.`);
+  }
+
+  if (item.direction === "word-to-meaning" && item.correctAnswer !== item.english) {
+    errors.push(`${item.id} word-to-meaning correctAnswer must match english.`);
+  }
+
+  if (item.direction === "meaning-to-word" && item.prompt !== item.english) {
+    errors.push(`${item.id} meaning-to-word prompt must be the English meaning.`);
+  }
+
+  if (item.direction === "meaning-to-word" && item.correctAnswer !== item.word) {
+    errors.push(`${item.id} meaning-to-word correctAnswer must match word.`);
   }
 
   if (item.correctAnswer === item.distractor) {
     errors.push(`${item.id} must have a different distractor.`);
   }
 
-  if (!item.prompt?.includes("___")) {
-    errors.push(`${item.id} prompt must include a blank marker.`);
-  }
-
-  if (!item.prompt?.endsWith(".")) {
-    errors.push(`${item.id} prompt must be a complete sentence.`);
-  }
-
-  if (!item.translation?.endsWith(".")) {
-    errors.push(`${item.id} translation must be a complete sentence.`);
+  if (!item.example?.endsWith(".")) {
+    errors.push(`${item.id} example must be a complete sentence.`);
   }
 
   if (!item.explanation?.endsWith(".")) {
@@ -65,6 +74,15 @@ for (const item of popQuiz.items ?? []) {
 for (const word of expectedWords) {
   if (!words.has(word)) {
     errors.push(`Missing requested small word: ${word}.`);
+  }
+}
+
+for (const word of words) {
+  const directions = new Set((popQuiz.items ?? []).filter((item) => item.word === word).map((item) => item.direction));
+  for (const direction of expectedDirections) {
+    if (!directions.has(direction)) {
+      errors.push(`Missing ${direction} item for word: ${word}.`);
+    }
   }
 }
 
