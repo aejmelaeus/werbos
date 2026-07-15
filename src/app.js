@@ -64,10 +64,32 @@ async function init() {
       renderSmallWordsPopQuizIntro("replace");
       return;
     }
-    startNextGameplayItem();
+    renderDailyGreeting();
   } catch (error) {
     renderError(error);
   }
+}
+
+function renderDailyGreeting() {
+  const isReturningPlayer = progress.attempts.length > 0 || progress.updatedAt;
+  const message = isReturningPlayer
+    ? "Welcome back. I saved your progress, so we can continue with today's practice."
+    : "Hi, I am Zorrito. We will practice a little Spanish together today.";
+  setAppHtml(`
+    <section class="app-view start-view">
+      ${renderHeader("Today")}
+      <article class="intro-card start-card card">
+        <div class="start-greeting">
+          <img class="start-zorrito" src="./design/brand/zorrito-speech.png" srcset="./design/brand/zorrito-speech.png 1x, ./design/brand/zorrito-speech@2x.png 2x" alt="Zorrito" />
+          <div class="speech-bubble start-bubble">
+            <p class="eyebrow">Zorrito</p>
+            ${renderAnimatedSpeechText(message)}
+          </div>
+        </div>
+        <button class="primary-action" data-action="start-daily-practice">Start today's practice</button>
+      </article>
+    </section>
+  `);
 }
 
 function renderTestMenu(historyMode = "push") {
@@ -911,6 +933,11 @@ app.addEventListener("click", (event) => {
   const action = button.dataset.action;
   if (action === "start") {
     startRandomSession();
+    return;
+  }
+
+  if (action === "start-daily-practice") {
+    startNextGameplayItem();
     return;
   }
 
