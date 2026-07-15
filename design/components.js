@@ -143,6 +143,34 @@ const components = {
         <p>Correct answers turn solid green. Distractors stay quiet so feedback feels clear without becoming noisy.</p>
       </footer>
     </article>
+  `,
+  "pop-quiz": `
+    <article class="card quiz-card">
+      <div class="quiz-header">
+        <div>
+          <p class="eyebrow">Pop quiz</p>
+          <h2 class="quiz-title">What does this word mean?</h2>
+        </div>
+        <div class="question-mark">2</div>
+      </div>
+      <article class="hero-card pop-quiz-preview">
+        <div class="hero-topline">
+          <span class="tag">Spanish to English</span>
+          <span class="muted">3 / 10</span>
+        </div>
+        <p class="hero-kicker">Small word</p>
+        <h1 class="reverse-prompt">de</h1>
+        <p class="sentence-text">Soy de Finlandia. = I am from Finland.</p>
+      </article>
+      <div class="answer-list two-answer-list">
+        <button class="answer-button"><span>from / of</span><span class="answer-key">A</span></button>
+        <button class="answer-button"><span>to / at</span><span class="answer-key">B</span></button>
+      </div>
+      <footer class="feedback-card">
+        <p class="eyebrow">Streak rule</p>
+        <p>Every item must be answered correctly in one run. Small words appear both Spanish to English and English to Spanish.</p>
+      </footer>
+    </article>
   `
 };
 

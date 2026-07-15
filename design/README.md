@@ -16,6 +16,8 @@ should later move these decisions into the compiled Tailwind build described in
 - `components/speech-bubble.html` - standalone Zorrito speech bubble preview.
 - `components/sounds.html` - standalone sound asset preview.
 - `components/quiz.html` - standalone quiz screen preview.
+- `components/pop-quiz.html` - standalone two-choice pop quiz preview.
+- Pop quiz pattern - two-choice streak chapter documented in `docs/pop-quiz-architecture.md`.
 - `sounds/werbos-success.wav` - correct-answer success sound.
 - `sounds/werbos-failure.wav` - subtle missed-answer sound.
 - `sounds/werbos-lesson-complete.wav` - lesson completion sound.
@@ -33,6 +35,7 @@ The artifact covers:
 - Zorrito speech-bubble avatar image.
 - Success, failure, and lesson-complete sounds.
 - Multiple-choice quiz screen with three to four answers.
+- Two-choice pop quiz chapters with all-correct streak completion.
 - Real logo and icon treatments.
 
 ## Logo Assets

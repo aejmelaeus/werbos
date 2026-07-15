@@ -1,0 +1,121 @@
+{
+  "version": 1,
+  "id": "small-words",
+  "title": "Palabras pequeñas",
+  "description": "A two-choice pop quiz for explicit training of the highest-priority small Spanish words.",
+  "introMessage": "Small words do big work. We will train the most important ones directly, both directions: Spanish to English and English to Spanish.",
+  "successMessage": "Perfect streak. You knew every priority small word both ways, and that is exactly how strong reading starts.",
+  "failureMessage": "That one is worth seeing again. Small words are learned by repetition, and the next round will make it stronger.",
+  "items": [
+    {
+      "id": "small-word-a-meaning",
+      "direction": "word-to-meaning",
+      "word": "a",
+      "english": "to / at",
+      "prompt": "a",
+      "correctAnswer": "to / at",
+      "distractor": "from / of",
+      "example": "Voy a la escuela. = I go to school.",
+      "explanation": "a often points toward a destination or marks where something is going."
+    },
+    {
+      "id": "small-word-a-reverse",
+      "direction": "meaning-to-word",
+      "word": "a",
+      "english": "to / at",
+      "prompt": "to / at",
+      "correctAnswer": "a",
+      "distractor": "de",
+      "example": "Voy a la escuela. = I go to school.",
+      "explanation": "a often points toward a destination or marks where something is going."
+    },
+    {
+      "id": "small-word-de-meaning",
+      "direction": "word-to-meaning",
+      "word": "de",
+      "english": "from / of",
+      "prompt": "de",
+      "correctAnswer": "from / of",
+      "distractor": "to / at",
+      "example": "Soy de Finlandia. = I am from Finland.",
+      "explanation": "de often shows origin, source, or belonging."
+    },
+    {
+      "id": "small-word-de-reverse",
+      "direction": "meaning-to-word",
+      "word": "de",
+      "english": "from / of",
+      "prompt": "from / of",
+      "correctAnswer": "de",
+      "distractor": "a",
+      "example": "Soy de Finlandia. = I am from Finland.",
+      "explanation": "de often shows origin, source, or belonging."
+    },
+    {
+      "id": "small-word-en-meaning",
+      "direction": "word-to-meaning",
+      "word": "en",
+      "english": "in / on / at",
+      "prompt": "en",
+      "correctAnswer": "in / on / at",
+      "distractor": "with",
+      "example": "Vivo en Madrid. = I live in Madrid.",
+      "explanation": "en marks where something is located or where something happens."
+    },
+    {
+      "id": "small-word-en-reverse",
+      "direction": "meaning-to-word",
+      "word": "en",
+      "english": "in / on / at",
+      "prompt": "in / on / at",
+      "correctAnswer": "en",
+      "distractor": "con",
+      "example": "Vivo en Madrid. = I live in Madrid.",
+      "explanation": "en marks where something is located or where something happens."
+    },
+    {
+      "id": "small-word-por-meaning",
+      "direction": "word-to-meaning",
+      "word": "por",
+      "english": "through / because of / by",
+      "prompt": "por",
+      "correctAnswer": "through / because of / by",
+      "distractor": "for / in order to",
+      "example": "Camino por el parque. = I walk through the park.",
+      "explanation": "por often marks a route, cause, exchange, or means."
+    },
+    {
+      "id": "small-word-por-reverse",
+      "direction": "meaning-to-word",
+      "word": "por",
+      "english": "through / because of / by",
+      "prompt": "through / because of / by",
+      "correctAnswer": "por",
+      "distractor": "para",
+      "example": "Camino por el parque. = I walk through the park.",
+      "explanation": "por often marks a route, cause, exchange, or means."
+    },
+    {
+      "id": "small-word-y-meaning",
+      "direction": "word-to-meaning",
+      "word": "y",
+      "english": "and",
+      "prompt": "y",
+      "correctAnswer": "and",
+      "distractor": "or",
+      "example": "Pan y agua. = Bread and water.",
+      "explanation": "y adds one thing to another."
+    },
+    {
+      "id": "small-word-y-reverse",
+      "direction": "meaning-to-word",
+      "word": "y",
+      "english": "and",
+      "prompt": "and",
+      "correctAnswer": "y",
+      "distractor": "o",
+      "example": "Pan y agua. = Bread and water.",
+      "explanation": "y adds one thing to another."
+    }
+  ]
+}
