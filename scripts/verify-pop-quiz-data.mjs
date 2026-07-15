@@ -2,7 +2,7 @@ import { readFile } from "node:fs/promises";
 
 const popQuiz = JSON.parse(await readFile(new URL("../data/pop-quizzes/small-words.v1.json", import.meta.url), "utf8"));
 const errors = [];
-const expectedWords = new Set(["a", "de", "en", "con", "sin", "por", "y", "e", "o", "u", "ni"]);
+const expectedWords = new Set(["a", "de", "en", "por", "y"]);
 const expectedDirections = new Set(["word-to-meaning", "meaning-to-word"]);
 
 if (popQuiz.version !== 1) {

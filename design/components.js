@@ -156,7 +156,7 @@ const components = {
       <article class="hero-card pop-quiz-preview">
         <div class="hero-topline">
           <span class="tag">Spanish to English</span>
-          <span class="muted">3 / 21</span>
+          <span class="muted">3 / 10</span>
         </div>
         <p class="hero-kicker">Small word</p>
         <h1 class="reverse-prompt">de</h1>

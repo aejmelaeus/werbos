@@ -4,7 +4,7 @@
 
 Pop quizzes are short, high-repetition review chapters. They differ from normal practice because the learner must answer every item correctly in one streak to complete the chapter.
 
-The first pop quiz is `Palabras pequeñas`, focused on high-frequency Spanish connector words such as `a`, `de`, `en`, `con`, `sin`, `por`, `y`, `e`, `o`, `u`, and `ni`.
+The first pop quiz is `Palabras pequeñas`, focused on the first high-priority Spanish connector words: `a`, `de`, `en`, `por`, and `y`.
 
 ## Interaction
 
