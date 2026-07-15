@@ -92,6 +92,8 @@ Initial weighting can be content-count based:
 
 The exact ratio should be computed from available due items, then bounded so no family disappears. For example, pop quizzes can have a small minimum chance when due, while concepts can dominate when many concept items are due.
 
+The default app route should start or resume this mixed gameplay loop. Direct module entry points should stay available from the hidden test route, `?mode=test`, for development and review.
+
 ## Reinforcement
 
 Correct answers should not remove an item forever. A correct item should become less urgent, then return after a delay. A missed item should return sooner.

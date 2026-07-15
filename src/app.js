@@ -1,4 +1,5 @@
 import { loadConceptData, loadNearPastQuest, loadSerEstarQuest, loadSmallWordsPopQuiz, loadVerbData } from "./data-loader.js";
+import { getModuleIntroState, pickNextGameplayItem } from "./gameplay-engine.js";
 import {
   answerConcept,
   answerForm,
@@ -10,10 +11,11 @@ import {
   createNearPastQuestSession,
   createPopQuizSession,
   createQuestSession,
+  createVerbSessionForForm,
   createVerbSession,
   pickRandomVerb
 } from "./practice-engine.js";
-import { loadProgress, recordAttempt } from "./progress-store.js";
+import { loadProgress, markModuleSeen, recordAttempt } from "./progress-store.js";
 
 const app = document.querySelector("#app");
 const sounds = {
@@ -27,6 +29,7 @@ let nearPastQuest;
 let smallWordsPopQuiz;
 let conceptData;
 let session;
+let pendingGameplayItem;
 let progress = loadProgress();
 
 init();
@@ -41,6 +44,10 @@ async function init() {
       loadSmallWordsPopQuiz(),
       loadConceptData()
     ]);
+    if (shouldStartTestMenu()) {
+      renderTestMenu("replace");
+      return;
+    }
     if (shouldStartSerEstarQuest()) {
       renderQuestIntro("replace");
       return;
@@ -57,32 +64,33 @@ async function init() {
       renderSmallWordsPopQuizIntro("replace");
       return;
     }
-    renderStart();
+    startNextGameplayItem();
   } catch (error) {
     renderError(error);
   }
 }
 
-function renderStart() {
+function renderTestMenu(historyMode = "push") {
+  if (historyMode === "push") {
+    window.history.pushState({}, "", "./?mode=test");
+  } else if (historyMode === "replace") {
+    window.history.replaceState({}, "", "./?mode=test");
+  }
+
   const attempts = progress.attempts.length;
   const verbCount = verbData.items.length;
-  const isReturningPlayer = attempts > 0;
-  const greeting = isReturningPlayer
-    ? "Hola, welcome back!"
-    : "Hola, my name is Zorrito and we are going to practice some Spanish together";
-  const actionLabel = isReturningPlayer ? "Continue" : "Start";
   setAppHtml(`
     <section class="app-view start-view">
-      ${renderHeader()}
+      ${renderHeader("Test")}
       <article class="intro-card start-card card">
         <div class="start-greeting">
           <img class="start-zorrito" src="./design/brand/zorrito-speech.png" srcset="./design/brand/zorrito-speech.png 1x, ./design/brand/zorrito-speech@2x.png 2x" alt="Zorrito" />
           <div class="speech-bubble start-bubble">
             <p class="eyebrow">Zorrito</p>
-            ${renderAnimatedSpeechText(greeting)}
+            ${renderAnimatedSpeechText("This hidden test menu keeps direct module entry points available while gameplay becomes the default app experience.")}
           </div>
         </div>
-        <button class="primary-action" data-action="start">${actionLabel}</button>
+        <button class="primary-action" data-action="start">Start verb practice</button>
       </article>
       <article class="quest-link-card card">
         <div>
@@ -128,6 +136,77 @@ function renderStart() {
       </section>
     </section>
   `);
+}
+
+function renderGameplayIntro(item) {
+  const introState = getModuleIntroState(progress, item.moduleKey);
+  const copy = getGameplayIntroCopy(item.moduleKey, introState);
+  pendingGameplayItem = item;
+
+  setAppHtml(`
+    <section class="app-view start-view">
+      ${renderHeader(copy.header)}
+      <article class="quest-intro-card card">
+        <p class="eyebrow">${introState === "first" ? "First time" : "Reminder"}</p>
+        <h1>${escapeHtml(copy.title)}</h1>
+        <div class="start-greeting quest-greeting">
+          <img class="start-zorrito" src="./design/brand/zorrito-speech.png" srcset="./design/brand/zorrito-speech.png 1x, ./design/brand/zorrito-speech@2x.png 2x" alt="Zorrito" />
+          <div class="speech-bubble start-bubble">
+            <p class="eyebrow">Zorrito</p>
+            ${renderAnimatedSpeechText(copy.message)}
+          </div>
+        </div>
+        <button class="primary-action" data-action="start-gameplay-module">Continue</button>
+      </article>
+    </section>
+  `);
+}
+
+function getGameplayIntroCopy(moduleKey, introState) {
+  const returning = introState === "returning";
+  const copy = {
+    verbs: {
+      header: "Gameplay",
+      title: "Verb practice",
+      first:
+        "We will practice common Spanish verbs in both directions. First recognize the meaning, then match the sentence.",
+      returning: "Back to verbs. Read the prompt, choose carefully, and the form will come back later for review."
+    },
+    concepts: {
+      header: "Gameplay",
+      title: "Conceptos",
+      first:
+        "You will see three Spanish sentences. They share one small idea. Find the concept that appears in all three.",
+      returning: "Back to concepts. Look for the shared idea across the three Spanish examples."
+    },
+    "quest.ser-estar": {
+      header: "Quest",
+      title: "Ser estar quest",
+      first:
+        "Think of ser as what something is, and estar as where or how something is right now. Use the clue and sentence context.",
+      returning: "Ser or estar again. Ask whether the sentence defines something or shows where or how it is right now."
+    },
+    "quest.near-past": {
+      header: "Quest",
+      title: "The Near Past",
+      first:
+        "Recent past phrases use a helper word plus an action word. The helper tells us who, and the action tells what happened.",
+      returning: "Near past again. Watch the helper word first, then connect it to who did the action."
+    },
+    "popQuiz.small-words": {
+      header: "Pop quiz",
+      title: "Palabras pequeñas",
+      first:
+        "Small words do big work. We will train them directly in both directions so they become quick to recognize.",
+      returning: "Small words again. This is a quick two-choice recall check."
+    }
+  }[moduleKey];
+
+  return {
+    header: copy?.header ?? "Gameplay",
+    title: copy?.title ?? "Practice",
+    message: returning ? copy?.returning : copy?.first
+  };
 }
 
 function renderNearPastIntro(historyMode = "push") {
@@ -835,6 +914,14 @@ app.addEventListener("click", (event) => {
     return;
   }
 
+  if (action === "start-gameplay-module") {
+    if (pendingGameplayItem) {
+      progress = markModuleSeen(progress, pendingGameplayItem.moduleKey);
+      startGameplayItem(pendingGameplayItem);
+    }
+    return;
+  }
+
   if (action === "show-quest-intro") {
     event.preventDefault();
     renderQuestIntro("push");
@@ -906,6 +993,10 @@ app.addEventListener("click", (event) => {
   }
 
   if (action === "next") {
+    if (session?.gameplay) {
+      startNextGameplayItem();
+      return;
+    }
     if (session?.mode === "concept") {
       startConceptSession();
       return;
@@ -963,6 +1054,15 @@ app.addEventListener("click", (event) => {
       finishAttempt("completed", "success");
       return;
     }
+    progress = recordAttempt(progress, {
+      mode: session.mode,
+      ...getGameplayAttemptFields(),
+      conceptId: session.conceptId,
+      parentId: session.conceptId,
+      challengeId: session.challenge.id,
+      misses: session.misses,
+      status: "failed"
+    });
     playSound("failure");
     renderConceptStep();
   }
@@ -987,6 +1087,85 @@ function startRandomSession() {
   renderMeaningStep();
 }
 
+function startNextGameplayItem() {
+  const item = pickNextGameplayItem(getGameplayResources(), progress);
+  if (shouldShowGameplayIntro(item)) {
+    renderGameplayIntro(item);
+    return;
+  }
+
+  startGameplayItem(item);
+}
+
+function startGameplayItem(item) {
+  pendingGameplayItem = null;
+
+  if (item.family === "concept") {
+    session = createConceptSession(conceptData, Math.random, item.challenge);
+    attachGameplayItem(item);
+    renderConceptStep();
+    return;
+  }
+
+  if (item.family === "verb") {
+    session = createVerbSessionForForm(item.verb, item.form);
+    attachGameplayItem(item);
+    renderMeaningStep();
+    return;
+  }
+
+  if (item.family === "quest" && item.questId === "near-past") {
+    session = createNearPastQuestSession(nearPastQuest, Math.random, item.question);
+    attachGameplayItem(item);
+    renderNearPastStep();
+    return;
+  }
+
+  if (item.family === "quest") {
+    session = createQuestSession(serEstarQuest, Math.random, item.question);
+    attachGameplayItem(item);
+    renderQuestStep();
+    return;
+  }
+
+  if (item.family === "popQuiz") {
+    session = createPopQuizSession(smallWordsPopQuiz, Math.random, [item.question]);
+    attachGameplayItem(item);
+    renderPopQuizStep();
+  }
+}
+
+function attachGameplayItem(item) {
+  session = {
+    ...session,
+    gameplay: true,
+    gameplayItem: {
+      family: item.family,
+      moduleKey: item.moduleKey,
+      itemKey: item.itemKey
+    }
+  };
+}
+
+function shouldShowGameplayIntro(item) {
+  const introState = getModuleIntroState(progress, item.moduleKey);
+  if (introState === "first") {
+    return true;
+  }
+
+  return progress.current?.moduleKey !== item.moduleKey;
+}
+
+function getGameplayResources() {
+  return {
+    verbData,
+    conceptData,
+    serEstarQuest,
+    nearPastQuest,
+    smallWordsPopQuiz
+  };
+}
+
 function startQuestSession() {
   session = createQuestSession(serEstarQuest);
   renderQuestStep();
@@ -1008,10 +1187,13 @@ function startSmallWordsPopQuizSession() {
 }
 
 function finishAttempt(status, soundName) {
+  const gameplayAttempt = getGameplayAttemptFields();
   if (session.mode === "concept") {
     progress = recordAttempt(progress, {
       mode: session.mode,
+      ...gameplayAttempt,
       conceptId: session.conceptId,
+      parentId: session.conceptId,
       challengeId: session.challenge.id,
       misses: session.misses,
       status
@@ -1019,22 +1201,30 @@ function finishAttempt(status, soundName) {
   } else if (session.mode === "nearPastQuest") {
     progress = recordAttempt(progress, {
       mode: session.mode,
+      ...gameplayAttempt,
       questId: session.questId,
+      parentId: session.questId,
       questionId: session.question.id,
       status
     });
   } else if (session.mode === "quest") {
     progress = recordAttempt(progress, {
       mode: session.mode,
+      ...gameplayAttempt,
       questId: session.questId,
+      parentId: session.questId,
       questionId: session.question.id,
       status
     });
   } else if (session.mode === "popQuiz") {
+    const question = session.failedQuestion ?? session.questions.at(-1);
     progress = recordAttempt(progress, {
       mode: session.mode,
+      ...gameplayAttempt,
       quizId: session.quizId,
-      questionId: session.failedQuestion?.id ?? "completed",
+      parentId: session.quizId,
+      questionId: question?.id ?? "completed",
+      direction: question?.direction ?? null,
       correctCount: session.correctCount,
       totalCount: session.questions.length,
       status
@@ -1042,13 +1232,28 @@ function finishAttempt(status, soundName) {
   } else {
     progress = recordAttempt(progress, {
       mode: session.mode,
+      ...gameplayAttempt,
       verbId: session.verb.id,
+      parentId: session.verb.id,
       formId: session.form.id,
+      direction: session.mode === "reverse" ? "english-to-spanish" : "spanish-to-english",
       status
     });
   }
   playSound(soundName);
   renderResult();
+}
+
+function getGameplayAttemptFields() {
+  if (!session.gameplayItem) {
+    return {};
+  }
+
+  return {
+    family: session.gameplayItem.family,
+    moduleKey: session.gameplayItem.moduleKey,
+    itemKey: session.gameplayItem.itemKey
+  };
 }
 
 function shouldStartSerEstarQuest() {
@@ -1073,6 +1278,12 @@ function shouldStartSmallWordsPopQuiz() {
   const path = window.location.pathname.replace(/\/+$/, "");
   const query = new URLSearchParams(window.location.search);
   return path.endsWith("/pop-quiz-small-words") || query.get("quiz") === "small-words";
+}
+
+function shouldStartTestMenu() {
+  const path = window.location.pathname.replace(/\/+$/, "");
+  const query = new URLSearchParams(window.location.search);
+  return path.endsWith("/test") || query.get("mode") === "test";
 }
 
 function playSound(name) {
