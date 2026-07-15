@@ -28,6 +28,8 @@ Recommended resource characteristics:
 - Include stable IDs for verbs, tenses, prompts, and exercise items.
 - Keep display text separate from answer-checking metadata.
 - Avoid storing user progress inside the exercise files.
+- Keep exercise-family rules documented in `docs/exercise-framework.md`.
+- Keep family-specific notes in docs such as `docs/verb-practice-architecture.md`, `docs/quest-architecture.md`, `docs/concept-challenge-architecture.md`, and `docs/pop-quiz-architecture.md`.
 
 Example direction:
 
@@ -93,7 +95,9 @@ Implementation details to remember:
   service-worker.js
   data/
     verbs.v1.json
-    exercises.v1.json
+    concepts.v1.json
+    quests/
+    pop-quizzes/
   src/
     app.js
     data-loader.js
