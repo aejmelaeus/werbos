@@ -6,6 +6,8 @@ The concept challenge teaches small Spanish concepts through Spanish context onl
 
 This mode is a glossary mechanic, not a translation exercise. It should help the learner infer meaning from repeated context.
 
+Concept challenges are one exercise family in the broader framework described in `docs/exercise-framework.md`.
+
 ## Interaction
 
 Each challenge shows:

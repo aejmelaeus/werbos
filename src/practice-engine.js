@@ -1,5 +1,9 @@
 export function createVerbSession(verb, random = Math.random, mode = pickRandomMode(random)) {
   const form = pickRandomForm(verb, random);
+  return createVerbSessionForForm(verb, form, random, mode);
+}
+
+export function createVerbSessionForForm(verb, form, random = Math.random, mode = pickRandomMode(random)) {
   const isReverse = mode === "reverse";
   return {
     id: `${verb.id}.${Date.now()}`,
@@ -26,12 +30,12 @@ export function pickRandomVerb(verbs, random = Math.random) {
   return verbs[Math.floor(random() * verbs.length)];
 }
 
-export function createQuestSession(quest, random = Math.random) {
+export function createQuestSession(quest, random = Math.random, selectedQuestion = null) {
   if (!quest?.items?.length) {
     throw new Error("No quest questions are available.");
   }
 
-  const question = quest.items[Math.floor(random() * quest.items.length)];
+  const question = selectedQuestion ?? quest.items[Math.floor(random() * quest.items.length)];
   return {
     id: `${quest.id}.${question.id}.${Date.now()}`,
     mode: "quest",
@@ -44,12 +48,12 @@ export function createQuestSession(quest, random = Math.random) {
   };
 }
 
-export function createNearPastQuestSession(quest, random = Math.random) {
+export function createNearPastQuestSession(quest, random = Math.random, selectedQuestion = null) {
   if (!quest?.items?.length) {
     throw new Error("No near-past quest questions are available.");
   }
 
-  const question = quest.items[Math.floor(random() * quest.items.length)];
+  const question = selectedQuestion ?? quest.items[Math.floor(random() * quest.items.length)];
   return {
     id: `${quest.id}.${question.id}.${Date.now()}`,
     mode: "nearPastQuest",
@@ -62,12 +66,12 @@ export function createNearPastQuestSession(quest, random = Math.random) {
   };
 }
 
-export function createConceptSession(concepts, random = Math.random) {
+export function createConceptSession(concepts, random = Math.random, selectedChallenge = null) {
   if (!concepts?.items?.length) {
     throw new Error("No concept challenges are available.");
   }
 
-  const challenge = concepts.items[Math.floor(random() * concepts.items.length)];
+  const challenge = selectedChallenge ?? concepts.items[Math.floor(random() * concepts.items.length)];
   return {
     id: `${concepts.id}.${challenge.id}.${Date.now()}`,
     mode: "concept",
@@ -81,12 +85,13 @@ export function createConceptSession(concepts, random = Math.random) {
   };
 }
 
-export function createPopQuizSession(popQuiz, random = Math.random) {
+export function createPopQuizSession(popQuiz, random = Math.random, selectedQuestions = null) {
   if (!popQuiz?.items?.length) {
     throw new Error("No pop quiz questions are available.");
   }
 
-  const questions = shuffle(popQuiz.items, random).map((question) => ({
+  const sourceQuestions = selectedQuestions ?? shuffle(popQuiz.items, random);
+  const questions = sourceQuestions.map((question) => ({
     ...question,
     answers: shuffle([question.correctAnswer, question.distractor], random)
   }));

@@ -6,6 +6,8 @@ Pop quizzes are short, high-repetition review chapters. They differ from normal 
 
 The first pop quiz is `Palabras pequeñas`, focused on the first high-priority Spanish connector words: `a`, `de`, `en`, `por`, and `y`.
 
+Pop quizzes are one exercise family in the broader framework described in `docs/exercise-framework.md`.
+
 ## Interaction
 
 Each pop quiz starts with Zorrito introducing why the category matters. The learner then sees one explicit recall prompt at a time with exactly two answer buttons:
