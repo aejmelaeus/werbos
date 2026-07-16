@@ -25,6 +25,8 @@ export function loadProgress() {
 export function recordAttempt(progress, attempt) {
   const completedAt = new Date();
   const itemKey = getAttemptItemKey(attempt);
+  const family = attempt.family ?? attempt.mode;
+  const previousFamilyRunCount = progress.current?.family === family ? progress.current?.familyRunCount ?? 0 : 0;
   const previousItem = itemKey ? progress.items?.[itemKey] : null;
   const correct = attempt.status === "completed";
   const correctStreak = correct ? (previousItem?.correctStreak ?? 0) + 1 : 0;
@@ -41,7 +43,8 @@ export function recordAttempt(progress, attempt) {
     ...progress,
     updatedAt: completedAt.toISOString(),
     current: {
-      family: attempt.family ?? attempt.mode,
+      family,
+      familyRunCount: previousFamilyRunCount + 1,
       mode: attempt.mode,
       itemKey,
       moduleKey: attempt.moduleKey ?? null,
@@ -52,7 +55,7 @@ export function recordAttempt(progress, attempt) {
           ...progress.items,
           [itemKey]: {
             itemKey,
-            family: attempt.family ?? attempt.mode,
+            family,
             parentId: attempt.parentId ?? null,
             direction: attempt.direction ?? null,
             lastResult: attempt.status,
@@ -85,8 +88,19 @@ function normalizeProgress(progress) {
     attempts: Array.isArray(progress.attempts) ? progress.attempts : [],
     items: progress.items && typeof progress.items === "object" ? progress.items : {},
     seenModules: progress.seenModules && typeof progress.seenModules === "object" ? progress.seenModules : {},
-    current: progress.current ?? null,
+    current: normalizeCurrent(progress.current),
     updatedAt: progress.updatedAt ?? null
+  };
+}
+
+function normalizeCurrent(current) {
+  if (!current) {
+    return null;
+  }
+
+  return {
+    ...current,
+    familyRunCount: current.familyRunCount ?? 1
   };
 }
 

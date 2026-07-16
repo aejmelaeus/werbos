@@ -6,6 +6,7 @@ const FAMILY_LIMITS = {
   quest: { min: 0.12, max: 0.22 },
   popQuiz: { min: 0.04, max: 0.1 }
 };
+const MIN_FAMILY_RUN = 3;
 
 export function pickNextGameplayItem(resources, progress, now = Date.now(), random = Math.random) {
   const pools = buildDuePools(resources, progress, now);
@@ -15,12 +16,16 @@ export function pickNextGameplayItem(resources, progress, now = Date.now(), rand
     throw new Error("No gameplay items are available.");
   }
 
+  const preferredFamily = getPreferredFamily(pools, progress);
+  if (preferredFamily) {
+    return pickFromFamily(pools, preferredFamily, random);
+  }
+
   const familyWeights = applyFamilyBounds(
     Object.fromEntries(availableFamilies.map(([family, items]) => [family, items.length]))
   );
   const family = pickWeighted(familyWeights, random);
-  const item = pools[family][Math.floor(random() * pools[family].length)];
-  return item;
+  return pickFromFamily(pools, family, random);
 }
 
 export function buildDuePools(resources, progress, now = Date.now()) {
@@ -95,6 +100,20 @@ function isDue(item, progress, now) {
   }
 
   return Date.parse(record.nextDueAt) <= now;
+}
+
+function getPreferredFamily(pools, progress) {
+  const currentFamily = progress.current?.family;
+  if (!currentFamily || !pools[currentFamily]?.length) {
+    return null;
+  }
+
+  const familyRunCount = progress.current?.familyRunCount ?? 0;
+  return familyRunCount > 0 && familyRunCount < MIN_FAMILY_RUN ? currentFamily : null;
+}
+
+function pickFromFamily(pools, family, random) {
+  return pools[family][Math.floor(random() * pools[family].length)];
 }
 
 function applyFamilyBounds(counts) {

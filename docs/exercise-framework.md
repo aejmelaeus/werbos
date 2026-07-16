@@ -92,6 +92,8 @@ Initial weighting can be content-count based:
 
 The exact ratio should be computed from available due items, then bounded so no family disappears. For example, pop quizzes can have a small minimum chance when due, while concepts can dominate when many concept items are due.
 
+To avoid feeling jumpy, gameplay should stay in the same exercise family for at least three answered questions before switching families, as long as that family still has due items.
+
 The default app route should greet the learner with Zorrito, then start or resume this mixed gameplay loop as today's practice. Direct module entry points should stay available from the hidden test route, `?mode=test`, for development and review.
 
 ## Reinforcement

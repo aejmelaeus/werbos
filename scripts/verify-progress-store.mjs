@@ -40,6 +40,9 @@ try {
   if (firstRecord.correctStreak !== 1 || firstRecord.missCount !== 0 || firstRecord.lastResult !== "completed") {
     errors.push("Expected first correct attempt to update item progress.");
   }
+  if (progress.current.family !== "concept" || progress.current.familyRunCount !== 1) {
+    errors.push("Expected first concept attempt to start a family run.");
+  }
 
   progress = recordAttempt(progress, {
     mode: "concept",
@@ -54,6 +57,9 @@ try {
   const failedRecord = progress.items["concept:encima-de-01"];
   if (failedRecord.correctStreak !== 0 || failedRecord.missCount !== 1 || failedRecord.lastResult !== "failed") {
     errors.push("Expected failed attempt to reset correct streak and increment misses.");
+  }
+  if (progress.current.familyRunCount !== 2) {
+    errors.push("Expected second concept attempt to continue the family run.");
   }
 
   storage.set("werbos.progress.v1", JSON.stringify({ version: 1, attempts: [] }));

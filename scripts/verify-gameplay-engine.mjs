@@ -55,6 +55,22 @@ try {
   const pickedByHighRoll = pickNextGameplayItem(resources, { items: {} }, now, () => 0.99);
   assertEqual(errors, pickedByHighRoll.family, "popQuiz", "Highest roll should still reach bounded pop quiz items.");
 
+  const continuedFamily = pickNextGameplayItem(
+    resources,
+    { items: {}, current: { family: "concept", familyRunCount: 2 } },
+    now,
+    () => 0.99
+  );
+  assertEqual(errors, continuedFamily.family, "concept", "Family run under 3 should continue the same family.");
+
+  const switchAllowed = pickNextGameplayItem(
+    resources,
+    { items: {}, current: { family: "concept", familyRunCount: 3 } },
+    now,
+    () => 0.99
+  );
+  assertEqual(errors, switchAllowed.family, "popQuiz", "Family run of 3 should allow weighted switching.");
+
   if (errors.length > 0) {
     console.error(errors.join("\n"));
     process.exit(1);
